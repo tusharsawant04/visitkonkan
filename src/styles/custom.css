@@ -1,0 +1,20 @@
+/* src/styles/custom.css */
+
+/* Ensure body and html take up the full height of the screen */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  /* Make the layout stretch across the full height of the viewport */
+  .layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the viewport */
+  }
+  
+  /* This ensures the main content takes all remaining space */
+  .layout-main {
+    flex-grow: 1; /* This takes up all the available space between header and footer */
+  }
+  
