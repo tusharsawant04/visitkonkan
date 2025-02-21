@@ -6,6 +6,7 @@ import Category from '../components/category';
 import ExperienceList from "@/components/ExperienceList";
 import Layout from '.././components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 export default function Home() {
   return (
     <div >
