@@ -1,13 +1,10 @@
 'use client'; // Mark this file as a client-side component
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 
 const HeroSlider: React.FC = () => {
 
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js'); // Import Bootstrap JS dynamically on the client-side
-  }, []); // Empty dependency array ensures this runs only once when the component mounts.
 
   return (
 
