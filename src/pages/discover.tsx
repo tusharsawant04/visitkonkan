@@ -1,6 +1,6 @@
 'use client'; // Mark this file as a client-side component
 
-import React, { useState, useRef } from 'react';
+import React, {  useRef } from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { CSSTransition } from 'react-transition-group';
@@ -8,22 +8,15 @@ import Image from 'next/image';
 import './discover.css'; // Create a CSS file for custom styles and animations
 
 const Discover = () => {
-  const [darkMode, setDarkMode] = useState(false);
+ 
   const nodeRef = useRef(null);
 
-  const toggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
+
 
   return (
     <Layout>
-      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+      <div className={'light-mode'}>
         {/* Theme Toggle Button */}
-        <div className="theme-toggle">
-          <button onClick={toggleTheme} className="btn btn-secondary">
-            {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-          </button>
-        </div>
 
         {/* Hero Section */}
         <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(https://static.toiimg.com/thumb/86547703/Maharashtra-Konkan-region.jpg?width=1200&height=900)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>

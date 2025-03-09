@@ -7,7 +7,6 @@ import Carousel from 'react-bootstrap/Carousel';
 
 const HeroSlider: React.FC = () => {
   const images = [
-    "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
     "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
