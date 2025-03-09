@@ -1,6 +1,9 @@
+'use client'; // Mark this file as a client-side component
+
 import React from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 
 const Experiences = () => {
   return (
@@ -20,7 +23,7 @@ const Experiences = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Trekking" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Trekking" />
                 <div className="card-body">
                   <h5 className="card-title">Trekking</h5>
                   <p className="card-text">Explore the scenic trails of Kokan.</p>
@@ -29,7 +32,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Scuba Diving" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Scuba Diving" />
                 <div className="card-body">
                   <h5 className="card-title">Scuba Diving</h5>
                   <p className="card-text">Dive into the underwater world of Kokan.</p>
@@ -38,7 +41,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Paragliding" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Paragliding" />
                 <div className="card-body">
                   <h5 className="card-title">Paragliding</h5>
                   <p className="card-text">Experience the thrill of flying over Kokan.</p>
@@ -54,7 +57,7 @@ const Experiences = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Folk Dance" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Folk Dance" />
                 <div className="card-body">
                   <h5 className="card-title">Folk Dance</h5>
                   <p className="card-text">Witness the vibrant folk dances of Kokan.</p>
@@ -63,7 +66,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  className="card-img-top" alt="Temple" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Temple" />
                 <div className="card-body">
                   <h5 className="card-title">Temples</h5>
                   <p className="card-text">Visit the ancient temples of Kokan.</p>
@@ -72,7 +75,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Festival" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Festival" />
                 <div className="card-body">
                   <h5 className="card-title">Festivals</h5>
                   <p className="card-text">Experience the colorful festivals of Kokan.</p>
@@ -88,7 +91,7 @@ const Experiences = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Food 1" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Food 1" />
                 <div className="card-body">
                   <h5 className="card-title">Seafood</h5>
                   <p className="card-text">Taste the fresh seafood of Kokan.</p>
@@ -97,7 +100,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Food 2" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Food 2" />
                 <div className="card-body">
                   <h5 className="card-title">Konkani Cuisine</h5>
                   <p className="card-text">Enjoy the traditional Konkani dishes.</p>
@@ -106,7 +109,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Food 3" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Food 3" />
                 <div className="card-body">
                   <h5 className="card-title">Street Food</h5>
                   <p className="card-text">Savor the delicious street food of Kokan.</p>
@@ -126,7 +129,7 @@ const Experiences = () => {
                   <div className="card" style={{ maxWidth: '600px' }}>
                     <div className="card-body">
                       <h5 className="card-title">John Doe</h5>
-                      <p className="card-text">"Kokan is a paradise! The experiences were unforgettable."</p>
+                      <p className="card-text">&quot;Kokan is a paradise! The experiences were unforgettable.&quot;</p>
                     </div>
                   </div>
                 </div>
@@ -136,7 +139,7 @@ const Experiences = () => {
                   <div className="card" style={{ maxWidth: '600px' }}>
                     <div className="card-body">
                       <h5 className="card-title">Jane Smith</h5>
-                      <p className="card-text">"I loved the cultural experiences and the local food. Highly recommend!"</p>
+                      <p className="card-text">&quot;I loved the cultural experiences and the local food. Highly recommend!&quot;</p>
                     </div>
                   </div>
                 </div>
@@ -146,7 +149,7 @@ const Experiences = () => {
                   <div className="card" style={{ maxWidth: '600px' }}>
                     <div className="card-body">
                       <h5 className="card-title">Michael Brown</h5>
-                      <p className="card-text">"The adventure activities were thrilling. Can't wait to visit again!"</p>
+                      <p className="card-text">&quot;The adventure activities were thrilling. Can&apos;t wait to visit again!&quot;</p>
                     </div>
                   </div>
                 </div>

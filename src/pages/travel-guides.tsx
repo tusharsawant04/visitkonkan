@@ -1,6 +1,9 @@
+'use client'; // Mark this file as a client-side component
+
 import React from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 
 const TravelGuides = () => {
   return (
@@ -12,7 +15,7 @@ const TravelGuides = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/guide1.jpg" className="card-img-top" alt="Guide 1" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Guide 1" />
                 <div className="card-body">
                   <h5 className="card-title">Guide to Beaches</h5>
                   <p className="card-text">Explore the best beaches in Kokan.</p>
@@ -22,7 +25,7 @@ const TravelGuides = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/guide2.jpg" className="card-img-top" alt="Guide 2" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Guide 2" />
                 <div className="card-body">
                   <h5 className="card-title">Adventure Guide</h5>
                   <p className="card-text">Discover adventure activities in Kokan.</p>
@@ -32,7 +35,7 @@ const TravelGuides = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/guide3.jpg" className="card-img-top" alt="Guide 3" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Guide 3" />
                 <div className="card-body">
                   <h5 className="card-title">Cultural Guide</h5>
                   <p className="card-text">Experience the rich culture of Kokan.</p>
@@ -61,7 +64,7 @@ const TravelGuides = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/summary1.jpg" className="card-img-top" alt="Summary 1" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Summary 1" />
                 <div className="card-body">
                   <h5 className="card-title">Beach Guide Summary</h5>
                   <p className="card-text">A brief overview of the best beaches in Kokan.</p>
@@ -71,7 +74,7 @@ const TravelGuides = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/summary2.jpg" className="card-img-top" alt="Summary 2" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Summary 2" />
                 <div className="card-body">
                   <h5 className="card-title">Adventure Guide Summary</h5>
                   <p className="card-text">A brief overview of adventure activities in Kokan.</p>
@@ -81,7 +84,7 @@ const TravelGuides = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="/images/summary3.jpg" className="card-img-top" alt="Summary 3" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Summary 3" />
                 <div className="card-body">
                   <h5 className="card-title">Cultural Guide Summary</h5>
                   <p className="card-text">A brief overview of the cultural experiences in Kokan.</p>

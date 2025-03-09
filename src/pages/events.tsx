@@ -1,13 +1,16 @@
+'use client'; // Mark this file as a client-side component
+
 import React from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Image from 'next/image';
 
 const Events = () => {
   return (
     <Layout>
       <div>
         {/* Header Section */}
-        <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(/images/kokan-events.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>
+        <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>
           <div className="container">
             <h1 className="display-4">Events in Kokan</h1>
             <p className="lead">Discover the vibrant festivals and events in Kokan.</p>
@@ -21,7 +24,7 @@ const Events = () => {
             <div className="col-md-12">
               <div className="calendar">
                 {/* Placeholder for dynamic calendar */}
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Calendar" className="img-fluid" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={1260} height={750} alt="Calendar" className="img-fluid" />
               </div>
             </div>
           </div>
@@ -33,7 +36,7 @@ const Events = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Event 1" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Event 1" />
                 <div className="card-body">
                   <h5 className="card-title">Music Festival</h5>
                   <p className="card-text">Join us for a night of music and fun.</p>
@@ -45,7 +48,7 @@ const Events = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Event 2" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Event 2" />
                 <div className="card-body">
                   <h5 className="card-title">Cultural Parade</h5>
                   <p className="card-text">Experience the rich culture of Kokan.</p>
@@ -57,7 +60,7 @@ const Events = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Event 3" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Event 3" />
                 <div className="card-body">
                   <h5 className="card-title">Adventure Marathon</h5>
                   <p className="card-text">Join the adventure marathon through scenic trails.</p>
@@ -76,7 +79,7 @@ const Events = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Past Event 1" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Past Event 1" />
                 <div className="card-body">
                   <h5 className="card-title">Past Event 1</h5>
                   <p className="card-text">Highlights from the past event.</p>
@@ -85,7 +88,7 @@ const Events = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Past Event 2" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Past Event 2" />
                 <div className="card-body">
                   <h5 className="card-title">Past Event 2</h5>
                   <p className="card-text">Highlights from the past event.</p>
@@ -94,7 +97,7 @@ const Events = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Past Event 3" />
+                <Image src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width={400} height={250} className="card-img-top" alt="Past Event 3" />
                 <div className="card-body">
                   <h5 className="card-title">Past Event 3</h5>
                   <p className="card-text">Highlights from the past event.</p>

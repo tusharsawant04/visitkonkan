@@ -1,42 +1,50 @@
-// components/ExperienceList.tsx
-import Image from "next/image";
+'use client'; // Mark this file as a client-side component
+
+import React from 'react';
+import Image from 'next/image';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './ExperienceList.css'; // Create a CSS file for custom styles and animations
 
 interface Experience {
   name: string;
-  price: string;
+  desc: string;
   rating: string;
   img: string;
 }
-const DEFAULT_IMG = "https://via.placeholder.com/400x250?text=No+Image"; // Placeholder image
 
 const experiences: Experience[] = [
-  { name: "Beachfront Bungalow", price: "$150/night", rating: "4.9 (2,000+ reviews)", img: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-  { name: "Farm-to-Table Dinner", price: "$65/person", rating: "4.8 (800+ reviews)", img: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-  { name: "Sunset Yoga Class", price: "$20/class", rating: "4.7 (500+ reviews)", img: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-  { name: "Winery Tour", price: "$25/tour", rating: "4.9 (1,000+ reviews)", img: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-  { name: "Deep Sea Fishing", price: "$75/person", rating: "4.5 (300+ reviews)", img: "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1s" },
+  { name: "Beach Camping Under the Stars", desc: "Experience the serene beauty of Kokan's beaches at night.", rating: "4.9/5", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
+  { name: "Trekking Through the Western Ghats", desc: "Explore the lush greenery and scenic trails.", rating: "4.8/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
+  { name: "Fishing with Local Fishermen", desc: "Learn traditional fishing techniques from locals.", rating: "4.7/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
+  { name: "Cooking Traditional Konkani Cuisine", desc: "Discover the flavors of Kokan with a local chef.", rating: "4.9/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
+  { name: "Backwater Boating Adventures", desc: "Enjoy a peaceful boat ride through Kokan's backwaters.", rating: "4.5/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
 ];
 
 export default function ExperienceList() {
   return (
-    <div className="container my-5">
-      <h2 className="fw-bold mb-4">Explore experiences, events, and guides</h2>
-      <div className="row g-4">
-        {experiences.map((exp, idx) => (
-          <div className="col-12 col-md-6 col-lg-4" key={idx}>
-            <div className="card border-0 shadow-sm h-100">
-              <Image src={exp.img ?? DEFAULT_IMG } width={400} height={250} className="card-img-top" alt={exp.name} />
+    <div className="experience-section">
+      <video autoPlay loop muted className="background-video">
+        <source src="/path/to/your/video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="container my-5">
+        <h2 className="fw-bold mb-4 text-white">Explore experiences, events, and guides</h2>
+        <div className="experience-slider">
+          {experiences.map((exp, idx) => (
+            <div className="experience-card" key={idx}>
+              <Image src={exp.img} width={400} height={250} className="card-img-top" alt={exp.name} />
               <div className="card-body">
-                <h5 className="fw-semibold">{exp.name}</h5>
-                <p className="mb-1 text-primary fw-bold">{exp.price}</p>
-                <p className="text-muted small">⭐ {exp.rating}</p>
+                <h5 className="fw-semibold text-white">{exp.name}</h5>
+                <p className="text-muted small">{exp.desc}</p>
+                <p className="text-warning small">⭐ {exp.rating}</p>
+                <button className="btn btn-outline-light">Learn More</button>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="text-center mt-4">
-        <button className="btn btn-outline-primary">Explore more experiences</button>
+          ))}
+        </div>
+        <div className="text-center mt-4">
+          <button className="btn btn-outline-primary">Explore more experiences</button>
+        </div>
       </div>
     </div>
   );

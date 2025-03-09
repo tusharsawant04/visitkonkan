@@ -7,7 +7,7 @@ const Login = () => {
   const [otp, setOtp] = useState('');
   const [isOtpLogin, setIsOtpLogin] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
-  const [error, setError] = useState('');
+
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
           <div className="card">
             <div className="card-body">
               <h2 className="text-center mb-4">Login</h2>
-              {error && <div className="alert alert-danger">{error}</div>}
+              {/* {error && <div className="alert alert-danger">{error}</div>} */}
               {!isOtpLogin ? (
                 <form onSubmit={handleLogin}>
                   <div className="mb-3">

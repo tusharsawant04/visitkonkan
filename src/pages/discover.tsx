@@ -1,16 +1,35 @@
-import React from 'react';
+'use client'; // Mark this file as a client-side component
+
+import React, { useState, useRef } from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CSSTransition } from 'react-transition-group';
+import Image from 'next/image';
+import './discover.css'; // Create a CSS file for custom styles and animations
 
 const Discover = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const nodeRef = useRef(null);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
     <Layout>
-      <div>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+        {/* Theme Toggle Button */}
+        <div className="theme-toggle">
+          <button onClick={toggleTheme} className="btn btn-secondary">
+            {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+          </button>
+        </div>
+
         {/* Hero Section */}
-        <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(/images/kokan-hero.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>
+        <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(https://static.toiimg.com/thumb/86547703/Maharashtra-Konkan-region.jpg?width=1200&height=900)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>
           <div className="container">
-            <h1 className="display-4">Discover Kokan</h1>
-            <p className="lead">Explore the scenic beauty and rich heritage of Kokan.</p>
+            <h1 className="display-4">Explore the Unseen Beauty of Kokan</h1>
+            <p className="lead">Discover the scenic beauty and rich heritage of Kokan.</p>
           </div>
         </section>
 
@@ -18,33 +37,26 @@ const Discover = () => {
         <section className="container my-5">
           <h2 className="text-center mb-4">Top Attractions</h2>
           <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Attraction 1" />
-                <div className="card-body">
-                  <h5 className="card-title">Attraction 1</h5>
-                  <p className="card-text">Description of Attraction 1.</p>
+            {['Beaches', 'Forts', 'Waterfalls'].map((attraction, index) => (
+              <CSSTransition
+                key={index}
+                in={true}
+                appear={true}
+                timeout={500}
+                classNames="fade"
+                nodeRef={nodeRef}
+              >
+                <div className="col-md-4" ref={nodeRef}>
+                  <div className="card">
+                    <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt={attraction} />
+                    <div className="card-body">
+                      <h5 className="card-title">{attraction}</h5>
+                      <p className="card-text">Description of {attraction}.</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Attraction 2" />
-                <div className="card-body">
-                  <h5 className="card-title">Attraction 2</h5>
-                  <p className="card-text">Description of Attraction 2.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Attraction 3" />
-                <div className="card-body">
-                  <h5 className="card-title">Attraction 3</h5>
-                  <p className="card-text">Description of Attraction 3.</p>
-                </div>
-              </div>
-            </div>
+              </CSSTransition>
+            ))}
           </div>
         </section>
 
@@ -53,27 +65,15 @@ const Discover = () => {
           <h2 className="text-center mb-4">Hidden Gems</h2>
           <div id="hiddenGemsCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
-              <div className="carousel-item active">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="d-block w-100" alt="Gem 1" />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Hidden Gem 1</h5>
-                  <p>Description of Hidden Gem 1.</p>
+              {['Gem 1', 'Gem 2', 'Gem 3'].map((gem, index) => (
+                <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                  <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={1200} height={900} className="d-block w-100" alt={gem} />
+                  <div className="carousel-caption d-none d-md-block">
+                    <h5>{gem}</h5>
+                    <p>Description of {gem}.</p>
+                  </div>
                 </div>
-              </div>
-              <div className="carousel-item">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="d-block w-100" alt="Gem 2" />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Hidden Gem 2</h5>
-                  <p>Description of Hidden Gem 2.</p>
-                </div>
-              </div>
-              <div className="carousel-item">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="d-block w-100" alt="Gem 3" />
-                <div className="carousel-caption d-none d-md-block">
-                  <h5>Hidden Gem 3</h5>
-                  <p>Description of Hidden Gem 3.</p>
-                </div>
-              </div>
+              ))}
             </div>
             <button className="carousel-control-prev" type="button" data-bs-target="#hiddenGemsCarousel" data-bs-slide="prev">
               <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -91,7 +91,7 @@ const Discover = () => {
           <div className="container">
             <h2>Ready to Explore Kokan?</h2>
             <p className="lead">Book your trip now and experience the beauty of Kokan.</p>
-            <button className="btn btn-primary btn-lg">Book Now</button>
+            <button className="btn btn-primary btn-lg">Start Your Journey</button>
           </div>
         </section>
       </div>

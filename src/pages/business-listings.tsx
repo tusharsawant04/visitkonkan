@@ -1,10 +1,11 @@
+'use client'; // Mark this file as a client-side component
+
 import React from 'react';
+import Image from 'next/image';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BusinessListings = () => {
-    const DEFAULT_IMG = "https://via.placeholder.com/400x250?text=No+Image"; // Placeholder image
-
   return (
     <Layout>
       <div className="container my-5">
@@ -43,7 +44,13 @@ const BusinessListings = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Business 1" />
+                <Image
+                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  width={400}
+                  height={250}
+                  className="card-img-top"
+                  alt="Business 1"
+                />
                 <div className="card-body">
                   <h5 className="card-title">Hotel Kokan</h5>
                   <p className="card-text">A luxurious hotel offering the best amenities.</p>
@@ -54,7 +61,13 @@ const BusinessListings = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Business 2" />
+                <Image
+                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  width={400}
+                  height={250}
+                  className="card-img-top"
+                  alt="Business 2"
+                />
                 <div className="card-body">
                   <h5 className="card-title">Kokan Restaurant</h5>
                   <p className="card-text">Serving delicious local cuisine.</p>
@@ -65,7 +78,13 @@ const BusinessListings = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <img src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" className="card-img-top" alt="Business 3" />
+                <Image
+                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  width={400}
+                  height={250}
+                  className="card-img-top"
+                  alt="Business 3"
+                />
                 <div className="card-body">
                   <h5 className="card-title">Kokan Travel Agency</h5>
                   <p className="card-text">Your trusted partner for travel arrangements.</p>
