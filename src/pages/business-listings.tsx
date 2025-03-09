@@ -45,7 +45,7 @@ const BusinessListings = () => {
             <div className="col-md-4">
               <div className="card">
                 <Image
-                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
                   width={400}
                   height={250}
                   className="card-img-top"
@@ -62,7 +62,7 @@ const BusinessListings = () => {
             <div className="col-md-4">
               <div className="card">
                 <Image
-                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
                   width={400}
                   height={250}
                   className="card-img-top"
@@ -79,7 +79,7 @@ const BusinessListings = () => {
             <div className="col-md-4">
               <div className="card">
                 <Image
-                  src="https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
                   width={400}
                   height={250}
                   className="card-img-top"
