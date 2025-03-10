@@ -1,17 +1,25 @@
 'use client'; // Mark this file as a client-side component
 
-import React, {  useRef } from 'react';
+import React from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { CSSTransition } from 'react-transition-group';
 import Image from 'next/image';
+import Link from 'next/link';
 import './discover.css'; // Create a CSS file for custom styles and animations
 
 const Discover = () => {
- 
-  const nodeRef = useRef(null);
-
-
+  const topPlaces = [
+    { name: 'Ganpatipule Beach', description: 'A beautiful beach with a famous Ganpati temple.', imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e' },
+    { name: 'Sindhudurg Fort', description: 'A historical fort located on a rocky island.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Ratnagiri', description: 'A port city known for its beaches and historical sites.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Murud Beach', description: 'A serene beach with clear waters and soft sand.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Dapoli', description: 'A hill station with beautiful beaches and temples.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Alibaug', description: 'A coastal town known for its beaches and forts.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Harihareshwar', description: 'A town known for its ancient temples and beaches.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Tarkarli', description: 'A beach destination known for its clear waters and water sports.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Diveagar', description: 'A beach village known for its serene environment.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+    { name: 'Velas Beach', description: 'A beach known for its turtle festival.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0' },
+  ];
 
   return (
     <Layout>
@@ -26,29 +34,25 @@ const Discover = () => {
           </div>
         </section>
 
-        {/* Top Attractions Section */}
+        {/* Top Places Section */}
         <section className="container my-5">
-          <h2 className="text-center mb-4">Top Attractions</h2>
+          <h2 className="text-center mb-4">Top 10 Places in Kokan</h2>
           <div className="row">
-            {['Beaches', 'Forts', 'Waterfalls'].map((attraction, index) => (
-              <CSSTransition
-                key={index}
-                in={true}
-                appear={true}
-                timeout={500}
-                classNames="fade"
-                nodeRef={nodeRef}
-              >
-                <div className="col-md-4" ref={nodeRef}>
-                  <div className="card">
-                    <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt={attraction} />
+            {topPlaces.map((place, index) => (
+              <div className="col-md-4 mb-4" key={index}>
+                <Link href={`/PlaceInformation?place=${place.name}`}>
+                  <div className="card h-100 shadow-sm border-0">
+                    <Image src={place.imageUrl} width={400} height={250} className="card-img-top" alt={place.name} />
                     <div className="card-body">
-                      <h5 className="card-title">{attraction}</h5>
-                      <p className="card-text">Description of {attraction}.</p>
+                      <h5 className="card-title">{place.name}</h5>
+                      <p className="card-text">{place.description}</p>
+                    </div>
+                    <div className="card-footer bg-white border-0">
+                      <button className="btn btn-primary btn-sm">Learn More</button>
                     </div>
                   </div>
-                </div>
-              </CSSTransition>
+                </Link>
+              </div>
             ))}
           </div>
         </section>
