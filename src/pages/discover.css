@@ -1,5 +1,10 @@
+.light-mode {
+  background-color: #f0f8ff;
+  color: #333;
+}
+
 .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
@@ -14,6 +19,16 @@
 
 .card-body {
   padding: 1.25rem;
+  position: relative;
+}
+
+.card-body .card-rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .card-title {
@@ -38,4 +53,199 @@
 .btn-primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
+}
+
+.list-view .card {
+  display: flex;
+  flex-direction: row;
+}
+
+.list-view .card-img-top {
+  width: 200px;
+  height: auto;
+}
+
+.list-view .card-body {
+  flex: 1;
+  padding: 20px;
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.discover-page {
+  background-color: #f8f9fa;
+}
+
+.hero-section {
+  height: 80vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://static.toiimg.com/thumb/86547703/Maharashtra-Konkan-region.jpg?width=1200&height=900');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 2rem;
+}
+
+.hero-title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-input, .category-select {
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+}
+
+.search-input {
+  flex: 2;
+}
+
+.category-select {
+  flex: 1;
+}
+
+.destinations-section {
+  padding: 4rem 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.destinations-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.destinations-grid.grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.destinations-grid.list {
+  grid-template-columns: 1fr;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card-image {
+  position: relative;
+}
+
+.card-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255,255,255,0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.card-rating {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255,255,255,0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.explore-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+.experience-section {
+  background: white;
+  padding: 4rem 0;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.experience-card {
+  text-align: center;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.cta-section {
+  text-align: center;
+  padding: 6rem 0;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://static.toiimg.com/thumb/86547703/Maharashtra-Konkan-region.jpg?width=1200&height=900');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.cta-button {
+  background: #ff5722;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #f4511e;
+  transform: translateY(-2px);
 }
