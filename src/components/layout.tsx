@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import Header from './header';
 import Footer from './footer';
-
+import ChatbotButton from './ChatbotButton';
 interface LayoutProps {
   children: ReactNode;  // Define children prop type
 }
@@ -14,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </main>
       <Footer />
+      <ChatbotButton />
     </div>
   );
 };

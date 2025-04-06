@@ -1,8 +1,11 @@
-'use client'; // Mark this file as a client-side component
+'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './category.css'; // Create a CSS file for custom styles and animations
+import './category.css';
 
 interface Category {
   title: string;
@@ -21,23 +24,77 @@ const categories: Category[] = [
 ];
 
 export default function Category() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const CategoryCard = ({ cat }: { cat: Category }) => (
+    <div className="card h-100 text-center p-3 border-0 shadow-sm category-card">
+      <div className="card-body d-flex flex-column justify-content-between p-0">
+        <div>
+          <div className="category-icon display-5 mb-3">{cat.icon}</div>
+          <h5 className="card-title fw-semibold">{cat.title}</h5>
+          <p className="text-muted small mb-3">{cat.desc}</p>
+        </div>
+        <div className="category-image-wrapper">
+          <div 
+            className="category-image" 
+            style={{ backgroundImage: `url(${cat.image})` }}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+
   return (
     <div className="container my-5">
       <h2 className="fw-bold mb-4">Discover experiences for every mood</h2>
-      <div className="row g-4">
-        {categories.map((cat, idx) => (
-          <div className="col-6 col-md-4 col-lg-2" key={idx}>
-            <div className="card text-center p-3 border-0 shadow-sm category-card">
-              <div className="category-icon display-5">{cat.icon}</div>
-              <h5 className="mt-2 fw-semibold">{cat.title}</h5>
-              <p className="text-muted small">{cat.desc}</p>
-              <div className="category-image" style={{ backgroundImage: `url(${cat.image})` }}></div>
+      
+      {isMobile ? (
+        <Swiper
+          spaceBetween={16}
+          slidesPerView={1.2}
+          centeredSlides={false}
+          className="category-swiper"
+          breakpoints={{
+            320: {
+              slidesPerView: 1.2,
+            },
+            480: {
+              slidesPerView: 2.2,
+            },
+            640: {
+              slidesPerView: 3.2,
+            }
+          }}
+        >
+          {categories.map((cat, idx) => (
+            <SwiperSlide key={idx}>
+              <CategoryCard cat={cat} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="row g-4">
+          {categories.map((cat, idx) => (
+            <div className="col-6 col-md-4 col-lg-2" key={idx}>
+              <CategoryCard cat={cat} />
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
+
       <div className="text-center mt-4">
-        <button className="btn btn-primary">View All Categories</button>
+        <button className="btn btn-primary px-4">View All Categories</button>
       </div>
     </div>
   );

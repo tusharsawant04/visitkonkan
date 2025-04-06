@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
@@ -8,28 +8,59 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import './discover.css';
 
+// Define the Place type for better type safety
+interface Place {
+  name: string;
+  description: string;
+  imageUrl: string;
+  category: string;
+  rating: number;
+}
+
+const topPlaces: Place[] = [
+  { 
+    name: 'Ganpatipule Beach', 
+    description: 'A beautiful beach with a famous Ganpati temple.', 
+    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', 
+    category: 'beach', 
+    rating: 4.5 
+  },
+  { 
+    name: 'Sindhudurg Fort', 
+    description: 'A historical fort located on a rocky island.', 
+    imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', 
+    category: 'fort', 
+    rating: 4.7 
+  },
+  { 
+    name: 'Ratnagiri', 
+    description: 'A port city known for its beaches and historical sites.', 
+    imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', 
+    category: 'beach', 
+    rating: 4.3 
+  }
+];
+
 const Discover = () => {
+  const [places, setPlaces] = useState<Place[]>([]);
   const [view, setView] = useState('grid');
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('all');
+  const [isClient, setIsClient] = useState(false);
 
-  const topPlaces = [
-    { name: 'Ganpatipule Beach', description: 'A beautiful beach with a famous Ganpati temple.', imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', category: 'beach', rating: 4.5 },
-    { name: 'Sindhudurg Fort', description: 'A historical fort located on a rocky island.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'fort', rating: 4.7 },
-    { name: 'Ratnagiri', description: 'A port city known for its beaches and historical sites.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.3 },
-    { name: 'Murud Beach', description: 'A serene beach with clear waters and soft sand.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.4 },
-    { name: 'Dapoli', description: 'A hill station with beautiful beaches and temples.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'hill station', rating: 4.6 },
-    { name: 'Alibaug', description: 'A coastal town known for its beaches and forts.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.2 },
-    { name: 'Harihareshwar', description: 'A town known for its ancient temples and beaches.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'temple', rating: 4.5 },
-    { name: 'Tarkarli', description: 'A beach destination known for its clear waters and water sports.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.8 },
-    { name: 'Diveagar', description: 'A beach village known for its serene environment.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.1 },
-    { name: 'Velas Beach', description: 'A beach known for its turtle festival.', imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', category: 'beach', rating: 4.3 },
-  ];
+  useEffect(() => {
+    setIsClient(true);
+    setPlaces(topPlaces);
+  }, []);
 
-  const filteredPlaces = topPlaces.filter(place => 
+  const filteredPlaces = places.filter(place => 
     (category === 'all' || place.category === category) &&
     place.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
+
+  if (!isClient) {
+    return null; // or a loading state
+  }
 
   return (
     <Layout>
@@ -109,7 +140,14 @@ const Discover = () => {
                     <div className="card-content">
                       <h3>{place.name}</h3>
                       <p>{place.description}</p>
-                      <button className="explore-btn">Explore More</button>
+                      <div className="button-group">
+                        <Link href={`/PlaceInformation?place=${place.name}`}>
+                          <button className="explore-btn">Explore More</button>
+                        </Link>
+                        <Link href={`/PlanTrip?place=${place.name}`}>
+                          <button className="plan-btn">Plan Trip</button>
+                        </Link>
+                      </div>
                     </div>
                   </Link>
                 </motion.div>

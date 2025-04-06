@@ -17,4 +17,77 @@ html, body {
   .layout-main {
     flex-grow: 1; /* This takes up all the available space between header and footer */
   }
-  
+
+.home-page {
+  background-color: #ffffff;
+}
+
+.hero-section {
+  min-height: 80vh;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.category-section,
+.experiences-section,
+.featured-section,
+.local-section {
+  position: relative;
+}
+
+.category-section::before,
+.featured-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1), transparent);
+}
+
+.cta-section {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('/images/konkan-beach.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 60vh;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

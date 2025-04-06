@@ -1,61 +1,90 @@
-.hero-slider {
+.hero-container {
+  position: relative;
+  /* margin-bottom: 6rem; */
+}
+
+.planning-card-wrapper {
+  position: absolute;
+  bottom: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 2;
+ 
+}
+
+/* Add these styles to TripPlanningCard component */
+.planning-card {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Ensure card takes full width of wrapper */
+}
+
+.planning-card.show {
+  display: block;
+  opacity: 1;
+}
+
+.recommendations-section {
+  background-color: #f8f9fa;
+  padding: 3rem 0;
+  margin-top: 2rem;
+}
+
+.hover-card {
+  transition: transform 0.2s;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+  .planning-card-wrapper {
     position: relative;
-    height: 100vh;
-    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-50px);
+    width: calc(100% - 30px);
+    margin: 0 15px;
   }
   
-  .hero-slider .carousel-item {
-    height: 100vh;
+  .hero-container {
+    margin-bottom: 4rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .planning-card {
+    margin: 0 auto; /* Center the card */
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .recommendations-section {
+    padding: 2rem 0;
   }
   
-  .hero-slider img {
-    object-fit: cover;
-    height: 100vh;
+  .recommendations-section h2 {
+    font-size: 1.5rem;
   }
-  
-  .hero-slider .carousel-caption {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    animation: fadeIn 1s ease-in-out;
+}
+
+@media (max-width: 576px) {
+  .display-4 {
+    font-size: 1.75rem;
   }
-  
-  .hero-slider .gradient-text {
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .hero-slider .glow-on-hover {
-    background: linear-gradient(45deg, #ff6b6b, #f06595);
-    border: none;
-    color: white;
-    transition: box-shadow 0.3s ease-in-out;
-  }
-  
-  .hero-slider .glow-on-hover:hover {
-    box-shadow: 0 0 20px rgba(255, 107, 107, 0.7);
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .overlay-map {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 200px;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    /* Add your map styles here */
-  }
+}

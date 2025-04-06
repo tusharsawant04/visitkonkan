@@ -1,0 +1,20 @@
+/* Add your styles here */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.plan-trip-container {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.plan-trip-header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.plan-trip-content {
+  font-size: 16px;
+  line-height: 1.5;
+}

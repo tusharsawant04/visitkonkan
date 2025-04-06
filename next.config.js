@@ -12,6 +12,21 @@ const nextConfig = {
           hostname: "images.unsplash.com",
           pathname: "/photo-**", // Allow images from Unsplash as well
         },
+        {
+          protocol: "https",
+          hostname: "api.dicebear.com",
+          pathname: "/6.x/**",
+        },
+        {
+          protocol: "https",
+          hostname: "ui-avatars.com",
+          pathname: "/api/**",
+        },
+        {
+          protocol: "https",
+          hostname: "i.pravatar.cc",
+          pathname: "/**", // Allow all paths from pravatar.cc
+        }
       ],
     },
   };

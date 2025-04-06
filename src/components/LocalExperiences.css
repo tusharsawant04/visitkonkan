@@ -1,0 +1,224 @@
+.local-experiences {
+  background: linear-gradient(to bottom, #f8fafc, #fff);
+  padding: 6rem 0;
+}
+
+.section-subtitle {
+  background: linear-gradient(120deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.section-description {
+  color: #64748b;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.experiences-slider {
+  padding: 2rem 0 4rem;
+  margin: 0 -1rem;
+}
+
+.experience-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 1rem;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+.experience-image-wrapper {
+  position: relative;
+  padding-bottom: 75%;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 0.75rem;
+}
+
+.experience-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: inherit;
+}
+
+.experience-card:hover .experience-image {
+  transform: scale(1.08);
+}
+
+.experience-meta {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.duration,
+.price {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 0.75rem 1.25rem;
+  border-radius: 30px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.duration {
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.duration:hover,
+.price:hover {
+  transform: translateY(-2px);
+}
+
+.price {
+  color: #16a34a;
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.experience-content {
+  padding: 1.75rem;
+}
+
+.experience-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.experience-description {
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+
+.book-now-btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: linear-gradient(120deg, #3b82f6, #60a5fa);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.book-now-btn:hover,
+.book-now-btn.hovered {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.3);
+  background: linear-gradient(120deg, #2563eb, #3b82f6);
+  gap: 1rem;
+}
+
+/* Swiper Customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #3b82f6;
+  background: rgba(255, 255, 255, 0.9);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #3b82f6;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .local-experiences {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: 2.25rem;
+  }
+  
+  .experience-card {
+    margin: 0.5rem;
+  }
+
+  .experience-content {
+    padding: 1.25rem;
+  }
+
+  .experience-title {
+    font-size: 1.25rem;
+  }
+
+  .book-now-btn {
+    padding: 0.875rem 1.5rem;
+  }
+}

@@ -1,0 +1,150 @@
+.featured-destinations {
+  background-color: #f8fafc;
+}
+
+.section-subtitle {
+  color: #3b82f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.section-description {
+  color: #666;
+  font-size: 1.125rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.destinations-slider {
+  padding: 1rem 0 3rem;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.destination-image-wrapper {
+  position: relative;
+  padding-bottom: 75%;
+  overflow: hidden;
+}
+
+.destination-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.destination-card:hover .destination-image {
+  transform: scale(1.05);
+}
+
+.destination-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  color: #3b82f6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.destination-rating {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  backdrop-filter: blur(4px);
+}
+
+.destination-content {
+  padding: 1.5rem;
+}
+
+.destination-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+}
+
+.destination-description {
+  color: #666;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.discover-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #3b82f6;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.discover-link.hovered {
+  gap: 0.75rem;
+  color: #2563eb;
+}
+
+/* Swiper Customization */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #3b82f6;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.25rem;
+}
+
+.swiper-pagination-bullet {
+  background: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .destination-content {
+    padding: 1.25rem;
+  }
+}
