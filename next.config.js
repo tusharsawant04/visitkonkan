@@ -26,7 +26,12 @@ const nextConfig = {
           protocol: "https",
           hostname: "i.pravatar.cc",
           pathname: "/**", // Allow all paths from pravatar.cc
-        }
+        },
+          {
+        protocol: "https",
+        hostname: "drive.google.com",
+        pathname: "/**", // This matches the `uc?export=view&id=...` path
+      }
       ],
     },
   };

@@ -18,19 +18,35 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
-    name: "Rahul Sharma",
-    avatar: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    name: "Paratik Gawade",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 5,
-    comment: "Amazing experience! The beaches were pristine and the local food was incredible.",
-    destination: "Ganpatipule"
+    comment: "Thank you all for the amazing memories. We shared so many adventures and had a lot of fun together. If I had to talk about any low points or mistakes from the management team, I honestly have nothing to say — everything was well planned from start to finish. Once again, thank you for adding another unforgettable adventure to my life.",
+    destination: "Rajgad trek"
   },
   {
     id: 2,
-    name: "Priya Patel",
-    avatar: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    name: "Rahul Dhayalkar",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     rating: 4,
-    comment: "Loved exploring the historical forts. Great guide service!",
-    destination: "Sindhudurg"
+    comment: "Pratik, Aryan & Team well execution and well planning about all trek and well support. The memories and trek was unforgettable❤️🫂✨Keep it up guys🙌🏻",
+    destination: "Rajgad trek"
+  },
+   {
+    id: 3,
+    name: "unknown traveler",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rating: 4,
+    comment: "Thanks pratik and all the team trek was very nice Something new was experienced 🌍❤️",
+    destination: "Rajgad trek"
+  },
+    {
+    id: 4,
+    name: "unknown traveler",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rating: 4,
+    comment: "Thanks pratik and all the team trek was very nice Something new was experienced 🌍❤️",
+    destination: "Rajgad trek"
   },
   // Add more reviews...
 ];
@@ -55,7 +71,7 @@ export default function ReviewSection() {
         >
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>
-              <div className="card h-100 border-0 shadow-sm">
+              <div className="card h-100 border-0 shadow">
                 <div className="card-body p-4">
                   <div className="d-flex align-items-center mb-3">
                     <Image

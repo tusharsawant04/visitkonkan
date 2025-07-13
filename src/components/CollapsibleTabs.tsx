@@ -13,64 +13,7 @@ interface CollapsibleTabsProps {
 const CollapsibleTabs: React.FC<CollapsibleTabsProps> = ({ place, activeTab }) => {
   return (
     <div className="container my-5">
-      <ul className="nav nav-tabs" id="myTab" role="tablist">
-        <li className="nav-item" role="presentation">
-          <button 
-            className={`nav-link ${activeTab === 'attractions' ? 'active' : ''}`} 
-            id="attractions-tab" 
-            data-bs-toggle="tab" 
-            data-bs-target="#attractions" 
-            type="button" 
-            role="tab" 
-            aria-controls="attractions" 
-            aria-selected={activeTab === 'attractions'}
-          >
-            Nearby Attractions
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button 
-            className={`nav-link ${activeTab === 'activities' ? 'active' : ''}`}
-            id="activities-tab" 
-            data-bs-toggle="tab" 
-            data-bs-target="#activities" 
-            type="button" 
-            role="tab" 
-            aria-controls="activities" 
-            aria-selected={activeTab === 'activities'}
-          >
-            Activities
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button 
-            className={`nav-link ${activeTab === 'hotels' ? 'active' : ''}`}
-            id="hotels-tab" 
-            data-bs-toggle="tab" 
-            data-bs-target="#hotels" 
-            type="button" 
-            role="tab" 
-            aria-controls="hotels" 
-            aria-selected={activeTab === 'hotels'}
-          >
-            Hotels
-          </button>
-        </li>
-        <li className="nav-item" role="presentation">
-          <button 
-            className={`nav-link ${activeTab === 'reviews' ? 'active' : ''}`}
-            id="reviews-tab" 
-            data-bs-toggle="tab" 
-            data-bs-target="#reviews" 
-            type="button" 
-            role="tab" 
-            aria-controls="reviews" 
-            aria-selected={activeTab === 'reviews'}
-          >
-            Reviews
-          </button>
-        </li>
-      </ul>
+    
       <div className="tab-content" id="myTabContent">
         <div 
           className={`tab-pane fade ${activeTab === 'attractions' ? 'show active' : ''}`} 

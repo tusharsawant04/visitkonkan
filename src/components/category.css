@@ -58,6 +58,27 @@
   height: auto;
 }
 
+/* Swiper Navigation Styles */
+.category-swiper .swiper-button-next,
+.category-swiper .swiper-button-prev {
+  color: #000;
+  background: rgba(255, 255, 255, 0.8);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.category-swiper .swiper-button-next:after,
+.category-swiper .swiper-button-prev:after {
+  font-size: 18px;
+}
+
+.category-swiper .swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
 @media (min-width: 768px) {
   .category-card:hover {
     transform: translateY(-5px);

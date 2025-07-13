@@ -37,14 +37,15 @@ const HeroSlider: React.FC = () => {
   const [hotelPreferences, setHotelPreferences] = useState<Preferences | null>(null);
 
   const images = [
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0",
-    "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
-  ];
+  "https://drive.google.com/uc?export=view&id=1SjPJoSnNM-j8Cg_SP1iWuJWDjHSzvU2j",
+  "https://drive.google.com/uc?export=view&id=1SHOtYaCIrqcwQuTy42C9VOjXgJVs0fLu",
+  "https://drive.google.com/uc?export=view&id=1StNEcU4a8SdGroPoBv311pbk7uEwcW-8",
+  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
+];
 
   const togglePlanCard = () => {
     setShowPlanCard(!showPlanCard);
+    setShowHotelCard(false); // Close the hotel booking card when opening trip planning card
     if (!showPlanCard) {
       setShowRecommendations(false); // Reset recommendations when opening new plan
     }
@@ -68,6 +69,7 @@ const HeroSlider: React.FC = () => {
 
   const toggleHotelCard = () => {
     setShowHotelCard(!showHotelCard);
+    setShowPlanCard(false); // Close the trip planning card when opening hotel booking card
     if (!showHotelCard) {
       setShowHotelRecommendations(false);
     }
@@ -143,7 +145,7 @@ const HeroSlider: React.FC = () => {
                     name: tripPreferences.destination,
                     duration: '3 days', // Add a default or calculated duration
                     price: tripPreferences.budget,
-                    image: 'https://via.placeholder.com/150', // Add a placeholder or actual image URL
+                    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', // Add a placeholder or actual image URL
                     rating: 4.5, // Provide a default or calculated rating
                   }] : []} 
                 />

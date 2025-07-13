@@ -139,13 +139,17 @@ const Discover = () => {
                     </div>
                     <div className="card-content">
                       <h3>{place.name}</h3>
-                      <p>{place.description}</p>
-                      <div className="button-group">
-                        <Link href={`/PlaceInformation?place=${place.name}`}>
-                          <button className="explore-btn">Explore More</button>
+                      <p className="mb-1">{place.description}
+                        <Link 
+                          href={`/PlaceInformation?place=${place.name}`}
+                          className="text-primary text-decoration-none ms-1"
+                        >
+                          Read More →
                         </Link>
+                      </p>
+                      <div className="d-flex justify-content-start mt-3">
                         <Link href={`/PlanTrip?place=${place.name}`}>
-                          <button className="plan-btn">Plan Trip</button>
+                          <button className="btn btn-primary">Plan Trip</button>
                         </Link>
                       </div>
                     </div>

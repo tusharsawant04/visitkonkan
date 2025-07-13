@@ -2,7 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './category.css';
@@ -60,29 +62,37 @@ export default function Category() {
       <h2 className="fw-bold mb-4">Discover experiences for every mood</h2>
       
       {isMobile ? (
-        <Swiper
-          spaceBetween={16}
-          slidesPerView={1.2}
-          centeredSlides={false}
-          className="category-swiper"
-          breakpoints={{
-            320: {
-              slidesPerView: 1.2,
-            },
-            480: {
-              slidesPerView: 2.2,
-            },
-            640: {
-              slidesPerView: 3.2,
-            }
-          }}
-        >
-          {categories.map((cat, idx) => (
-            <SwiperSlide key={idx}>
-              <CategoryCard cat={cat} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        <div className="position-relative">
+          <Swiper
+            modules={[Navigation, Autoplay]}
+            spaceBetween={16}
+            slidesPerView={1.2}
+            centeredSlides={false}
+            className="category-swiper"
+            navigation={true}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              320: {
+                slidesPerView: 1.2,
+              },
+              480: {
+                slidesPerView: 2.2,
+              },
+              640: {
+                slidesPerView: 3.2,
+              }
+            }}
+          >
+            {categories.map((cat, idx) => (
+              <SwiperSlide key={idx}>
+                <CategoryCard cat={cat} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       ) : (
         <div className="row g-4">
           {categories.map((cat, idx) => (

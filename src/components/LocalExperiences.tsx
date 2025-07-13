@@ -64,7 +64,7 @@ const LocalExperiences = () => {
           {experiences.map((exp) => (
             <SwiperSlide key={exp.id}>
               <div 
-                className="experience-card"
+                className="experience-card ms-4"
                 onMouseEnter={() => setHoveredId(exp.id)}
                 onMouseLeave={() => setHoveredId(null)}
               >

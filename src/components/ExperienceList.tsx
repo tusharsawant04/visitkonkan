@@ -13,6 +13,12 @@ interface Experience {
 }
 
 const experiences: Experience[] = [
+  {
+  name: "Rajgad Trek",
+  desc: "Walk the ancient paths of Shivaji Maharaj’s capital — where clouds kiss the fort and sunrise paints history in gold.",
+  rating: "5.0/5",
+  img: "https://drive.google.com/uc?export=view&id=1SnkUiDSySSG-vn8wX5VwIDYvOVMHlc1D"
+},
   { name: "Beach Camping Under the Stars", desc: "Experience the serene beauty of Kokan's beaches at night.", rating: "4.9/5", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
   { name: "Trekking Through the Western Ghats", desc: "Explore the lush greenery and scenic trails.", rating: "4.8/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
   { name: "Fishing with Local Fishermen", desc: "Learn traditional fishing techniques from locals.", rating: "4.7/5", img: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
@@ -53,7 +59,7 @@ export default function ExperienceList() {
         <div className="experience-slider-container">
           <div className="experience-slider" ref={sliderRef}>
             {experiences.map((exp, idx) => (
-              <div className="experience-card" key={idx}>
+              <div className="experience-card ms-4" key={idx}>
                 <Image 
                   src={exp.img} 
                   width={400} 
