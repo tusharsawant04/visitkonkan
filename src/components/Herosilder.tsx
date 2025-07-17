@@ -96,7 +96,7 @@ const HeroSlider: React.FC = () => {
                 />
                 <div className="position-absolute top-50 start-50 translate-middle text-center text-white">
                   <h1 className="display-4 fw-bold mb-4">Discover the Hidden Gems of Konkan</h1>
-                  <div className="d-flex flex-wrap justify-content-center gap-2 mt-3">
+                  {/* <div className="d-flex flex-wrap justify-content-center gap-2 mt-3">
                     <button 
                       className="btn btn-primary px-4"
                       onClick={togglePlanCard}
@@ -110,7 +110,7 @@ const HeroSlider: React.FC = () => {
                       {showHotelCard ? 'Close Booking' : 'Book Hotel'}
                     </button>
                     <button className="btn btn-light">Explore Listings</button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Carousel.Item>

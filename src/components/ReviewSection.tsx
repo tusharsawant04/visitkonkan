@@ -1,10 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
 import 'swiper/css';
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 interface Review {
   id: number;
@@ -19,79 +20,116 @@ const reviews: Review[] = [
   {
     id: 1,
     name: "Paratik Gawade",
-    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d",
     rating: 5,
-    comment: "Thank you all for the amazing memories. We shared so many adventures and had a lot of fun together. If I had to talk about any low points or mistakes from the management team, I honestly have nothing to say — everything was well planned from start to finish. Once again, thank you for adding another unforgettable adventure to my life.",
-    destination: "Rajgad trek"
+    comment: "Thank you all for the amazing memories...",
+    destination: "Rajgad Trek"
   },
   {
     id: 2,
     name: "Rahul Dhayalkar",
-    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d",
     rating: 4,
-    comment: "Pratik, Aryan & Team well execution and well planning about all trek and well support. The memories and trek was unforgettable❤️🫂✨Keep it up guys🙌🏻",
-    destination: "Rajgad trek"
+    comment: "Well execution and planning. Unforgettable memories ❤️",
+    destination: "Rajgad Trek"
   },
-   {
+  {
     id: 3,
-    name: "unknown traveler",
-    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    name: "Unknown Traveler",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d",
     rating: 4,
-    comment: "Thanks pratik and all the team trek was very nice Something new was experienced 🌍❤️",
-    destination: "Rajgad trek"
+    comment: "Thanks Pratik and team — something new was experienced 🌍",
+    destination: "Rajgad Trek"
   },
-    {
-    id: 4,
-    name: "unknown traveler",
-    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    rating: 4,
-    comment: "Thanks pratik and all the team trek was very nice Something new was experienced 🌍❤️",
-    destination: "Rajgad trek"
-  },
-  // Add more reviews...
 ];
 
 export default function ReviewSection() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
-    <section className="review-section py-5">
-      <div className="container">
+    <section
+      className="position-relative text-white py-5"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backdropFilter: 'blur(5px)'
+      }}
+    >
+      <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+
+      <div className="container position-relative z-1">
         <div className="text-center mb-5">
-          <h2 className="fw-bold">What Our Travelers Say</h2>
-          <p className="text-muted">Real experiences from real people</p>
+          <h2 className="fw-bold display-5">Traveler Stories</h2>
+          <p className="lead text-light">Real journeys. Real emotions. Shared with love.</p>
+        </div>
+
+        {/* Swiper Navigation Buttons */}
+        <div className="d-flex justify-content-end mb-3 gap-2">
+          <button ref={prevRef} className="btn btn-light rounded-circle shadow">
+            <i className="bi bi-arrow-left fs-5"></i>
+          </button>
+          <button ref={nextRef} className="btn btn-light rounded-circle shadow">
+            <i className="bi bi-arrow-right fs-5"></i>
+          </button>
         </div>
 
         <Swiper
+          modules={[Navigation]}
           spaceBetween={30}
           slidesPerView={1}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            968: { slidesPerView: 3 }
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
           }}
-          className="pb-5"
+          onBeforeInit={(swiper) => {
+            // @ts-ignore
+            swiper.params.navigation.prevEl = prevRef.current;
+            // @ts-ignore
+            swiper.params.navigation.nextEl = nextRef.current;
+          }}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 2 },
+            992: { slidesPerView: 3 }
+          }}
         >
           {reviews.map((review) => (
             <SwiperSlide key={review.id}>
-              <div className="card h-100 border-0 shadow">
+              <div
+                className="card text-dark h-100 border-0 shadow-lg"
+                style={{
+                  backdropFilter: 'blur(5px)',
+                  background: 'rgba(255, 255, 255, 0.85)',
+                  borderRadius: '20px'
+                }}
+              >
                 <div className="card-body p-4">
                   <div className="d-flex align-items-center mb-3">
                     <Image
                       src={review.avatar}
                       alt={review.name}
-                      width={50}
-                      height={50}
-                      className="rounded-circle"
+                      width={60}
+                      height={60}
+                      className="rounded-circle border border-white shadow"
                     />
                     <div className="ms-3">
                       <h6 className="mb-0">{review.name}</h6>
-                      <small className="text-muted">{review.destination}</small>
+                      <small className="text-muted">
+                        <i className="bi bi-geo-alt-fill me-1 text-danger"></i>
+                        {review.destination}
+                      </small>
                     </div>
                   </div>
                   <div className="text-warning mb-3">
                     {[...Array(review.rating)].map((_, i) => (
-                      <i key={i} className="bi bi-star-fill"></i>
+                      <i key={i} className="bi bi-star-fill me-1"></i>
                     ))}
                   </div>
-                  <p className="card-text">{review.comment}</p>
+                  <blockquote className="blockquote mb-0">
+                    <p className="fst-italic">“{review.comment}”</p>
+                  </blockquote>
                 </div>
               </div>
             </SwiperSlide>
