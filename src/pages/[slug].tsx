@@ -2,8 +2,10 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
 import Layout from '../components/layout';
+
 import { useEffect } from 'react';
 import { useState } from 'react';
+import './discover.css';
 export interface Experience {
   name: string;
   slug: string;
@@ -11,7 +13,11 @@ export interface Experience {
   rating: string;
   img: string[];
   history: string;
-  itinerary: string[];
+  itinerary: {
+    time: string;
+    description: string;
+    day: number;
+  }[];
   location: string; // Google Maps embed link
   reviews: {
     name: string;
@@ -32,15 +38,15 @@ export const experiences: Experience[] = [
   "https://images.unsplash.com/photo-1599106242383-271adeb2e828"
 ],    history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj, was a strategic military base and residence. Its architecture and stories reflect the strength and vision of the Maratha rulers.",
     itinerary: [
-      "6:00 AM: Departure from Pune",
-      "9:00 AM: Base village arrival",
-      "10:00 AM: Start trek",
-      "1:00 PM: Reach top, explore fort",
-      "2:30 PM: Lunch and rest",
-      "4:00 PM: Start descent",
-      "6:00 PM: Return to base village"
-    ],
-    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.561999548417!2d73.67640917519161!3d18.592380667253108",
+  { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
+  { time: "4:00 AM", description: "Base village arrival", day: 2 },
+  { time: "5:00 AM", description: "Start trek", day: 2 },
+  { time: "6:30 AM", description: "Reach top, explore fort", day: 2 },
+  { time: "1:00 PM", description: "Start descent", day: 2 },
+  { time: "2:30 PM", description: "Lunch and rest", day: 2 },
+  { time: "4:00 PM", description: "Return to Mumbai", day: 2 },
+],
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.671624761216!2d73.68285273679074!3d18.24822985904944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc28fa3eb07c019%3A0xe2f323ba03aacd31!2sRajgad%20Fort!5e0!3m2!1sen!2sin!4v1752896243233!5m2!1sen!2sin",
     reviews: [
       { name: "Paratik Gawade", comment: "Truly unforgettable experience!", rating: 5 },
       { name: "Rahul Dhayalkar", comment: "Amazing trek, great planning!", rating: 4 },
@@ -58,15 +64,15 @@ export const experiences: Experience[] = [
     "https://images.unsplash.com/photo-1599106242383-271adeb2e828"
   ],    
 history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj, was a strategic military base and residence. Its architecture and stories reflect the strength and vision of the Maratha rulers.",
-    itinerary: [
-      "6:00 AM: Departure from Pune",
-      "9:00 AM: Base village arrival",
-      "10:00 AM: Start trek",
-      "1:00 PM: Reach top, explore fort",
-      "2:30 PM: Lunch and rest",
-      "4:00 PM: Start descent",
-      "6:00 PM: Return to base village"
-    ],
+   itinerary: [
+  { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
+  { time: "4:00 AM", description: "Base village arrival", day: 2 },
+  { time: "5:00 AM", description: "Start trek", day: 2 },
+  { time: "6:30 AM", description: "Reach top, explore fort", day: 2 },
+  { time: "1:00 PM", description: "Start descent", day: 2 },
+  { time: "2:30 PM", description: "Lunch and rest", day: 2 },
+  { time: "4:00 PM", description: "Return to Mumbai", day: 2 },
+],
     location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.561999548417!2d73.67640917519161!3d18.592380667253108",
     reviews: [
       { name: "Paratik Gawade", comment: "Truly unforgettable experience!", rating: 5 },
@@ -74,8 +80,97 @@ history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati 
       { name: "Unknown", comment: "Loved the views and history!", rating: 5 }
     ]
   },
+  {
+    name: "Raigad Trek",
+    slug: "naneghat-trek",
+    desc: "Walk the ancient paths of Shivaji Maharaj’s capital where clouds kiss the fort and history whispers through every stone.",
+    rating: "5.0/5",
+    img: [
+    "https://drive.google.com/uc?export=view&id=1SnkUiDSySSG-vn8wX5VwIDYvOVMHlc1D",
+    "https://images.unsplash.com/photo-1589644873574-345111273e9b",
+    "https://images.unsplash.com/photo-1599106242383-271adeb2e828"
+  ],    
+history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj, was a strategic military base and residence. Its architecture and stories reflect the strength and vision of the Maratha rulers.",
+   itinerary: [
+  { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
+  { time: "4:00 AM", description: "Base village arrival", day: 2 },
+  { time: "5:00 AM", description: "Start trek", day: 2 },
+  { time: "6:30 AM", description: "Reach top, explore fort", day: 2 },
+  { time: "1:00 PM", description: "Start descent", day: 2 },
+  { time: "2:30 PM", description: "Lunch and rest", day: 2 },
+  { time: "4:00 PM", description: "Return to Mumbai", day: 2 },
+],
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.671624761216!2d73.68285273679074!3d18.24822985904944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc28fa3eb07c019%3A0xe2f323ba03aacd31!2sRajgad%20Fort!5e0!3m2!1sen!2sin!4v1752896243233!5m2!1sen!2sin",
+    reviews: [
+      { name: "Paratik Gawade", comment: "Truly unforgettable experience!", rating: 5 },
+      { name: "Rahul Dhayalkar", comment: "Amazing trek, great planning!", rating: 4 },
+      { name: "Unknown", comment: "Loved the views and history!", rating: 5 }
+    ]
+  },
   // Add more
+  {
+  name: "Harishchandragad Trek",
+  slug: "harishchandragad-trek",
+  desc: "Scale the legendary Sahyadri peaks where misty cliffs and ancient caves await your footsteps.",
+  rating: "4.8/5",
+    img: [
+    "https://images.unsplash.com/photo-1621508459206-1734f98de809?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8",
+    "https://images.unsplash.com/photo-1602926614761-1b4e8d2f64d7?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1600508773416-df7e2ec1c158?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1600369673533-ef4de4cd475b?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0"
+  ],
+  history: "Harishchandragad is an ancient fort with origins dating back to the 6th century. Known for its Konkan Kada (a 1,800 ft concave cliff), this fort served as a great watchtower and was of strategic importance in the Malshej region.",
+  itinerary: [
+    { time: "9:00 PM", description: "Departure from Mumbai", day: 1 },
+    { time: "4:00 AM", description: "Reach base village, quick rest", day: 2 },
+    { time: "5:30 AM", description: "Trek starts", day: 2 },
+    { time: "9:00 AM", description: "Explore Harishchandreshwar Temple & Konkan Kada", day: 2 },
+    { time: "1:00 PM", description: "Lunch and rest", day: 2 },
+    { time: "2:30 PM", description: "Start descent", day: 2 },
+    { time: "6:00 PM", description: "Return journey to Mumbai", day: 2 }
+  ],
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12038.91263656082!2d73.772205603982!3d19.38873530185295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd7337d8d1605b%3A0x388b6234e90cb3ce!2sHarishchandragad%20Fort!5e0!3m2!1sen!2sin!4v1752911221245!5m2!1sen!2sin",
+  reviews: [
+    { name: "Sneha Patil", comment: "Unreal cliff views, worth every step!", rating: 5 },
+    { name: "Aniket Jadhav", comment: "Tough trek but rewarding scenery.", rating: 4 },
+    { name: "Riya Shah", comment: "Perfect mix of adventure and heritage!", rating: 5 }
+   ]
+  },
+  {
+  name: "Malvan Beach Getaway",
+  slug: "malvan-beach-getaway",
+  desc: "Unwind on golden sands, dive into pristine waters, and explore coastal forts in this Konkan paradise.",
+  rating: "4.7/5",
+  img: [
+    "https://images.unsplash.com/photo-1627654324129-1c671f6a7a2d",  // Malvan beach view
+    "https://images.unsplash.com/photo-1617277675203-c3b83f5d89a1",  // Scuba diving
+    "https://images.unsplash.com/photo-1607768546710-210a848b55ef"   // Sindhudurg Fort
+  ],
+  history: "Malvan, located on the Konkan coast of Maharashtra, is famous for its serene beaches, Malvani cuisine, and historical forts like Sindhudurg built by Chhatrapati Shivaji Maharaj in the 17th century. It is also a hub for water sports and scuba diving in India.",
+  itinerary: [
+    { time: "6:00 AM", description: "Depart from Mumbai or Pune", day: 1 },
+    { time: "2:00 PM", description: "Check-in at beach resort and lunch", day: 1 },
+    { time: "4:00 PM", description: "Visit Rock Garden & sunset at Chivla Beach", day: 1 },
+    { time: "8:00 AM", description: "Visit Sindhudurg Fort via boat", day: 2 },
+    { time: "12:00 PM", description: "Explore Malvan market and local cuisine", day: 2 },
+    { time: "3:00 PM", description: "Scuba diving and water sports at Tarkarli Beach", day: 2 },
+    { time: "7:00 PM", description: "Campfire and beach dinner", day: 2 },
+    { time: "9:00 AM", description: "Relaxation at beach / optional backwater boating", day: 3 },
+    { time: "12:00 PM", description: "Check-out from hotel", day: 3 },
+    { time: "1:00 PM", description: "Lunch and return journey", day: 3 }
+  ],
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61134.16887075879!2d73.44418194203693!3d16.05166365318637!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcfa36f35aebfa7%3A0xb91d8ccf2c879847!2sMalvan!5e0!3m2!1sen!2sin!4v1752917649209!5m2!1sen!2sin",
+  reviews: [
+    { name: "Priya Naik", comment: "Best beach vibe with clean water and delicious food!", rating: 5 },
+    { name: "Rahul More", comment: "Loved scuba diving here, it's peaceful and thrilling!", rating: 4 },
+    { name: "Devanshi Kale", comment: "A great mix of history and nature. Highly recommend!", rating: 5 }
+  ]
+  },// Add more experiences as needed
+
+
+
 ];
+
 
 export default function ExperienceDetail() {
   const router = useRouter();
@@ -160,24 +255,36 @@ export default function ExperienceDetail() {
             </div>
 
             {/* Modern Itinerary */}
-            <div className="mb-4 border rounded p-4">
-              <h5 className="fw-semibold mb-4">🧭 Itinerary</h5>
-              {experience.itinerary.map((step, idx) => (
-                <div key={idx} className="mb-4 p-3 bg-light rounded shadow-sm">
-                  <div className="d-flex align-items-start">
-                    <div className="me-3">
-                      <div className="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style={{ width: '40px', height: '40px' }}>
-                        {idx + 1}
-                      </div>
-                    </div>
-                    <div>
-                      <h6 className="mb-1">Day {idx + 1}</h6>
-                      <p className="mb-0 text-muted">{step}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="itinerary-container border rounded p-4 bg-white shadow-sm">
+  <h5 className="fw-bold text-primary mb-4">🧭 Itinerary</h5>
+
+  {experience.itinerary.map((step, idx) => {
+    const prevDay = idx > 0 ? experience.itinerary[idx - 1].day : null;
+    const showDay = step.day !== prevDay;
+
+    return (
+      <div key={idx} className="d-flex position-relative mb-4 ps-4 timeline-item">
+        {/* Timeline dot and line */}
+        <div className="timeline-icon me-3 d-flex flex-column align-items-center">
+          <div className="dot bg-primary"></div>
+          {idx !== experience.itinerary.length - 1 && <div className="line"></div>}
+        </div>
+
+        {/* Content */}
+        <div>
+          {showDay && (
+            <h6 className="fw-bold mb-2 text-dark">Day {step.day}</h6>
+          )}
+          <div className="text-muted">
+            <strong>{step.time}:</strong> {step.description}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+
           </div>
 
           {/* Right Sidebar */}
@@ -221,13 +328,8 @@ export default function ExperienceDetail() {
               <div>
                 <h6 className="fw-semibold mb-2">📍 Location</h6>
                 <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                  <iframe
-                    src={experience.location}
-                    width="100%"
-                    height="250"
-                    loading="lazy"
-                    allowFullScreen
-                  ></iframe>
+                 
+                  <iframe src={experience.location} width="600" height="450"  loading="lazy" ></iframe>
                 </div>
               </div>
             </div>

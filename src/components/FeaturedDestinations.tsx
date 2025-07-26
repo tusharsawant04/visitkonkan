@@ -9,11 +9,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './FeaturedDestinations.css';
+import DiscoverMorePage from '@/pages/discover/[discovermore]';
 
 const destinations = [
   {
     id: 1,
     name: 'Ganpatipule Beach',
+    DiscoverMore:'ganpti-pule',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
     description: 'Beautiful beach with famous Ganpati temple',
     rating: 4.5,
@@ -22,6 +24,7 @@ const destinations = [
   {
     id: 2,
     name: 'Tarkarli Beach',
+    DiscoverMore:'ganpti-pule',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
     description: 'Crystal clear waters perfect for water sports',
     rating: 4.8,
@@ -30,6 +33,7 @@ const destinations = [
   {
     id: 3,
     name: 'Sindhudurg Fort',
+    DiscoverMore:'ganpti-pule',
     image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
     description: 'Historic sea fort with amazing architecture',
     rating: 4.7,
@@ -86,16 +90,14 @@ const FeaturedDestinations = () => {
                 <div className="destination-content">
                   <h3 className="destination-title">{dest.name}</h3>
                   <p className="destination-description">{dest.description}</p>
-                  <Link 
-                    href={`/discover/${dest.id}`} 
-                    className={`discover-link ${hoveredId === dest.id ? 'hovered' : ''}`}
-                  >
-                    Discover More
+                  <Link href={`/discover/${dest.DiscoverMore}`} passHref>
+                     Discover More
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                  </Link>
+                </Link>
+                  
                 </div>
               </div>
             </SwiperSlide>

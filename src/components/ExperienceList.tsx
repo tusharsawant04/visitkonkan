@@ -33,16 +33,22 @@ const experiences: Experience[] = [
      slug: "naneghat-trek",
     desc: "Trek through ancient trade routes with breathtaking valley views and rock-carved inscriptions.",
     rating: "4.8/5",
-    img: "https://images.unsplash.com/photo-1599106242383-271adeb2e828?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    img: "https://drive.google.com/uc?export=view&id=1crq4Aou-bP6PljkOl1l6Bg6EfGWu8yh1"
   },
   {
-    name: "Sinhagad Trek",
-    slug: "sinhagad-trek",
-    desc: "Conquer one of Pune’s most iconic forts with scenic sunrise views and battlefield stories.",
-    rating: "4.7/5",
-    img: "https://images.unsplash.com/photo-1707840422122-268356e197c8?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  name: "Harishchandragad Trek",
+  slug: "harishchandragad-trek",
+  desc: "Embark on a thrilling journey to Harishchandragad, where towering cliffs, ancient caves, and the majestic Konkan Kada await your discovery.",
+  rating: "4.8/5",
+  img: "https://drive.google.com/uc?export=view&id=1csHSPKheA-tkjdyfbYhjrc_n1qEMT-of"
   },
-  { name: "Beach Camping Under the Stars", slug:"beach-camping", desc: "Experience the serene beauty of Kokan's beaches at night.", rating: "4.9/5", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
+  {
+  name: "Malvan Beach Getaway",
+  slug: "malvan-beach-getaway",
+  desc: "Relax on the sun-kissed beaches of Malvan, explore the historic Sindhudurg Fort, and dive into crystal-clear waters with snorkeling and scuba adventures.",
+  rating: "4.6/5",
+  img: "https://drive.google.com/uc?export=view&id=1dOdMOwxsGVadDuOC4HdayuaFIZMmzDPe"
+  },
    ];
 
 export default function ExperienceList() {
