@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Import Firestore functions and the initialized db instance
-import { db } from '../../backend/lib/firebase';
+import { db } from '../../../backend/lib/firebase';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore"; 
 
 // Helper function to format the slug into a readable title

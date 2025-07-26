@@ -4,6 +4,7 @@ import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css"; // Load Bootstrap CSS globally
 import BootstrapClient from "@/components/BootstrapClient"; // Import the Client Component
 import Script from 'next/script'; // Add this import
+import { AuthProvider } from "@/context/AuthContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,12 +46,14 @@ export default function RootLayout({
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <BootstrapClient /> {/* Ensures Bootstrap JS loads in the client */}
-        {children}
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
-          strategy="lazyOnload"
-        />
+         <AuthProvider> {/* ✅ Wrap your entire app with AuthProvider */}
+          <BootstrapClient />
+          {children}
+          <Script
+            src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"
+            strategy="lazyOnload"
+          />
+        </AuthProvider>
       </body>
     </html>
   );
