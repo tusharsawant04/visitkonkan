@@ -149,6 +149,8 @@ export default function RegistrationsPage() {
                                                 <th>Pickup Location</th>
                                                 <th>Date of Birth</th>
                                                 <th>Submitted At</th>
+                                                 <th>amount paid</th>
+                                                <th> discounted amount</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -165,6 +167,8 @@ export default function RegistrationsPage() {
                                                             : 'N/A'
                                                         }
                                                     </td>
+                                                     <td>₹{reg.finalAmountPaid ?? 0}</td>
+                                                     <td>₹{reg.discountGiven ?? 0}</td>
                                                 </tr>
                                             ))}
                                         </tbody>
