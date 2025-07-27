@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import { db } from '../../../backend/lib/firebase';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-
+import Layout from '../../../components/layout';
 // Helper function
 const formatTrekName = (slug: string): string => {
   if (!slug) return '';
@@ -150,6 +150,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=${finalAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
 
   return (
+    <Layout>
     <div className="container mt-5 mb-5 shadow p-4 rounded bg-light">
       <h1 className="mb-4 text-center">
         ⛰️ Register for {formData.trekChoice || 'Trek'}
@@ -209,7 +210,7 @@ const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=
               <div className="text-center mt-3">
                 <Image src="/images/gpay_qr.jpeg" alt="Payment QR Code" width={200} height={200} className="img-fluid" />
                 <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
-                  <a href="/images/gpay_qr.jpeg'" download="payment-qr.png" className="btn btn-sm btn-outline-secondary"><i className="bi bi-download me-1"></i>Download QR</a>
+                  <a href="/images/gpay_qr.jpeg" download="gpay_qr.jpeg" className="btn btn-sm btn-outline-secondary"><i className="bi bi-download me-1"></i>Download QR</a>
                   <a href={upiUrl} className="btn btn-sm btn-primary"><i className="bi bi-phone-fill me-1"></i>Pay with UPI App</a>
                 </div>
               </div>
@@ -229,5 +230,6 @@ const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=
         )}
       </form>
     </div>
+  </Layout>
   );
 }

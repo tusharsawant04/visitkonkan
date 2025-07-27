@@ -349,12 +349,10 @@ export default function ExperienceDetail() {
                   </div>
                   
                   <div className="d-grid gap-2 mt-4">
-                    <button className="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#bookingModal">
+                    <a href="form/new/naneghat" className="btn btn-primary btn-lg">
                       Book Now
-                    </button>
-                    <button className="btn btn-outline-secondary">
-                      Contact Organizer
-                    </button>
+                    </a>
+                  
                   </div>
                 </div>
               </div>
