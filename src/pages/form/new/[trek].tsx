@@ -141,13 +141,13 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   // ... (The rest of your component code, including pickupLocations, payeeVPA, payeeName, and the entire return() statement remains the same as the previous version) ...
   const pickupLocations = ["Virar", "Nalasopara", "Thane"];
-  const payeeVPA = "aryansawant307@okhdfcbank"; 
-  const payeeName = "Aryan Sawant";   
+  const payeeVPA = "new"; 
+  const payeeName = "new";   
 
 
   const transactionNote = `Payment for ${formData.trekChoice}`;
  // const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=${finalAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
-const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=${finalAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
+const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
 
   return (
     <Layout>
@@ -211,7 +211,7 @@ const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=
                 <Image src="/images/gpay_qr.jpeg" alt="Payment QR Code" width={200} height={200} className="img-fluid" />
                 <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
                   <a href="/images/gpay_qr.jpeg" download="gpay_qr.jpeg" className="btn btn-sm btn-outline-secondary"><i className="bi bi-download me-1"></i>Download QR</a>
-                  <a href={upiUrl} className="btn btn-sm btn-primary"><i className="bi bi-phone-fill me-1"></i>Pay with UPI App</a>
+                  {/* <a href={upiUrl} className="btn btn-sm btn-primary"><i className="bi bi-phone-fill me-1"></i>Pay with UPI App</a> */}
                 </div>
               </div>
             </div>
