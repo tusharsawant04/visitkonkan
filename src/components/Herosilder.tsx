@@ -37,10 +37,10 @@ const HeroSlider: React.FC = () => {
   const [hotelPreferences, setHotelPreferences] = useState<Preferences | null>(null);
 
   const images = [
-  "https://drive.google.com/uc?export=view&id=1SjPJoSnNM-j8Cg_SP1iWuJWDjHSzvU2j",
+  "https://drive.google.com/uc?export=view&id=1kmd4iTl65vd5xtMkKt0KRhpU1TzTpx33",
   "https://drive.google.com/uc?export=view&id=1SHOtYaCIrqcwQuTy42C9VOjXgJVs0fLu",
-  "https://drive.google.com/uc?export=view&id=1StNEcU4a8SdGroPoBv311pbk7uEwcW-8",
-  "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
+  "https://drive.google.com/uc?export=view&id=1-PK_gvDLgte6vS9Sy0xjMESn2ZaOcx9G",
+  "https://drive.google.com/uc?export=view&id=1Gq3k3hZD10Ij8UF7j2Kx1Uz5P3fWIJ1w"
 ];
 
   const togglePlanCard = () => {

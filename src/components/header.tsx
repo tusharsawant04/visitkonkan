@@ -21,7 +21,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {['discover', 'experiences', 'events', 'business-listings'].map((path) => (
+              {['experiences', 'events'].map((path) => (
                 <li className="nav-item" key={path}>
                   <Link href={`/${path}`} className="nav-link">
                     {path.replace('-', ' ').replace(/\b\w/g, (char) => char.toUpperCase())}

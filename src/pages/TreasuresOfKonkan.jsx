@@ -4,12 +4,18 @@ import React from "react";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Layout from "../components/layout";
-
+import Image from 'next/image';
 const products = [
-  { id: 1, name: "Konkan Mango Pickle", price: "₹250", img: "/images/mango-pickle.jpg" },
-  { id: 2, name: "Handcrafted Wooden Boat", price: "₹1200", img: "/images/wooden-boat.jpg" },
-  { id: 3, name: "Coconut Shell Lamp", price: "₹850", img: "/images/coconut-lamp.jpg" },
-  { id: 4, name: "Konkan Cashews", price: "₹600", img: "/images/cashews.jpg" },
+  
+
+   { id: 1, name: "Konkan Mango Pickle",  img: "https://drive.google.com/uc?export=view&id=1p5Tv_BSnwAv0ovX-F-vX9IR3TtcUSr7K" },
+     {
+      id: 5,
+      name: "Kokum Syrup",
+      img: "https://drive.google.com/uc?export=view&id=1ZfA4KvcAryrcw62SvJD0jov-bGQhwVcd",
+    },
+       { id: 4, name: "Konkan Cashews",img: "https://drive.google.com/uc?export=view&id=1ebZ-UUvJwewMcDBqZHaAtfLNijIViiko" },
+
 ];
 
 const TreasuresOfKonkan = () => {
@@ -63,11 +69,12 @@ const TreasuresOfKonkan = () => {
                 key={product.id}
                 className={`carousel-item ${index === 0 ? "active" : ""}`}
               >
-                <img
+                <Image
                   src={product.img}
                   className="d-block w-100"
                   alt={product.name}
-                  style={{ height: "450px", objectFit: "cover", filter: "brightness(0.8)" }}
+               width={400}
+                        height={300}
                 />
                 <div className="carousel-caption d-none d-md-block">
                   <h4 className="fw-bold">{product.name}</h4>
@@ -128,15 +135,12 @@ const TreasuresOfKonkan = () => {
                     borderRadius: "15px",
                   }}
                 >
-                  <img
+                  <Image
                     src={product.img}
                     className="card-img-top"
                     alt={product.name}
-                    style={{
-                      height: "220px",
-                      objectFit: "cover",
-                      transition: "transform 0.4s ease",
-                    }}
+                         width={400}
+                        height={300}
                   />
                   <div className="card-body text-center">
                     <h5 className="card-title fw-semibold text-dark">

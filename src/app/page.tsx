@@ -25,9 +25,9 @@ export default function Home() {
           {/* <LocalExperiences /> */}
           <BlogSection />
           <ReviewSection />
-          <section className="cta-section py-5">
+          {/* <section className="cta-section py-5">
             <CTABanner />
-          </section>
+          </section> */}
       
         </Layout>
       </main>

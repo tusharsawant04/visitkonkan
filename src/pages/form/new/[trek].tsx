@@ -153,7 +153,7 @@ const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&cu=
     <Layout>
     <div className="container mt-5 mb-5 shadow p-4 rounded bg-light">
       <h1 className="mb-4 text-center">
-        ⛰️ Register for {formData.trekChoice || 'Trek'}
+        ⛰️ Register for Trek
       </h1>
       <form onSubmit={handleSubmit} noValidate>
         {step === 1 && (

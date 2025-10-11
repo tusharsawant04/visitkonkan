@@ -16,7 +16,7 @@ const destinations = [
     id: 1,
     name: 'Ganpatipule Beach',
     DiscoverMore:'ganpti-pule',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
+    image: 'https://drive.google.com/uc?export=view&id=1pWbe1Rh69AyvNjIobKi4W7t_qSRHJnTl',
     description: 'Beautiful beach with famous Ganpati temple',
     rating: 4.5,
     category: 'Beach'
@@ -25,7 +25,8 @@ const destinations = [
     id: 2,
     name: 'Tarkarli Beach',
     DiscoverMore:'ganpti-pule',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
+    image: 'https://drive.google.com/uc?export=view&id=1E_e0Wos_oet15cw98NXYdmXI4Fseons2',
+
     description: 'Crystal clear waters perfect for water sports',
     rating: 4.8,
     category: 'Beach'
@@ -34,7 +35,7 @@ const destinations = [
     id: 3,
     name: 'Sindhudurg Fort',
     DiscoverMore:'ganpti-pule',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e',
+      image: 'https://drive.google.com/uc?export=view&id=1Yzae1DBvutK9zKKuLr5_rh1NbXSC_ATQ',
     description: 'Historic sea fort with amazing architecture',
     rating: 4.7,
     category: 'Heritage'
@@ -90,13 +91,13 @@ const FeaturedDestinations = () => {
                 <div className="destination-content">
                   <h3 className="destination-title">{dest.name}</h3>
                   <p className="destination-description">{dest.description}</p>
-                  <Link href={`/discover/${dest.DiscoverMore}`} passHref>
+                  {/* <Link href={`/discover/${dest.DiscoverMore}`} passHref>
                      Discover More
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12"></line>
                       <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                </Link>
+                </Link> */}
                   
                 </div>
               </div>

@@ -1,121 +1,74 @@
-'use client'; // Mark this file as a client-side component
-
+'use client';
 import React from 'react';
 import Layout from '../components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 
+const ideaEvents = [
+  { id: 1, title: "Music Festival", emoji: "🎵" },
+  { id: 2, title: "Cultural Parade", emoji: "🎭" },
+  { id: 3, title: "Adventure Marathon", emoji: "🏃‍♂️" },
+  { id: 4, title: "Food & Craft Fair", emoji: "🍲" },
+  { id: 5, title: "Beach Party", emoji: "🏖️" },
+];
+
 const Events = () => {
   return (
     <Layout>
-      <div>
-        {/* Header Section */}
-        <section className="hero-section text-center text-white bg-dark" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1507525428034-b723cf961d3e)', backgroundSize: 'cover', backgroundPosition: 'center', padding: '100px 0' }}>
-          <div className="container">
-            <h1 className="display-4">Events in Kokan</h1>
-            <p className="lead">Discover the vibrant festivals and events in Kokan.</p>
-          </div>
-        </section>
+      {/* Banner */}
+      <section
+        className="text-center text-white position-relative"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          padding: "120px 20px",
+        }}
+      >
+        <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-60"></div>
+        <div className="container position-relative z-1">
+          <h1 className="display-4 fw-bold">🌟 Upcoming Events – Stay Tuned!</h1>
+          <p className="lead">We’re planning something exciting for Konkan – festivals, adventure, culture & fun!</p>
+          <button className="btn btn-warning btn-lg mt-3">Register Your Interest</button>
+        </div>
+      </section>
 
-        {/* Dynamic Calendar Section */}
-        <section className="container my-5">
-          <h2 className="text-center mb-4">Upcoming Events</h2>
-          <div className="row">
-            <div className="col-md-12">
-              <div className="calendar">
-                {/* Placeholder for dynamic calendar */}
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={1260} height={750} alt="Calendar" className="img-fluid" />
+      {/* Teaser Event Cards */}
+      <section className="container my-5">
+        <h2 className="text-center mb-4">Sneak Peek of Ideas</h2>
+        <div className="row g-4 justify-content-center">
+          {ideaEvents.map(event => (
+            <div key={event.id} className="col-6 col-sm-4 col-md-3">
+              <div className="card shadow-lg h-100 text-center p-4 teaser-card">
+                <div className="display-1">{event.emoji}</div>
+                <h5 className="card-title mt-3">{event.title}</h5>
+                <p className="card-text text-muted">Coming Soon</p>
               </div>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Event Details Section */}
-        <section className="container my-5">
-          <h2 className="text-center mb-4">Event Details</h2>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Event 1" />
-                <div className="card-body">
-                  <h5 className="card-title">Music Festival</h5>
-                  <p className="card-text">Join us for a night of music and fun.</p>
-                  <p className="card-text"><small className="text-muted">Location: Kokan Beach</small></p>
-                  <p className="card-text"><small className="text-muted">Date: March 15, 2025</small></p>
-                  <button className="btn btn-primary">Register Now</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Event 2" />
-                <div className="card-body">
-                  <h5 className="card-title">Cultural Parade</h5>
-                  <p className="card-text">Experience the rich culture of Kokan.</p>
-                  <p className="card-text"><small className="text-muted">Location: Main Street</small></p>
-                  <p className="card-text"><small className="text-muted">Date: April 10, 2025</small></p>
-                  <button className="btn btn-primary">Register Now</button>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Event 3" />
-                <div className="card-body">
-                  <h5 className="card-title">Adventure Marathon</h5>
-                  <p className="card-text">Join the adventure marathon through scenic trails.</p>
-                  <p className="card-text"><small className="text-muted">Location: Kokan Hills</small></p>
-                  <p className="card-text"><small className="text-muted">Date: May 5, 2025</small></p>
-                  <button className="btn btn-primary">Register Now</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* Call to Action */}
+      <section className="text-center my-5">
+        <div className="container">
+          <h2>Excited? Stay Connected!</h2>
+          <p className="lead">Be the first to know when our events go live. Subscribe to updates.</p>
+          <button className="btn btn-primary btn-lg">Subscribe Now</button>
+        </div>
+      </section>
 
-        {/* Past Events Section */}
-        <section className="container my-5">
-          <h2 className="text-center mb-4">Past Events</h2>
-          <div className="row">
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Past Event 1" />
-                <div className="card-body">
-                  <h5 className="card-title">Past Event 1</h5>
-                  <p className="card-text">Highlights from the past event.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Past Event 2" />
-                <div className="card-body">
-                  <h5 className="card-title">Past Event 2</h5>
-                  <p className="card-text">Highlights from the past event.</p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4">
-              <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Past Event 3" />
-                <div className="card-body">
-                  <h5 className="card-title">Past Event 3</h5>
-                  <p className="card-text">Highlights from the past event.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action Section */}
-        <section className="text-center my-5">
-          <div className="container">
-            <h2>Plan Your Visit</h2>
-            <p className="lead">Register for upcoming events and experience the vibrant culture of Kokan.</p>
-            <button className="btn btn-primary btn-lg">Register Now</button>
-          </div>
-        </section>
-      </div>
+      <style jsx>{`
+        .teaser-card {
+          border-radius: 20px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          cursor: pointer;
+        }
+        .teaser-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+      `}</style>
     </Layout>
   );
 };

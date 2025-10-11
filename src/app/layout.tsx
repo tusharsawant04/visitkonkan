@@ -17,14 +17,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Visit Konkan",
-  description: "Discover the scenic beauty and rich heritage of Konkan.",
-  keywords: "Konkan, tourism, beaches, forts, waterfalls, trekking, travel",
+  title: "Visit Konkan | Explore Beaches, Forts, Waterfalls & Authentic Konkan Experiences",
+  description: "Plan your dream trip to Konkan! Discover pristine beaches, majestic forts, hidden waterfalls, authentic local cuisine, and memorable trekking adventures along India’s scenic western coast.",
+  keywords: "Konkan tourism, Konkan travel guide, Konkan beaches, Konkan forts, Konkan waterfalls, Konkan trekking, Maharashtra travel, Visit Konkan, Konkan homestays, Konkan food",
+  
   openGraph: {
-    title: "Visit Konkan",
-    description: "Discover the scenic beauty and rich heritage of Konkan.", 
-    type: "website",
-  },
+  title: "Visit Konkan | Explore Scenic Beauty & Authentic Experiences",
+      description: "Discover the untouched beauty of Konkan – from serene beaches and historic forts to thrilling treks and local cuisine. Start your Konkan adventure today!",
+      type: "website",
+      url: "https://www.visitkokan.in/",
+      siteName: "Visit Konkan",
+    },
 };
 
 export default function RootLayout({

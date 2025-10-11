@@ -19,7 +19,7 @@ const experiences: Experience[] = [
   slug: "ekvira-lohagad-trek",
   desc: "Seek blessings at the sacred Ekvira Devi Temple and trek through the lush trails of Lohagad Fort, where history meets breathtaking valley views.",
   rating: "4.7/5",
-  img: "https://drive.google.com/uc?export=view&id=1MjehJG5Fj9FADhWyt39sugX7v7ZrRh4U"
+  img: "https://drive.google.com/uc?export=view&id=16qBbYmiWXB-QIjkVPHcd3fyfASs2McHs"
 },
   {
   name: "Rajgad Trek",
@@ -56,6 +56,8 @@ const experiences: Experience[] = [
   rating: "4.6/5",
   img: "https://drive.google.com/uc?export=view&id=1dOdMOwxsGVadDuOC4HdayuaFIZMmzDPe"
   },
+  
+  
    ];
 
 export default function ExperienceList() {
@@ -121,9 +123,9 @@ export default function ExperienceList() {
           <i className="bi bi-chevron-right"></i>
         </button>
 
-        <div className="text-center mt-4">
+        {/* <div className="text-center mt-4">
           <button className="btn btn-outline-primary">Explore more experiences</button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -23,14 +23,7 @@ const products = [
     tagline: "Bring Handmade Art to Your Home",
     desc: "Beautifully handcrafted wooden boat model for decoration and gifting purposes.",
   },
-  {
-    id: "3",
-    name: "Coconut Shell Lamp",
-    price: "₹850",
-    img: "/images/coconut-lamp.jpg",
-    tagline: "Eco-Friendly Lighting with Elegance",
-    desc: "Eco-friendly coconut shell lamp with warm ambient lighting, perfect for any corner of your home.",
-  },
+ 
   {
     id: "4",
     name: "Konkan Cashews",

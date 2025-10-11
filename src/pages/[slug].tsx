@@ -238,7 +238,45 @@ export const experiences: Experience[] = [
       { name: "Rohan Deshpande", comment: "Loved the monsoon views and fort exploration!", rating: 4 },
       { name: "Ankita More", comment: "The temple visit added a special touch to the trek.", rating: 5 }
     ]
+},
+{
+  name: "Harishchandragad Trek",
+  slug: "harishchandragad-trek",
+  desc: "Journey into the heart of the Western Ghats where ancient caves, misty cliffs, and the legendary Konkan Kada await your footsteps.",
+  rating: "4.8/5",
+  price: 1799,
+  img: [
+    "https://images.unsplash.com/photo-1612331689896-09c0d9d0ec0e",
+    "https://images.unsplash.com/photo-1576485436506-69d2f0c7a2cc",
+    "https://images.unsplash.com/photo-1621518327289-ea5e3d8efbbf"
+  ],
+  history: "Harishchandragad is a historic hill fort in the Ahmednagar district of Maharashtra, with origins dating back to the 6th century. The fort is known for its ancient caves, temples, and the iconic Konkan Kada — a massive concave cliff offering surreal views and vertigo-inducing drops. The caves near the fort are believed to be carved during the reign of the Kalachuri dynasty, and the temple of Harishchandreshwar stands as a fine example of Hemadpanthi architecture.",
+  whatToCarry: [
+    "A sturdy backpack (20-30 litres) with a rain cover.",
+    "Trekking shoes with good grip (mandatory).",
+    "Torch or headlamp with extra batteries.",
+    "At least 2-3 litres of water.",
+    "Ready-to-eat food like protein bars, fruits, or dry snacks.",
+    "A valid Government ID proof.",
+    "Personal medication (if any).",
+    "Raincoat or poncho (especially during monsoon).",
+    "Extra pair of clothes and a towel."
+  ],
+  itinerary: [
+    { time: "9:00 PM", description: "Departure from Mumbai", day: 1 },
+    { time: "3:30 AM", description: "Reach Pachnai base village", day: 2 },
+    { time: "4:30 AM", description: "Start trek from base", day: 2 },
+    { time: "7:00 AM", description: "Reach Harishchandragad top, rest & explore", day: 2 },
+    { time: "8:30 AM", description: "Visit Kedareshwar Cave & Konkan Kada", day: 2 },
+    { time: "11:30 AM", description: "Start descent", day: 2 },
+    { time: "1:30 PM", description: "Lunch at base village", day: 2 },
+    { time: "3:00 PM", description: "Return journey to Mumbai", day: 2 }
+  ],
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3793.0161615166806!2d73.77165427502383!3d19.383378245214746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd78bbce5542c5%3A0xc3b1d1c9391fdf06!2sHarishchandragad%20Fort!5e0!3m2!1sen!2sin!4v1677334645012!5m2!1sen!2sin",
+  reviews: [
+    ]
 }
+
 
 ];
 

@@ -57,8 +57,7 @@ const Accommodations: React.FC<AccommodationProps> = ({
                 <Image
                   src={hotel.image}
                   alt={hotel.name}
-                  width={400}
-                  height={300}
+               
                   className="card-img-top"
                 />
                 <span className="badge bg-primary position-absolute top-0 end-0 m-2">

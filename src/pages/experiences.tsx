@@ -23,7 +23,7 @@ const Experiences = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Trekking" />
+                <Image src="https://drive.google.com/uc?export=view&id=1rvWDWdkZ7gf5e3NrTaQC5vuQKodQGvdE" width={400} height={250} className="card-img-top" alt="Trekking" />
                 <div className="card-body">
                   <h5 className="card-title">Trekking</h5>
                   <p className="card-text">Explore the scenic trails of Kokan.</p>
@@ -32,8 +32,9 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Scuba Diving" />
-                <div className="card-body">
+                     <Image src="https://drive.google.com/uc?export=download&id=1VF7j6xnZ2SJC6kWLj6XsBa4uXMCsM8cw" width={400} height={250} className="card-img-top" alt="Paragliding" />
+
+                              <div className="card-body">
                   <h5 className="card-title">Scuba Diving</h5>
                   <p className="card-text">Dive into the underwater world of Kokan.</p>
                 </div>
@@ -41,8 +42,9 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Paragliding" />
-                <div className="card-body">
+                  <Image src="https://drive.google.com/uc?export=view&id=1qKumBBfqRYIWEsHrL0c5mwTqZ9d3q_H_" width={400} height={250} className="card-img-top" alt="Scuba Diving" />
+
+                           <div className="card-body">
                   <h5 className="card-title">Paragliding</h5>
                   <p className="card-text">Experience the thrill of flying over Kokan.</p>
                 </div>
@@ -57,16 +59,16 @@ const Experiences = () => {
           <div className="row">
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Folk Dance" />
+                <Image src="https://drive.google.com/uc?export=view&id=1GLuqHs21-HignO5hmNyGaTJfSC-cIj_o" width={400} height={250} className="card-img-top" alt="Folk Dance" />
                 <div className="card-body">
-                  <h5 className="card-title">Folk Dance</h5>
-                  <p className="card-text">Witness the vibrant folk dances of Kokan.</p>
+                   <h5 className="card-title">Jatra</h5>
+    <p className="card-text">Experience the lively and colorful local Jatras of Konkan.</p>
                 </div>
               </div>
             </div>
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Temple" />
+                <Image src="https://drive.google.com/uc?export=view&id=1sEX0IxXG2xKsGls_miemBwWE-XgedoAs" width={400} height={250} className="card-img-top" alt="Temple" />
                 <div className="card-body">
                   <h5 className="card-title">Temples</h5>
                   <p className="card-text">Visit the ancient temples of Kokan.</p>
@@ -75,7 +77,7 @@ const Experiences = () => {
             </div>
             <div className="col-md-4">
               <div className="card">
-                <Image src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" width={400} height={250} className="card-img-top" alt="Festival" />
+                <Image src="https://drive.google.com/uc?export=view&id=1iw-WlvIErKoFRCLCqSDedAbczsPS2AdT" width={400} height={250} className="card-img-top" alt="Festival" />
                 <div className="card-body">
                   <h5 className="card-title">Festivals</h5>
                   <p className="card-text">Experience the colorful festivals of Kokan.</p>
@@ -86,7 +88,7 @@ const Experiences = () => {
         </section>
 
         {/* Local Food Experiences Section */}
-        <section className="container my-5">
+        {/* <section className="container my-5">
           <h2 className="text-center mb-4">Local Food Experiences</h2>
           <div className="row">
             <div className="col-md-4">
@@ -117,10 +119,10 @@ const Experiences = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Testimonials Section */}
-        <section className="container my-5">
+        {/* <section className="container my-5">
           <h2 className="text-center mb-4">Traveler Reviews</h2>
           <div id="testimonialsCarousel" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-inner">
@@ -164,10 +166,10 @@ const Experiences = () => {
               <span className="visually-hidden">Next</span>
             </button>
           </div>
-        </section>
+        </section> */}
 
         {/* Call to Action Section */}
-        <section className="text-center my-5">
+        {/* <section className="text-center my-5">
           <div className="container">
             <h2>Plan Your Experience</h2>
             <p className="lead">Book your trip now and experience the beauty of Kokan.</p>
@@ -180,7 +182,7 @@ const Experiences = () => {
                   fontSize: "15px"
                 }}>Book Now</button>
           </div>
-        </section>
+        </section> */}
       </div>
     </Layout>
   );

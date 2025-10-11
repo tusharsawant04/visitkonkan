@@ -2,13 +2,18 @@
 
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Image from 'next/image';
 const ProductSlider = () => {
   const products = [
-    { id: 1, name: "Konkan Mango Pickle", price: "₹250", img: "/images/mango-pickle.jpg", tagline: "Taste the Authentic Konkan Flavor!" },
-    { id: 2, name: "Handcrafted Wooden Boat", price: "₹1200", img: "/images/wooden-boat.jpg", tagline: "Bring Handmade Art to Your Home" },
-    { id: 3, name: "Coconut Shell Lamp", price: "₹850", img: "/images/coconut-lamp.jpg", tagline: "Eco-Friendly Lighting with Elegance" },
-    { id: 4, name: "Konkan Cashews", price: "₹600", img: "/images/cashews.jpg", tagline: "Crunchy & Premium Quality Nuts" },
+    { id: 1, name: "Konkan Mango Pickle", price: "₹250", img: "https://drive.google.com/uc?export=view&id=1p5Tv_BSnwAv0ovX-F-vX9IR3TtcUSr7K", tagline: "Taste the Authentic Konkan Flavor!" },
+     {
+      id: 5,
+      name: "Kokum Syrup",
+      price: "₹300",
+      img: "https://drive.google.com/uc?export=view&id=1ZfA4KvcAryrcw62SvJD0jov-bGQhwVcd",
+      tagline: "A Refreshing Taste of the Konkan Coast"
+    },
+       { id: 4, name: "Konkan Cashews", price: "₹600", img: "https://drive.google.com/uc?export=view&id=1ebZ-UUvJwewMcDBqZHaAtfLNijIViiko", tagline: "Crunchy & Premium Quality Nuts" },
   ];
 
   const handleMouseEnter = (e) => {
@@ -58,11 +63,12 @@ const ProductSlider = () => {
                         transition: "transform 0.3s",
                       }}
                     >
-                      <img
+                        <Image
                         src={product.img}
                         className="card-img-top"
                         alt={product.name}
-                        style={{ height: "220px", objectFit: "cover" }}
+                         width={400}
+                        height={300}
                       />
                       <div className="card-body d-flex flex-column align-items-center text-center">
                         <h5 className="card-title fw-bold mb-2" style={{ fontSize: "1.3rem" }}>
