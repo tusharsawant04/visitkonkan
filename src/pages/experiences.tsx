@@ -171,7 +171,14 @@ const Experiences = () => {
           <div className="container">
             <h2>Plan Your Experience</h2>
             <p className="lead">Book your trip now and experience the beauty of Kokan.</p>
-            <button className="btn btn-primary btn-lg">Book Now</button>
+            <button className="btn btn-lg text-white"
+                style={{
+                  background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                  borderRadius: "8px",
+                  fontWeight: "500",
+                  padding: "8px 16px",
+                  fontSize: "15px"
+                }}>Book Now</button>
           </div>
         </section>
       </div>

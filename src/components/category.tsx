@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './category.css';
-
+import Link from 'next/link';
 interface Category {
   title: string;
   desc: string;
@@ -104,7 +104,11 @@ export default function Category() {
       )}
 
       <div className="text-center mt-4">
-        <button className="btn btn-primary px-4">View All Categories</button>
+        {/* <Link href="/categories/trip">
+          <button className="btn btn-primary px-4">
+            View All Categories
+          </button>
+        </Link> */}
       </div>
     </div>
   );

@@ -85,7 +85,14 @@ const RecommendedHotels: React.FC<{ hotels: Hotel[], preferences: Preferences }>
                 <Link href={`/hotels/${hotel.id}`} className="view-details-btn">
                   View Details
                 </Link>
-                <button className="book-now-btn">
+                <button className="btn btn-lg text-white"
+                style={{
+                  background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                  borderRadius: "8px",
+                  fontWeight: "500",
+                  padding: "8px 16px",
+                  fontSize: "15px"
+                }}>
                   Book Now
                 </button>
               </div>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import { useEffect, useState } from 'react';
 import './discover.css';
+import { color } from 'framer-motion';
 
 // --- INTERFACE AND DATA ---
 export interface Experience {
@@ -195,7 +196,50 @@ export const experiences: Experience[] = [
       { name: "Rahul More", comment: "Loved scuba diving here, it's peaceful and thrilling!", rating: 4 },
       { name: "Devanshi Kale", comment: "A great mix of history and nature. Highly recommend!", rating: 5 }
     ]
-  }
+  },
+  {
+    name: "Ekvira Devi & Lohagad Trek",
+    slug: "ekvira-lohagad-trek",
+    desc: "Visit the sacred Ekvira Devi Temple and trek through the lush trails of Lohagad Fort, enjoying panoramic valley views, historic caves, and the monsoon greenery of the Western Ghats.",
+    rating: "4.7/5",
+    price: 1399, // Suggested price
+    img: [
+      "https://drive.google.com/uc?export=view&id=1MjehJG5Fj9FADhWyt39sugX7v7ZrRh4U",
+      "https://images.unsplash.com/photo-1598387847985-6e2c71f3f42d",
+      "https://images.unsplash.com/photo-1578758422163-b6b0b2c6b1b1"
+    ],
+    history: "Lohagad Fort, built during the 18th century, played a key role in the Maratha Empire under Chhatrapati Shivaji Maharaj. The Ekvira Devi Temple at the base is a revered pilgrimage site, drawing devotees year-round.",
+    whatToCarry: [
+        "A sturdy backpack (20-30 litres) with a rain cover.",
+        "Trekking shoes with good grip (mandatory).",
+        "Torch or headlamp with extra batteries.",
+        "At least 2-3 litres of water.",
+        "Ready-to-eat food like protein bars, fruits, or dry snacks.",
+        "A valid Government ID proof.",
+        "Personal medication (if any).",
+        "Raincoat or poncho (especially during monsoon).",
+        "Extra pair of clothes and a towel."
+    ],
+     itinerary: [
+      { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
+      { time: "4:00 AM", description: "Reach base village", day: 2 },
+      { time: "4:15 AM", description: "Visit Ekvira Devi Temple", day: 2 },
+      { time: "5:30 AM", description: "Breakfast at local spot / packed breakfast", day: 2 },
+      { time: "6:00 AM", description: "Start trek towards Lohagad Fort", day: 2 },
+      { time: "8:00 AM", description: "Reach top, explore fort & caves", day: 2 },
+      { time: "12:00 PM", description: "Start descent", day: 2 },
+      { time: "1:30 PM", description: "Lunch / Jevan", day: 2 },
+
+      { time: "3:00 PM", description: "Return to Mumbai", day: 2 },
+    ],
+    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.123456789!2d73.650000!3d18.650000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e00000000001%3A0x123456789abcdef!2sLohagad%20Fort!5e0!3m2!1sen!2sin!4v1677334551225!5m2!1sen!2sin",
+    reviews: [
+      { name: "Sneha Patil", comment: "A beautiful combination of spirituality and trekking!", rating: 5 },
+      { name: "Rohan Deshpande", comment: "Loved the monsoon views and fort exploration!", rating: 4 },
+      { name: "Ankita More", comment: "The temple visit added a special touch to the trek.", rating: 5 }
+    ]
+}
+
 ];
 
 
@@ -335,10 +379,13 @@ export default function ExperienceDetail() {
                   
                   {/* DYNAMIC PRICE DISPLAY */}
                   <p className="mb-1">
-                    <strong className="text-primary fs-4">
+                    <strong className="text-primary fs-4"   style={{
+                        color: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                       
+                      }}>
                         {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(experience.price)}
                     </strong> 
-                    <span className="text-muted"> / person</span>
+                    <span className="text-muted" > / person</span>
                   </p>
 
                   <p className="text-muted small">Taxes and fees may apply.</p>
@@ -349,7 +396,14 @@ export default function ExperienceDetail() {
                   </div>
                   
                   <div className="d-grid gap-2 mt-4">
-                    <a href="form/new/naneghat" className="btn btn-primary btn-lg">
+                    <a href="form/new/naneghat" className="btn btn-lg text-white"
+                      style={{
+                        background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                        borderRadius: "8px",
+                        fontWeight: "500",
+                        padding: "8px 16px",
+                        fontSize: "15px"
+                      }}>
                       Book Now
                     </a>
                   

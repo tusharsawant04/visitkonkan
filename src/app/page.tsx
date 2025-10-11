@@ -9,6 +9,8 @@ import Layout from '.././components/layout';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BlogSection from '../components/BlogSection';
 import ReviewSection from '../components/ReviewSection';
+import ProductSlider from '../components/ProductSlider';
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
@@ -18,6 +20,7 @@ export default function Home() {
           <HeroSlider />
           <Category />
           <ExperienceList />
+          <ProductSlider />
           <FeaturedDestinations />
           <LocalExperiences />
           <BlogSection />
@@ -25,6 +28,7 @@ export default function Home() {
           <section className="cta-section py-5">
             <CTABanner />
           </section>
+          <Analytics/>
         </Layout>
       </main>
     </div>

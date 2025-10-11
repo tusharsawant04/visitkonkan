@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
             <div className="mt-3">
               <p className="mb-1">Contact Us:</p>
               <a href="mailto:info@visitkokan.com" className="text-light text-decoration-none">
-                info@visitkokan.com
+                konkanvisit@gmail.com
               </a>
             </div>
           </div>

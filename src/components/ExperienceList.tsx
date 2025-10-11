@@ -15,6 +15,13 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+  name: "Ekvira Devi & Lohagad Trek",
+  slug: "ekvira-lohagad-trek",
+  desc: "Seek blessings at the sacred Ekvira Devi Temple and trek through the lush trails of Lohagad Fort, where history meets breathtaking valley views.",
+  rating: "4.7/5",
+  img: "https://drive.google.com/uc?export=view&id=1MjehJG5Fj9FADhWyt39sugX7v7ZrRh4U"
+},
+  {
   name: "Rajgad Trek",
   desc: "Walk the ancient paths of Shivaji Maharaj’s capital — where clouds kiss the fort and sunrise paints history in gold.",
   slug: "rajgad-trek",

@@ -29,10 +29,53 @@ const Header = () => {
                 </li>
               ))}
             </ul>
-            <div className="d-flex gap-2">
-              <button className="btn btn-outline-primary">List your business</button>
-              <Link href="/login" className="btn btn-primary">Log in</Link>
-            </div>
+           <div className="d-flex gap-2">
+              {/* Main CTA - Treasures of Konkan */}
+              <a href='TreasuresOfKonkan'
+                className="btn btn-lg text-white"
+                style={{
+                  background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                  borderRadius: "8px",
+                  fontWeight: "500",
+                  padding: "8px 16px",
+                  fontSize: "15px"
+                }}
+              >
+                Treasures of Konkan
+              </a>
+
+              {/* Secondary CTA - List your business */}
+              <button
+                className="btn btn-lg"
+                style={{
+                  border: "2px solid #1CA9C9",
+                  color: "#1CA9C9",
+                  borderRadius: "8px",
+                  fontWeight: "500",
+                  padding: "8px 16px",
+                  fontSize: "15px",
+                  background: "transparent"
+                }}
+              >
+                List your business
+              </button>
+
+              {/* Utility CTA - Log in */}
+              {/* <Link
+                href="/login"
+                className="btn btn-lg text-white"
+                style={{
+                  background: "#FF7F50",
+                 borderRadius: "8px",
+                  fontWeight: "500",
+                  padding: "8px 16px",
+                  fontSize: "15px"
+                }}
+              >
+                Log in
+              </Link> */}
+          </div>
+
           </div>
         </div>
       </nav>
