@@ -10,7 +10,7 @@ export default function ListYourBusinessPage() {
         className="d-flex flex-column justify-content-center align-items-center text-center position-relative overflow-hidden"
         style={{
           minHeight: "100vh",
-          backgroundColor: "#000",
+          backgroundColor: "#282662ff",
           fontFamily: "'Poppins', sans-serif",
           color: "#FFD700", // Gold/yellow accent
         }}

@@ -146,8 +146,7 @@ const handleSubmit = async (e: React.FormEvent) => {
 
 
   const transactionNote = `Payment for ${formData.trekChoice}`;
- // const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&am=${finalAmount.toFixed(2)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
-const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&cu=INR&tn=${encodeURIComponent(transactionNote)}`;
+const upiUrl = ``;
 
   return (
     <Layout>
@@ -208,11 +207,7 @@ const upiUrl = `upi://pay?pa=${payeeVPA}&pn=${encodeURIComponent(payeeName)}&cu=
                 <p className="lead fw-bold mt-2">Final Amount to Pay: {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(finalAmount)}</p>
               </div>
               <div className="text-center mt-3">
-                <Image src="/images/gpay_qr.jpeg" alt="Payment QR Code" width={200} height={200} className="img-fluid" />
-                <div className="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
-                  <a href="/images/gpay_qr.jpeg" download="gpay_qr.jpeg" className="btn btn-sm btn-outline-secondary"><i className="bi bi-download me-1"></i>Download QR</a>
-                  {/* <a href={upiUrl} className="btn btn-sm btn-primary"><i className="bi bi-phone-fill me-1"></i>Pay with UPI App</a> */}
-                </div>
+               
               </div>
             </div>
             <div className="mt-4">

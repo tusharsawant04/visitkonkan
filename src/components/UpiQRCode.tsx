@@ -35,12 +35,12 @@ const UpiQRCode: React.FC<Props> = ({ upiUrl }) => {
   return (
     <div className="text-center space-y-4">
       <canvas ref={canvasRef} />
-      <button
+      {/* <button
         onClick={downloadQR}
         className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
       >
         Download QR
-      </button>
+      </button> */}
     </div>
   );
 };
