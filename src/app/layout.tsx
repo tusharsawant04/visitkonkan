@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"; // Load Bootstrap CSS globally
 import BootstrapClient from "@/components/BootstrapClient"; // Import the Client Component
 import Script from 'next/script'; // Add this import
 import { AuthProvider } from "@/context/AuthContext";
-
+import { Analytics } from "@vercel/analytics/next"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -54,6 +54,7 @@ export default function RootLayout({
             strategy="lazyOnload"
           />
         </AuthProvider>
+            <Analytics/>
       </body>
     </html>
   );

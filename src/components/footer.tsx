@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link href="/about" className="text-decoration-none text-light-emphasis hover-white">
+                <Link href="/aboutus" className="text-decoration-none text-light-emphasis hover-white">
                   About Us
                 </Link>
               </li>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
           <div className="col-lg-4">
             <h5 className="mb-3">Connect With Us</h5>
             <ul className="list-unstyled d-flex gap-3">
-              <li>
+              {/* <li>
                 <a href="https://facebook.com" className="text-light fs-4">
                   <i className="bi bi-facebook"></i>
                 </a>
@@ -54,14 +54,14 @@ const Footer: React.FC = () => {
                 <a href="https://twitter.com" className="text-light fs-4">
                   <i className="bi bi-twitter"></i>
                 </a>
-              </li>
+              </li> */}
               <li>
-                <a href="https://instagram.com" className="text-light fs-4">
+                <a href="https://www.instagram.com/visit.konkan/" className="text-light fs-4">
                   <i className="bi bi-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="https://youtube.com" className="text-light fs-4">
+                <a href="https://www.youtube.com/c/MalvaniVision" className="text-light fs-4">
                   <i className="bi bi-youtube"></i>
                 </a>
               </li>

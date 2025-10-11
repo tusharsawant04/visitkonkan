@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import BlogSection from '../components/BlogSection';
 import ReviewSection from '../components/ReviewSection';
 import ProductSlider from '../components/ProductSlider';
-import { Analytics } from "@vercel/analytics/next"
+
 
 export default function Home() {
   return (
@@ -22,13 +22,13 @@ export default function Home() {
           <ExperienceList />
           <ProductSlider />
           <FeaturedDestinations />
-          <LocalExperiences />
+          {/* <LocalExperiences /> */}
           <BlogSection />
           <ReviewSection />
           <section className="cta-section py-5">
             <CTABanner />
           </section>
-          <Analytics/>
+      
         </Layout>
       </main>
     </div>

@@ -21,7 +21,7 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              {['discover', 'experiences', 'events', 'travel-guides', 'business-listings'].map((path) => (
+              {['discover', 'experiences', 'events', 'business-listings'].map((path) => (
                 <li className="nav-item" key={path}>
                   <Link href={`/${path}`} className="nav-link">
                     {path.replace('-', ' ').replace(/\b\w/g, (char) => char.toUpperCase())}
@@ -45,7 +45,8 @@ const Header = () => {
               </a>
 
               {/* Secondary CTA - List your business */}
-              <button
+              <a
+               href='/list-your-business/page'
                 className="btn btn-lg"
                 style={{
                   border: "2px solid #1CA9C9",
@@ -58,7 +59,7 @@ const Header = () => {
                 }}
               >
                 List your business
-              </button>
+              </a>
 
               {/* Utility CTA - Log in */}
               {/* <Link
