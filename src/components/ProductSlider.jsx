@@ -94,17 +94,19 @@ const ProductSlider = () => {
                           >
                             Upcoming
                           </button>
-                          <button
+                          <a
+
+                            href="/products/kokum-syrup"
                             className="btn btn-outline-secondary fw-semibold"
                             style={{
                               borderRadius: "8px",
                               padding: "8px 20px",
                               cursor: "not-allowed",
                             }}
-                            disabled
+                          
                           >
-                            View More
-                          </button>
+                            View
+                          </a>
                         </div>
                       </div>
                     </div>

@@ -7,6 +7,9 @@ import Image from 'next/image';
 import { db } from '../../../backend/lib/firebase';
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import Layout from '../../../components/layout';
+import 'flatpickr/dist/flatpickr.min.css';
+import Flatpickr from 'react-flatpickr';
+
 // Helper function
 const formatTrekName = (slug: string): string => {
   if (!slug) return '';
@@ -27,7 +30,7 @@ export default function TrekFormPage() {
   const [discount, setDiscount] = useState(0);
   const [finalAmount, setFinalAmount] = useState(trekPrice);
   const [couponMessage, setCouponMessage] = useState({ type: '', text: '' });
-  const [formData, setFormData] = useState({ fullName: '', mobile: '', altMobile: '', email: '', dob: '', address: '', trekChoice: '', pickupLocation: '', termsAccepted: false, contactConsent: false });
+  const [formData, setFormData] = useState({ fullName: '', mobile: '', altMobile: '', email: '', dob: '', address: '', trekChoice: '', pickupLocation: '',  foodPreference: '',   termsAccepted: false, contactConsent: false });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
@@ -59,6 +62,7 @@ export default function TrekFormPage() {
     if (!formData.address) formErrors.address = 'Address is required';
     if (!formData.pickupLocation) formErrors.pickupLocation = 'Please select a pickup location';
     if (!formData.termsAccepted) formErrors.termsAccepted = 'You must accept the terms and conditions';
+    if (!formData.foodPreference) formErrors.foodPreference = 'Please select a food preference';
     setErrors(formErrors);
     return Object.keys(formErrors).length === 0;
   };
@@ -163,13 +167,65 @@ const upiUrl = ``;
               <div className="col-md-6"><label htmlFor="mobile" className="form-label">Mobile Number</label><input type="tel" className={`form-control ${errors.mobile ? 'is-invalid' : ''}`} id="mobile" name="mobile" value={formData.mobile} onChange={handleChange} required />{errors.mobile && <div className="invalid-feedback">{errors.mobile}</div>}</div>
               <div className="col-md-6"><label htmlFor="altMobile" className="form-label">Alternative Mobile (Optional)</label><input type="tel" className="form-control" id="altMobile" name="altMobile" value={formData.altMobile} onChange={handleChange} /></div>
               <div className="col-md-6"><label htmlFor="email" className="form-label">Email Address (Optional)</label><input type="email" className="form-control" id="email" name="email" value={formData.email} onChange={handleChange} /></div>
-              <div className="col-md-6"><label htmlFor="dob" className="form-label">Date of Birth</label><input type="date" className={`form-control ${errors.dob ? 'is-invalid' : ''}`} id="dob" name="dob" value={formData.dob} onChange={handleChange} required />{errors.dob && <div className="invalid-feedback">{errors.dob}</div>}</div>
+             <div className="col-md-6">
+                <label htmlFor="dob" className="form-label">Date of Birth</label>
+
+                <Flatpickr
+                  id="dob"
+                  name="dob"
+                  options={{
+                    dateFormat: "Y-m-d",
+                    altInput: true,
+                    altFormat: "d M, Y",
+                    allowInput: true, // ✅ allows manual typing
+                    maxDate: "today", // prevents selecting future date
+                  }}
+                  value={formData.dob}
+                  onChange={(selectedDates) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      dob: selectedDates[0]
+                        ? selectedDates[0].toISOString().split("T")[0]
+                        : "",
+                    }))
+                  }
+                  onInput={(e) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      dob: (e.target as HTMLInputElement).value,
+                    }))
+                  }
+                  className={`form-control ${errors.dob ? "is-invalid" : ""}`}
+                  placeholder="YYYY-MM-DD"
+                />
+
+                {errors.dob && <div className="invalid-feedback">{errors.dob}</div>}
+              </div>
               <div className="col-12"><label htmlFor="address" className="form-label">Full Address</label><textarea className={`form-control ${errors.address ? 'is-invalid' : ''}`} id="address" name="address" rows={3} value={formData.address} onChange={handleChange} required></textarea>{errors.address && <div className="invalid-feedback">{errors.address}</div>}</div>
             </div>
             <h3 className="mt-4 mb-3 border-bottom pb-2">Trek Details</h3>
             <div className="row g-3">
-              <div className="col-md-6"><label htmlFor="trekChoice" className="form-label">Selected Trek</label><input type="text" className="form-control" id="trekChoice" name="trekChoice" value={formData.trekChoice} readOnly disabled /></div>
-              <div className="col-md-6"><label htmlFor="pickupLocation" className="form-label">Select Pickup Location</label><select className={`form-select ${errors.pickupLocation ? 'is-invalid' : ''}`} id="pickupLocation" name="pickupLocation" value={formData.pickupLocation} onChange={handleChange} required><option value="" disabled>Choose...</option>{pickupLocations.map(location => (<option key={location} value={location}>{location}</option>))}</select>{errors.pickupLocation && <div className="invalid-feedback">{errors.pickupLocation}</div>}</div>
+              <div className="col-md-4"><label htmlFor="trekChoice" className="form-label">Selected Trek</label><input type="text" className="form-control" id="trekChoice" name="trekChoice" value={formData.trekChoice} readOnly disabled /></div>
+              <div className="col-md-4"><label htmlFor="pickupLocation" className="form-label">Select Pickup Location</label><select className={`form-select ${errors.pickupLocation ? 'is-invalid' : ''}`} id="pickupLocation" name="pickupLocation" value={formData.pickupLocation} onChange={handleChange} required><option value="" disabled>Choose...</option>{pickupLocations.map(location => (<option key={location} value={location}>{location}</option>))}</select>{errors.pickupLocation && <div className="invalid-feedback">{errors.pickupLocation}</div>}</div>
+                    {/* 🍱 Food Preference Section */}
+              <div className="col-md-4">
+                <label htmlFor="foodPreference" className="form-label">Food Preference</label>
+                <select
+                  className={`form-select ${errors.foodPreference ? 'is-invalid' : ''}`}
+                  id="foodPreference"
+                  name="foodPreference"
+                  value={formData.foodPreference || ''}
+                  onChange={handleChange}
+                  required
+                >
+                  <option value="">Select Food Preference</option>
+                  <option value="Veg">Veg</option>
+                  <option value="Non-Veg">Non-Veg</option>
+                </select>
+                {errors.foodPreference && (
+                  <div className="invalid-feedback">{errors.foodPreference}</div>
+                )}
+              </div>
             </div>
             <div className="mt-4">
               <div className="form-check"><input type="checkbox" className="form-check-input" id="contactConsent" name="contactConsent" checked={formData.contactConsent} onChange={handleChange} /><label className="form-check-label" htmlFor="contactConsent">Yes, I would like to receive updates about future treks and offers.</label></div>

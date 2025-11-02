@@ -48,6 +48,14 @@ export default function BlogSection() {
             Latest Travel Stories
           </h2>
           <p className="text-gray-600 mt-2">Get inspired by stories from Konkan</p>
+          <div className="text-center mb-10">
+        <Link
+          href="/add-story"
+          className="text-3xl md:text-4xl font-bold mt-2 text-gray-800  "
+        >
+          ✍️ Share Your Travel Story
+        </Link>
+</div>
         </motion.div>
 
         {/* Empty State */}

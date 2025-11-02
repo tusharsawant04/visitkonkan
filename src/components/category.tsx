@@ -10,19 +10,57 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './category.css';
 import Link from 'next/link';
 interface Category {
+
   title: string;
+  slug:string;
   desc: string;
   icon: string;
   image: string;
 }
 
 const categories: Category[] = [
-  { title: "Beaches", desc: "Golden sand & clear waters", icon: "🏝️", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
-  { title: "Historical Forts", desc: "Ancient warrior history", icon: "🏰", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
-  { title: "Food & Cuisine", desc: "Local Konkani flavors", icon: "🥘", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
-  { title: "Adventure & Water Sports", desc: "Scuba diving, rafting", icon: "🚤", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
-  { title: "Wildlife & Nature", desc: "Bird sanctuaries, trekking", icon: "🌲", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
-  { title: "Cultural Festivals", desc: "Traditional Konkani dance & music", icon: "🎭", image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" },
+  { 
+    title: "Beaches", 
+    slug: "beaches",
+    desc: "Golden sand & clear waters", 
+    icon: "🏝️", 
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" 
+  },
+  { 
+    title: "Historical Forts", 
+    slug: "historical-forts",
+    desc: "Ancient warrior history", 
+    icon: "🏰", 
+    image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" 
+  },
+  { 
+    title: "Food & Cuisine", 
+    slug: "food-cuisine",
+    desc: "Local Konkani flavors", 
+    icon: "🥘", 
+    image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" 
+  },
+  { 
+    title: "Adventure & Water Sports", 
+    slug: "adventure-water-sports",
+    desc: "Scuba diving, rafting", 
+    icon: "🚤", 
+    image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" 
+  },
+  { 
+    title: "Wildlife & Nature", 
+    slug: "wildlife-nature",
+    desc: "Bird sanctuaries, trekking", 
+    icon: "🌲", 
+    image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" 
+  },
+  { 
+    title: "Cultural Festivals", 
+    slug: "cultural-festivals",
+    desc: "Traditional Konkani dance & music", 
+    icon: "🎭", 
+    image: "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" 
+  },
 ];
 
 export default function Category() {
@@ -40,21 +78,23 @@ export default function Category() {
   }, []);
 
   const CategoryCard = ({ cat }: { cat: Category }) => (
-    <div className="card h-100 text-center p-3 border-0 shadow-sm category-card">
-      <div className="card-body d-flex flex-column justify-content-between p-0">
-        <div>
-          <div className="category-icon display-5 mb-3">{cat.icon}</div>
-          <h5 className="card-title fw-semibold">{cat.title}</h5>
-          <p className="text-muted small mb-3">{cat.desc}</p>
-        </div>
-        <div className="category-image-wrapper">
-          <div 
-            className="category-image" 
-            style={{ backgroundImage: `url(${cat.image})` }}
-          ></div>
+  //  <Link href={`/categories/${cat.slug}`} style={{ textDecoration: "none", color: "inherit" }}>
+      <div className="card h-100 text-center p-3 border-0 shadow-sm category-card">
+        <div className="card-body d-flex flex-column justify-content-between p-0">
+          <div>
+            <div className="category-icon display-5 mb-3">{cat.icon}</div>
+            <h5 className="card-title fw-semibold">{cat.title}</h5>
+            <p className="text-muted small mb-3">{cat.desc}</p>
+          </div>
+          <div className="category-image-wrapper">
+            <div
+              className="category-image"
+              style={{ backgroundImage: `url(${cat.image})` }}
+            ></div>
+          </div>
         </div>
       </div>
-    </div>
+    // </Link>
   );
 
   return (

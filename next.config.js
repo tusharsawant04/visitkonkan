@@ -31,7 +31,12 @@ const nextConfig = {
         protocol: "https",
         hostname: "drive.google.com",
         pathname: "/**", // This matches the `uc?export=view&id=...` path
-      }
+      },
+       {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        pathname: "/**", // ✅ allows all Cloudinary image paths
+      },
       ],
     },
   };

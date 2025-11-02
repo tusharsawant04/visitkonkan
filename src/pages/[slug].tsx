@@ -5,6 +5,8 @@ import Layout from '../components/layout';
 import { useEffect, useState } from 'react';
 import './discover.css';
 import { color } from 'framer-motion';
+import ReviewsList from "@/components/ReviewsList";
+import ReviewForm from "@/components/ReviewForm";
 
 // --- INTERFACE AND DATA ---
 export interface Experience {
@@ -208,8 +210,14 @@ export const experiences: Experience[] = [
       "https://images.unsplash.com/photo-1598387847985-6e2c71f3f42d",
       "https://images.unsplash.com/photo-1578758422163-b6b0b2c6b1b1"
     ],
-    history: "Lohagad Fort, built during the 18th century, played a key role in the Maratha Empire under Chhatrapati Shivaji Maharaj. The Ekvira Devi Temple at the base is a revered pilgrimage site, drawing devotees year-round.",
-    whatToCarry: [
+  history: `The Ekvira Devi Temple and Lohagad Fort together represent a rich blend of spirituality and Maratha heritage in the Western Ghats.
+
+Ekvira Devi Temple, situated beside the ancient Buddhist Karla Caves near Lonavala, dates back over 2,000 years. The temple is dedicated to Goddess Ekvira, revered as the Kuldevi (family goddess) of the Koli and Aagri communities. Legend says the Pandavas built the original shrine overnight during their exile. The site’s early rock-cut architecture links it with the Buddhist cave tradition (circa 2nd century BC), while the temple structure seen today evolved through the Satavahana and later Maratha periods. It stands as a living heritage where ancient Buddhist and Hindu practices coexist harmoniously.
+
+Lohagad Fort, meaning “Iron Fort,” lies about 10 km from the temple and played a key role in the Maratha Empire under Chhatrapati Shivaji Maharaj in the 17th century. The fort’s strategic location helped guard trade routes connecting the Konkan coast and the Deccan plateau. Its robust construction, monsoon-fed moats, and distinct four gates (Ganesh, Narayan, Hanuman, and Maha Darwaza) showcase classic Maratha defense architecture. Lohagad also served briefly as the treasury fort for Shivaji and later came under the rule of the Mughals and Peshwas.
+
+Together, Ekvira Devi Temple and Lohagad Fort symbolize Maharashtra’s layered past — from ancient Buddhist spirituality to medieval Maratha valor — offering trekkers both sacred energy and panoramic history amidst the green Sahyadris.`,
+     whatToCarry: [
         "A sturdy backpack (20-30 litres) with a rain cover.",
         "Trekking shoes with good grip (mandatory).",
         "Torch or headlamp with extra batteries.",
@@ -313,16 +321,47 @@ export default function ExperienceDetail() {
       <div className="container-fluid p-0">
           <div className="hero-image-container" style={{ backgroundImage: `url(${experience.img[0]})` }}>
               <div className="hero-overlay">
-                  <div className="container text-center text-white">
-                      <h1 className="display-4 fw-bold">{experience.name}</h1>
-                      <p className="lead mb-0 text-warning">⭐ {experience.rating}</p>
-                      <button 
-                        className="btn btn-light mt-4" 
-                        data-bs-toggle="modal" 
-                        data-bs-target="#galleryModal">
-                          <i className="bi bi-images me-2"></i>View Gallery
-                      </button>
+                 <div className="container text-center text-white py-5">
+                  <h1 className="display-4 fw-bold mb-3">{experience.name}</h1>
+
+                  <div className="d-flex justify-content-center align-items-center gap-4 mb-4 flex-wrap">
+                    
+                    <p className="mb-1">
+                    <strong className="text-primary fs-4"   style={{
+                        color: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                       
+                      }}>
+                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(experience.price)}
+                    </strong> 
+                    <span className="text-muted" > / person</span>
+                  </p>
                   </div>
+
+                  <div className="d-flex justify-content-center gap-3 flex-wrap">
+                    <button
+                      className="btn btn-light btn-lg fw-semibold shadow-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#galleryModal"
+                    >
+                      <i className="bi bi-images me-2"></i> View Gallery
+                    </button>
+
+                    <a
+                      href={`/form/new/${experience.slug}`}
+                      className="btn btn-lg text-white fw-semibold shadow-sm"
+                      style={{
+                        background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                        borderRadius: "8px",
+                        padding: "10px 22px",
+                        fontSize: "16px",
+                        letterSpacing: "0.3px",
+                      }}
+                    >
+                      <i className="bi bi-calendar-check me-2"></i> Book Now
+                    </a>
+                  </div>
+                </div>
+
               </div>
           </div>
       </div>
@@ -358,10 +397,24 @@ export default function ExperienceDetail() {
                 <h4 className="fw-bold">About this experience</h4>
                 <p className="text-muted">{experience.desc}</p>
                 
-                <div className="mt-4 p-4 bg-light rounded">
-                    <h5 className="fw-semibold mb-2">📜 History</h5>
-                    <p className="mb-0">{experience.history}</p>
-                </div>
+                <div className="mt-4 p-4 bg-white shadow-sm rounded-3 border">
+                <h5 className="fw-bold mb-3 d-flex align-items-center text-primary">
+                  <span className="me-2 fs-4">📜</span> History
+                </h5>
+
+                <p
+                  className="mb-0 lh-lg text-secondary"
+                  style={{
+                    fontSize: "1rem",
+                    textAlign: "justify",
+                    lineHeight: "1.8",
+                    fontFamily: "'Poppins', sans-serif",
+                    whiteSpace: "pre-line"
+                  }}
+                >
+                  {experience.history}
+                </p>
+              </div>
               </div>
 
               {/* -- ITINERARY PANE -- */}
@@ -451,8 +504,10 @@ export default function ExperienceDetail() {
 
               {/* -- UPGRADED REVIEWS -- */}
               <div className="mb-4">
-                <h6 className="fw-bold mb-3">What travelers are saying</h6>
-                {experience.reviews.slice(0, 2).map((review, idx) => (
+        
+                    <ReviewsList slug={experience.slug} />
+      <ReviewForm slug={experience.slug} />
+                {/* {experience.reviews.slice(0, 2).map((review, idx) => (
                    <div key={idx} className="card border-0 bg-light mb-3">
                      <div className="card-body d-flex">
                         <div className="me-3">
@@ -470,7 +525,7 @@ export default function ExperienceDetail() {
                         </div>
                      </div>
                    </div>
-                ))}
+                ))} */}
               </div>
 
               {/* -- LOCATION MAP -- */}

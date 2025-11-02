@@ -1,54 +1,66 @@
 'use client';
-
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import { collection, getDocs, orderBy, query } from 'firebase/firestore';
+import { db } from '../backend/lib/firebase';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-interface Review {
-  id: number;
-  name: string;
-  rating: number;
-  comment: string;
-  destination: string;
+interface Story {
+  id: string;
+  title: string;
+  excerpt: string;
+  coverImage?: string;
+  images?: string[];
+   image?: string;  
+  createdAt?: any;
 }
 
-const reviews: Review[] = [
-  {
-    id: 1,
-    name: "Pratik Gawade",
-    rating: 5,
-    comment: "Thank you all for the amazing memories...",
-    destination: "Rajgad Trek"
-  },
-  {
-    id: 2,
-    name: "Rahul Dhayalkar",
-    rating: 4,
-    comment: "Well executed and planned. Unforgettable memories ❤️",
-    destination: "Rajgad Trek"
-  },
-  {
-    id: 3,
-    name: "Unknown Traveler",
-    rating: 4,
-    comment: "Thanks Pratik and team — something new was experienced 🌍",
-    destination: "Rajgad Trek"
-  },
-];
-
-export default function ReviewSection() {
+export default function StoriesSection() {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
+  const router = useRouter();
+  const [stories, setStories] = useState<Story[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchStories = async () => {
+      try {
+        const q = query(collection(db, 'stories'), orderBy('createdAt', 'desc'));
+        const querySnapshot = await getDocs(q);
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data(),
+        })) as Story[];
+        setStories(data);
+      } catch (error) {
+        console.error('Error fetching stories:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchStories();
+  }, []);
+
+  if (loading) {
+    return <p className="text-center py-5">Loading stories...</p>;
+  }
 
   return (
-    <section className="position-relative py-5" style={{
-      backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
-    }}>
+    <section
+      className="position-relative py-5"
+      style={{
+        backgroundImage: `url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
+    >
+      {/* Overlay */}
       <div className="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
 
       <div className="container position-relative z-2">
@@ -75,7 +87,7 @@ export default function ReviewSection() {
             prevEl: prevRef.current,
             nextEl: nextRef.current,
           }}
-          onBeforeInit={(swiper) => {
+          onBeforeInit={swiper => {
             // @ts-ignore
             swiper.params.navigation.prevEl = prevRef.current;
             // @ts-ignore
@@ -84,37 +96,80 @@ export default function ReviewSection() {
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },
-            1200: { slidesPerView: 3 }
+            1200: { slidesPerView: 3 },
           }}
         >
-          {reviews.map((review) => (
-            <SwiperSlide key={review.id}>
-              <div className="card h-100 border-0 shadow-lg overflow-hidden" style={{
-                borderRadius: '20px',
-                background: 'rgba(255, 255, 255, 0.9)',
-                transition: 'transform 0.3s, box-shadow 0.3s',
-              }}
-                onMouseEnter={e => (e.currentTarget.style.transform = 'translateY(-10px)')}
-                onMouseLeave={e => (e.currentTarget.style.transform = 'translateY(0)')}
-              >
-                <div className="card-body p-4 d-flex flex-column justify-content-between h-100">
-                  <div>
-                    <h6 className="fw-bold mb-1">{review.name}</h6>
-                    <small className="text-muted d-flex align-items-center mb-3">
-                      <i className="bi bi-geo-alt-fill me-1 text-danger"></i>
-                      {review.destination}
-                    </small>
-                    <div className="mb-3 text-warning">
-                      {[...Array(review.rating)].map((_, i) => (
-                        <i key={i} className="bi bi-star-fill me-1"></i>
-                      ))}
+          {stories.map(story => {
+            const imageUrl =
+              story.coverImage ||
+              story.image ||
+              story.images?.[0] ||
+              '/fallback.jpg';
+
+            return (
+              <SwiperSlide key={story.id}>
+                <div
+                  className="card h-100 border-0 shadow-lg overflow-hidden bg-white"
+                  style={{
+                    borderRadius: '20px',
+                    transition: 'transform 0.3s, box-shadow 0.3s',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.boxShadow =
+                      '0 10px 20px rgba(0,0,0,0.15)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+                  }}
+                >
+                  {/* Story Image */}
+                  <div className="position-relative" style={{ height: '220px' }}>
+                    <Image
+                      src={imageUrl}
+                      alt={story.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover rounded-top-4"
+                    />
+                    <div
+                      className="position-absolute bottom-0 start-0 w-100 text-light p-3"
+                      style={{
+                        background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                        borderTopLeftRadius: '20px',
+                        borderTopRightRadius: '20px',
+                      }}
+                    >
+                      <h5 className="fw-bold mb-0 text-truncate">{story.title}</h5>
                     </div>
-                    <p className="fst-italic text-dark">“{review.comment}”</p>
+                  </div>
+
+                  {/* Story Content */}
+                  <div className="card-body p-4 d-flex flex-column justify-content-between">
+                    <p
+                      className="text-muted mb-3"
+                      style={{
+                        minHeight: '60px',
+                        maxHeight: '60px',
+                        overflow: 'hidden',
+                        textOverflow: 'ellipsis',
+                      }}
+                    >
+                      {story.excerpt || 'No excerpt available.'}
+                    </p>
+
+                    <button
+                      className="btn btn-primary rounded-pill fw-semibold mt-auto"
+                      onClick={() => router.push(`/stories/${story.id}`)}
+                    >
+                      Read Full Story →
+                    </button>
                   </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>
