@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 import Carousel from 'react-bootstrap/Carousel';
 import TripPlanningCard from './TripPlanningCard';
 import './Heroslider.css'; // Create this file for custom styles

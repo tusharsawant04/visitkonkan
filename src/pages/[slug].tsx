@@ -7,6 +7,7 @@ import './discover.css';
 import { color } from 'framer-motion';
 import ReviewsList from "@/components/ReviewsList";
 import ReviewForm from "@/components/ReviewForm";
+import Head from "next/head"; 
 
 // --- INTERFACE AND DATA ---
 export interface Experience {
@@ -295,6 +296,11 @@ export default function ExperienceDetail() {
   const { slug } = router.query;
   const experience: Experience | undefined = experiences.find(exp => exp.slug === slug);
 
+  const pageTitle = experience ? `${experience.name} | Trekking & Travel Experience` : "Experience Not Found";
+  const pageDesc = experience?.desc || "Explore trekking and travel adventures in Maharashtra.";
+  const pageImg = experience?.img?.[0] || "/default-image.jpg";
+  const pageUrl = `https://www.visitkokan.in/${slug}`;
+
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap.bundle.min');
   }, []);
@@ -317,6 +323,26 @@ export default function ExperienceDetail() {
 
   return (
     <Layout>
+       <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={pageDesc} />
+
+        {/* ✅ Open Graph / Facebook */}
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDesc} />
+        <meta property="og:image" content={pageImg} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content="website" />
+
+        {/* ✅ Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDesc} />
+        <meta name="twitter:image" content={pageImg} />
+
+        {/* ✅ Canonical Link */}
+        <link rel="canonical" href={pageUrl} />
+      </Head>
       {/* --- HERO SECTION with GALLERY BUTTON --- */}
       <div className="container-fluid p-0">
           <div className="hero-image-container" style={{ backgroundImage: `url(${experience.img[0]})` }}>

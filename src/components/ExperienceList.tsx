@@ -107,7 +107,12 @@ export default function ExperienceList() {
                   <p className="text-muted small">{exp.desc}</p>
                   <p className="text-warning small">⭐ {exp.rating}</p>
                   <Link href={`/${exp.slug}`} passHref>
-                  <button className="btn btn-outline-light">Learn More</button>
+                  <button
+                    className="btn btn-outline-light"
+                    aria-label={`Learn more about ${exp.name || exp.slug}`}
+                  >
+                    Learn More
+                  </button>
                 </Link>
                 </div>
               </div>

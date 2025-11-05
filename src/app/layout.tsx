@@ -6,6 +6,7 @@ import BootstrapClient from "@/components/BootstrapClient"; // Import the Client
 import Script from 'next/script'; // Add this import
 import { AuthProvider } from "@/context/AuthContext";
 import { Analytics } from "@vercel/analytics/next"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -29,6 +30,7 @@ export const metadata: Metadata = {
       siteName: "Visit Konkan",
     },
 };
+
 
 export default function RootLayout({
   children,
