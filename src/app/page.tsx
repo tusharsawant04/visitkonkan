@@ -1,4 +1,5 @@
 // ✅ Import only CSS needed for this page
+'use client';
 import "../styles/custom.css";
 import Layout from '../components/layout';
 // ✅ Lazy load non-critical components
