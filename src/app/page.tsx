@@ -1,7 +1,6 @@
 // ✅ Import only CSS needed for this page
-"use client";
 import "../styles/custom.css";
-
+import Layout from '../components/layout';
 // ✅ Lazy load non-critical components
 const HeroSlider = dynamic(() => import("../components/Herosilder"), { ssr: true });
 const Category = dynamic(() => import("../components/category"), { ssr: false });
@@ -16,6 +15,8 @@ import dynamic from "next/dynamic";
 export default function Home() {
   return (
     <main className="overflow-hidden home-page">
+      <Layout>
+
       <HeroSlider />
 
       {/* ✅ Fold Content Below */}
@@ -25,6 +26,7 @@ export default function Home() {
       <FeaturedDestinations />
       <BlogSection />
       <ReviewSection />
+      </Layout>
     </main>
   );
 }
