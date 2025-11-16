@@ -24,7 +24,7 @@ export default function TrekFormPage() {
   const [paymentScreenshot, setPaymentScreenshot] = useState<File | null>(null);
   const [showTerms, setShowTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const trekPrice = 1299;
+  const trekPrice = 1400;
   const [isPayingHalf, setIsPayingHalf] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
@@ -124,7 +124,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     let trekId = trek;
 
     // If trek name is "rajgad-trek", use only "rajgad"
-    if (trek === "rajgad-trek") {
+    if (trek == "rajgad-trek") {
       trekId = "rajgad";
     }
 
