@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
   slug: "rajgad-trek",
   desc: "Rajgad is an enormous fort located around 60 km south-west of Pune. Known as the 'King of Forts', it served as the first capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. The fort is admired for its massive architecture, breathtaking views, and rich historical significance. It was here that Shivaji Maharaj spent nearly 25 years shaping his empire.",
   rating: "5.0/5",
-  price: 1499,
+  price: 1399,
   img: [
     "https://drive.google.com/uc?export=view&id=1SnkUiDSySSG-vn8wX5VwIDYvOVMHlc1D",
     "https://images.unsplash.com/photo-1589644873574-345111273e9b",
@@ -351,7 +351,17 @@ export default function ExperienceDetail() {
           <div className="hero-image-container" style={{ backgroundImage: `url(${experience.img[0]})` }}>
               <div className="hero-overlay">
                  <div className="container text-center text-white py-5">
-                  <h1 className="display-4 fw-bold mb-3">{experience.name}</h1>
+                <h1 
+                    className="display-4 fw-bold mb-3"
+                    style={{
+                      background: "linear-gradient(135deg, #1CA9C9, #005f73)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    {experience.name}
+                  </h1>
 
                   <div className="d-flex justify-content-center align-items-center gap-4 mb-4 flex-wrap">
                     
