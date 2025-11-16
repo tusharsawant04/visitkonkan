@@ -129,7 +129,7 @@ const handleSubmit = async (e: React.FormEvent) => {
     }
 
       // 4. Save the final data to Firestore
-      const registrationsCollectionRef = collection(db, 'trip', trek, 'deatils');
+      const registrationsCollectionRef = collection(db, 'trip', trekId, 'deatils');
       await addDoc(registrationsCollectionRef, { 
         ...formData, 
         finalAmountPaid: finalAmount, 
