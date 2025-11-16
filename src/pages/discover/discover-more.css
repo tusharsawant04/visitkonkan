@@ -1,0 +1,52 @@
+.hero-image {
+  height: 70vh;
+  position: relative;
+}
+
+.hero-img {
+  object-fit: cover;
+  filter: brightness(0.75);
+}
+
+.hero-overlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.detail-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  line-height: 1.7;
+}
+
+.side-card {
+  background: #f8f9fa;
+  position: sticky;
+  top: 100px;
+}
+
+.destination-details h4 {
+  margin-top: 1.5rem;
+  color: #333;
+}
+
+.destination-details strong {
+  color: #007bff;
+}
+
+.markdown-body {
+  font-size: 1rem;
+  color: #444;
+}
+
+.card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}

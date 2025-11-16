@@ -37,6 +37,16 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "/**", // ✅ allows all Cloudinary image paths
       },
+        {
+        protocol: "https",
+        hostname: "example.com",
+        pathname: "/**", // ✅ allows all Cloudinary image paths
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "/**", // ✅ allows all Cloudinary image paths
+      }
       ],
     },
   };

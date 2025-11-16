@@ -6,185 +6,159 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import placesData from '../data/places_card.json';
 import './discover.css';
 
-// Define the Place type for better type safety
 interface Place {
+  id: number;
   name: string;
-  description: string;
-  imageUrl: string;
+  short_desc: string;
+  image_url: string;
   category: string;
   rating: number;
+  slug: string;
 }
-
-const topPlaces: Place[] = [
-  { 
-    name: 'Ganpatipule Beach', 
-    description: 'A beautiful beach with a famous Ganpati temple.', 
-    imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', 
-    category: 'beach', 
-    rating: 4.5 
-  },
-  { 
-    name: 'Sindhudurg Fort', 
-    description: 'A historical fort located on a rocky island.', 
-    imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', 
-    category: 'fort', 
-    rating: 4.7 
-  },
-  { 
-    name: 'Ratnagiri', 
-    description: 'A port city known for its beaches and historical sites.', 
-    imageUrl: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0', 
-    category: 'beach', 
-    rating: 4.3 
-  }
-];
 
 const Discover = () => {
   const [places, setPlaces] = useState<Place[]>([]);
-  const [view, setView] = useState('grid');
   const [searchTerm, setSearchTerm] = useState('');
   const [category, setCategory] = useState('all');
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
-    setPlaces(topPlaces);
+    setPlaces(placesData);
   }, []);
 
-  const filteredPlaces = places.filter(place => 
-    (category === 'all' || place.category === category) &&
-    place.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const handleImageError = (
+    e: React.SyntheticEvent<HTMLImageElement, Event>
+  ) => {
+    e.currentTarget.src =
+      'https://via.placeholder.com/400x300.png?text=Konkan+Destination';
+  };
+
+  const filteredPlaces = places.filter(
+    (place) =>
+      (category === 'all' ||
+        place.category.toLowerCase().includes(category.toLowerCase())) &&
+      place.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  if (!isClient) {
-    return null; // or a loading state
-  }
+  if (!isClient) return null;
 
   return (
     <Layout>
       <div className="discover-page">
-        {/* Hero Section with Parallax */}
-        <motion.section 
+        {/* Hero Section */}
+        <motion.section
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="hero-section"
+          className="hero-section-modern text-center"
         >
           <div className="hero-content">
-            <h1 className="hero-title">Discover Kokan&apos;s Magic</h1>
-            <p className="hero-subtitle">Where Nature Meets Heritage</p>
-            <div className="search-container">
-              <input 
-                type="text" 
-                placeholder="Search your dream destination..."
+            <h1 className="hero-title display-4 fw-bold">
+              Discover the Beauty of Konkan
+            </h1>
+            <p className="hero-subtitle lead">
+              Explore 100+ scenic beaches, forts, temples, and hidden gems
+            </p>
+
+            <div className="search-filter-bar mt-4">
+              <input
+                type="text"
+                placeholder="Search destinations..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="search-input"
+                className="search-input-modern"
               />
-              <select 
-                value={category} 
+              <select
+                value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="category-select"
+                className="category-select-modern"
               >
                 <option value="all">All Categories</option>
                 <option value="beach">Beaches</option>
                 <option value="fort">Forts</option>
+                <option value="hill">Hill Stations</option>
+                <option value="temple">Temples</option>
                 <option value="waterfall">Waterfalls</option>
-                <option value="trekking">Trekking Spots</option>
               </select>
             </div>
           </div>
         </motion.section>
 
-        {/* Destinations Grid */}
-        <section className="destinations-section">
+        {/* Destination Cards Grid */}
+        <section className="destinations-section-modern py-5">
           <div className="container">
-            <div className="section-header">
-              <h2>Popular Destinations</h2>
-              <button 
-                className="view-toggle-btn"
-                onClick={() => setView(view === 'grid' ? 'list' : 'grid')}
-              >
-                <i className={`fas fa-${view === 'grid' ? 'list' : 'grid'}`}></i>
-              </button>
-            </div>
-            <motion.div 
-              className={`destinations-grid ${view}`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ staggerChildren: 0.1 }}
-            >
-              {filteredPlaces.map((place, index) => (
+            <h2 className="section-title text-center fw-semibold mb-5">
+              Explore All Destinations
+            </h2>
+
+            <div className="row g-4">
+              {filteredPlaces.map((place) => (
                 <motion.div
-                  key={index}
-                  className="destination-card"
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.2 }}
+                  key={place.id}
+                  className="col-12 col-sm-6 col-md-4 col-lg-3"
+                  whileHover={{ scale: 1.02 }}
                 >
-                  <Link href={`/PlaceInformation?place=${place.name}`}>
-                    <div className="card-image">
-                      <Image 
-                        src={place.imageUrl} 
-                        alt={place.name}
-                        width={400}
-                        height={300}
-                        layout="responsive"
-                      />
-                      <div className="card-category">{place.category}</div>
-                      <div className="card-rating">
-                        <span>★</span> {place.rating}
+                  <div className="destination-card-modern shadow-sm border-0 rounded-4 overflow-hidden h-100">
+                    <Link
+                      href={`/discover/${place.slug}`}
+                      className="text-decoration-none text-dark"
+                    >
+                      <div className="position-relative">
+                        <Image
+                          src={place.image_url || ''}
+                          alt={place.name}
+                          width={400}
+                          height={300}
+                          className="img-fluid destination-img"
+                          onError={handleImageError}
+                        />
+                        <div className="category-badge">
+                          {place.category}
+                        </div>
+                        <div className="rating-badge">
+                          ⭐ {place.rating.toFixed(1)}
+                        </div>
                       </div>
-                    </div>
-                    <div className="card-content">
-                      <h3>{place.name}</h3>
-                      <p className="mb-1">{place.description}
-                        <Link 
-                          href={`/PlaceInformation?place=${place.name}`}
-                          className="text-primary text-decoration-none ms-1"
-                        >
+
+                      <div className="p-3">
+                        <h5 className="fw-bold mb-1">{place.name}</h5>
+                        <p className="text-muted small mb-2">
+                          {place.short_desc.length > 80
+                            ? place.short_desc.slice(0, 80) + '...'
+                            : place.short_desc}
+                        </p>
+                        <span className="text-primary fw-semibold small">
                           Read More →
-                        </Link>
-                      </p>
-                      <div className="d-flex justify-content-start mt-3">
-                        <Link href={`/PlanTrip?place=${place.name}`}>
-                          <button className="btn btn-primary">Plan Trip</button>
-                        </Link>
+                        </span>
                       </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Experience Section */}
-        <section className="experience-section">
-          <div className="container">
-            <h2>Unique Experiences</h2>
-            <div className="experience-grid">
-              {['Cultural Tours', 'Adventure Sports', 'Local Cuisine', 'Heritage Walks'].map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="experience-card"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <h3>{exp}</h3>
-                  <p>Discover the authentic essence of Kokan</p>
+                    </Link>
+                  </div>
                 </motion.div>
               ))}
             </div>
+
+            {filteredPlaces.length === 0 && (
+              <div className="text-center py-5 text-muted">
+                <h5>No destinations found.</h5>
+              </div>
+            )}
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="cta-section">
+        {/* CTA Section */}
+        <section className="cta-modern text-center py-5">
           <div className="container">
-            <h2>Ready for Your Kokan Adventure?</h2>
-            <p>Plan your perfect getaway today</p>
-            <button className="cta-button">Start Planning</button>
+            <h2 className="fw-bold">Plan Your Perfect Konkan Getaway</h2>
+            <p className="lead text-muted mb-3">
+              Find your next adventure across beaches, forts, and more.
+            </p>
+            <button className="btn btn-primary btn-lg rounded-pill">
+              Start Planning
+            </button>
           </div>
         </section>
       </div>

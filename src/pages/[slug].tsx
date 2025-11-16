@@ -33,45 +33,48 @@ export interface Experience {
 }
 
 export const experiences: Experience[] = [
-    {
-    name: "Rajgad Trek",
-    slug: "rajgad-trek",
-    desc: "Rajgad is an enormous fort. Rajgad means King of all forts. It located south-west 60 Kms from Pune. Chhatrapati Shivaji Maharaj spent a great deal of his time on this fort close to 25 years. Rajgad is famous for its construction layout...",
-    rating: "5.0/5",
-    price: 1499, // Added price
-    img: [
-      "https://drive.google.com/uc?export=view&id=1SnkUiDSySSG-vn8wX5VwIDYvOVMHlc1D",
-      "https://images.unsplash.com/photo-1589644873574-345111273e9b",
-      "https://images.unsplash.com/photo-1599106242383-271adeb2e828"
-    ],
-    history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj, was a strategic military base and residence. Its architecture and stories reflect the strength and vision of the Maratha rulers.",
-    whatToCarry: [
-        "A sturdy backpack (20-30 litres) with a rain cover.",
-        "Trekking shoes with good grip (mandatory).",
-        "Torch or headlamp with extra batteries.",
-        "At least 2-3 litres of water.",
-        "Ready-to-eat food like protein bars, fruits, or dry snacks.",
-        "A valid Government ID proof.",
-        "Personal medication (if any).",
-        "Raincoat or poncho (especially during monsoon).",
-        "Extra pair of clothes and a towel."
-    ],
-    itinerary: [
-      { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
-      { time: "4:00 AM", description: "Base village arrival", day: 2 },
-      { time: "5:00 AM", description: "Start trek", day: 2 },
-      { time: "6:30 AM", description: "Reach top, explore fort", day: 2 },
-      { time: "1:00 PM", description: "Start descent", day: 2 },
-      { time: "2:30 PM", description: "Lunch and rest", day: 2 },
-      { time: "4:00 PM", description: "Return to Mumbai", day: 2 },
-    ],
-    location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15149.37807094207!2d73.6806019445163!3d18.32431871239534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e00815e12041%3A0x1968d374a4a1643c!2sRajgad%20Fort!5e0!3m2!1sen!2sin!4v1677334551225!5m2!1sen!2sin",
-    reviews: [
-      { name: "Paratik Gawade", comment: "Truly unforgettable experience!", rating: 5 },
-      { name: "Rahul Dhayalkar", comment: "Amazing trek, great planning!", rating: 4 },
-      { name: "Unknown", comment: "Loved the views and history!", rating: 5 }
-    ]
-  },
+  {
+  name: "Rajgad Trek",
+  slug: "rajgad-trek",
+  desc: "Rajgad is an enormous fort located around 60 km south-west of Pune. Known as the 'King of Forts', it served as the first capital of the Maratha Empire under Chhatrapati Shivaji Maharaj. The fort is admired for its massive architecture, breathtaking views, and rich historical significance. It was here that Shivaji Maharaj spent nearly 25 years shaping his empire.",
+  rating: "5.0/5",
+  price: 1499,
+  img: [
+    "https://drive.google.com/uc?export=view&id=1SnkUiDSySSG-vn8wX5VwIDYvOVMHlc1D",
+    "https://images.unsplash.com/photo-1589644873574-345111273e9b",
+    "https://images.unsplash.com/photo-1599106242383-271adeb2e828"
+  ],
+  history: "Rajgad Fort, once the capital of the Maratha Empire under Chhatrapati Shivaji Maharaj, stands as a symbol of strength, strategy, and architectural brilliance. The fort was the seat of power for over 25 years before the capital shifted to Raigad. Its vast expanse covers several miles and offers commanding views of the Sahyadri mountain ranges. Rajgad witnessed significant historical events, including the birth of Shivaji Maharaj’s son Rajaram and the death of his queen, Saibai.\n\nThe fort is divided into four main parts: Balekilla (Citadel), Padmavati Machi, Sanjivani Machi, and Suvela Machi. Each section has its own unique historical and architectural importance:\n\nBalekilla (Citadel): The highest point of Rajgad, offering panoramic views of the surrounding hills. This was the main residence of Shivaji Maharaj and contains remains of old structures, bastions, and watchtowers.\n\nPadmavati Machi: The most popular plateau on the fort, often used as the camping and resting point for trekkers. It houses the Padmavati Temple and several water tanks that provided a sustainable water supply for the soldiers.\n\nSanjivani Machi: An engineering marvel, this long and fortified extension features triple-layered defensive walls. It provided excellent defense during battles and strategic control of the surrounding valleys.\n\nSuvela Machi: Known for its natural beauty and the famous 'Nedhe' (a natural hole in the mountain), this section offers mesmerizing views of Torna Fort and nearby peaks.\n\nApart from these, other major attractions include:\n- Pali Darwaja: The main entrance of the fort, known for its strong structure and historic design.\n- Chor Darwaja: A secret and narrow passageway used during emergencies or surprise attacks.\n- Padmavati Temple: A serene spot near the main entrance, often used by trekkers to rest or stay overnight.\n- Sadar (Rajwada Ruins): The remains of the royal palace complex where Shivaji Maharaj held meetings and conducted administrative work.\n- Gunjavane Darwaja: Another entrance often used by trekkers starting from the Gunjavane base village.\n- Water Cisterns: Several natural and man-made tanks such as Padmavati Talav and Suvela Talav provided water to the residents throughout the year.\n\nBest Time to Visit: The ideal time to visit Rajgad is from October to February when the weather is cool and pleasant. During the monsoon (June to September), the fort turns lush green, but the paths can be slippery.\n\nTrek Difficulty: Moderate. The trek involves steep climbs and rocky paths but rewards trekkers with breathtaking views and an incredible historical experience.\n\nRajgad’s strategic location and magnificent design made it one of the strongest forts in Maharashtra. Even today, its ancient gateways, stone ruins, and panoramic vistas echo the glory of the Maratha Empire and the legacy of Chhatrapati Shivaji Maharaj.",
+  whatToCarry: [
+    "A sturdy backpack (20-30 litres) with a rain cover.",
+    "Trekking shoes with good grip (mandatory).",
+    "Torch or headlamp with extra batteries.",
+    "At least 2-3 litres of water.",
+    "Ready-to-eat food like protein bars, fruits, or dry snacks.",
+    "A valid Government ID proof.",
+    "Personal medication (if any).",
+    "Raincoat or poncho (especially during monsoon).",
+    "Extra pair of clothes and a towel."
+  ],
+  itinerary: [
+    { time: "8:00 PM", description: "Departure from Mumbai", day: 1 },
+    { time: "4:00 AM", description: "Arrival at base village (Gunjavane or Pali)", day: 2 },
+    { time: "5:00 AM", description: "Start trek with morning briefing", day: 2 },
+    { time: "6:30 AM", description: "Reach top, explore Padmavati Machi and Balekilla", day: 2 },
+    { time: "10:00 AM", description: "Explore Sanjivani and Suvela Machi", day: 2 },
+    { time: "1:00 PM", description: "Start descent towards base village", day: 2 },
+    { time: "2:30 PM", description: "Lunch and rest at base", day: 2 },
+    { time: "4:00 PM", description: "Departure for Mumbai", day: 2 },
+    { time: "10:00 PM", description: "Arrival in Mumbai (trip concludes)", day: 2 }
+  ],
+  location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15149.37807094207!2d73.6806019445163!3d18.32431871239534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e00815e12041%3A0x1968d374a4a1643c!2sRajgad%20Fort!5e0!3m2!1sen!2sin!4v1677334551225!5m2!1sen!2sin",
+  reviews: [
+    { name: "Paratik Gawade", comment: "Truly unforgettable experience!", rating: 5 },
+    { name: "Rahul Dhayalkar", comment: "Amazing trek, great planning!", rating: 4 },
+    { name: "Unknown", comment: "Loved the views and history!", rating: 5 }
+  ]
+},
+
   {
     name: "Raigad Trek",
     slug: "raigad-trek",

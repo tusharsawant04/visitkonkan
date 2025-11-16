@@ -1,0 +1,2621 @@
+[
+    {
+        "id": 1,
+        "name": "Alibaug Beach",
+        "slug": "alibaug-beach",
+        "short_desc": "Alibaug Beach — a beach in Raigad, known for Temples, Wildlife, Trekking and local culture.",
+        "image_url": "https://example.com/images/alibaug-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.7,
+        "price_range": "₹800 - ₹1500",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Temples",
+            "Wildlife",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "History Lovers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Alibaug+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 2,
+        "name": "Kashid Beach",
+        "slug": "kashid-beach",
+        "short_desc": "Kashid Beach — a beach in Raigad, known for Temples, Birdwatching, Trekking and local culture.",
+        "image_url": "https://example.com/images/kashid-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.5,
+        "price_range": "₹500 - ₹1200",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Temples",
+            "Birdwatching",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Nature Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kashid+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 3,
+        "name": "Murud Janjira Fort",
+        "slug": "murud-janjira-fort",
+        "short_desc": "Murud Janjira Fort — a fort in Raigad, known for Trekking, Sunset, Waterfalls and local culture.",
+        "image_url": "https://example.com/images/murud-janjira-fort.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Trekking",
+            "Sunset",
+            "Waterfalls"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Murud+Janjira+Fort%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 4,
+        "name": "Revdanda Fort",
+        "slug": "revdanda-fort",
+        "short_desc": "Revdanda Fort — a fort in Raigad, known for Scuba, Sunset, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/revdanda-fort.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 4.9,
+        "price_range": "₹500 - ₹1200",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Scuba",
+            "Sunset",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Revdanda+Fort%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 5,
+        "name": "Diveagar Beach",
+        "slug": "diveagar-beach",
+        "short_desc": "Diveagar Beach — a beach in Raigad, known for Waterfalls, Scuba, Peaceful and local culture.",
+        "image_url": "https://example.com/images/diveagar-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.4,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 1,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Scuba",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Nature Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Diveagar+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 6,
+        "name": "Shrivardhan Beach",
+        "slug": "shrivardhan-beach",
+        "short_desc": "Shrivardhan Beach — a beach in Raigad, known for Waterfalls, Wildlife, Sunset and local culture.",
+        "image_url": "https://example.com/images/shrivardhan-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.6,
+        "price_range": "₹900 - ₹1800",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Waterfalls",
+            "Wildlife",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Nature Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Shrivardhan+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 7,
+        "name": "Harihareshwar",
+        "slug": "harihareshwar",
+        "short_desc": "Harihareshwar — a temple/beach in Raigad, known for Scuba, Clean Beach, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/harihareshwar.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Temple/Beach",
+        "rating": 4.2,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Scuba",
+            "Clean Beach",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Harihareshwar%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 8,
+        "name": "Pawana Lake (Tackson)",
+        "slug": "pawana-lake-tackson",
+        "short_desc": "Pawana Lake (Tackson) — a lake in Pune, known for Clean Beach, Temples, Scuba and local culture.",
+        "image_url": "https://example.com/images/pawana-lake-tackson.jpg",
+        "location": "Pune, Maharashtra",
+        "category": "Lake",
+        "rating": 5.0,
+        "price_range": "₹800 - ₹1300",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Clean Beach",
+            "Temples",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Family",
+            "Solo Travelers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Pawana+Lake+%28Tackson%29%2C+Pune+Maharashtra"
+    },
+    {
+        "id": 9,
+        "name": "Tamhini Ghat",
+        "slug": "tamhini-ghat",
+        "short_desc": "Tamhini Ghat — a ghat in Pune, known for Scuba, Waterfalls, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/tamhini-ghat.jpg",
+        "location": "Pune, Maharashtra",
+        "category": "Ghat",
+        "rating": 4.5,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Scuba",
+            "Waterfalls",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Family",
+            "Couples",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Tamhini+Ghat%2C+Pune+Maharashtra"
+    },
+    {
+        "id": 10,
+        "name": "Matheran",
+        "slug": "matheran",
+        "short_desc": "Matheran — a hill station in Raigad, known for History, Wildlife, Seafood and local culture.",
+        "image_url": "https://example.com/images/matheran.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Hill Station",
+        "rating": 4.3,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "History",
+            "Wildlife",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Family",
+            "Solo Travelers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Matheran%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 11,
+        "name": "Karnala Bird Sanctuary",
+        "slug": "karnala-bird-sanctuary",
+        "short_desc": "Karnala Bird Sanctuary — a sanctuary in Raigad, known for Seafood, History, Forts and local culture.",
+        "image_url": "https://example.com/images/karnala-bird-sanctuary.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Sanctuary",
+        "rating": 4.8,
+        "price_range": "₹800 - ₹1300",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Seafood",
+            "History",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Friends",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Karnala+Bird+Sanctuary%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 12,
+        "name": "Korlai Fort",
+        "slug": "korlai-fort",
+        "short_desc": "Korlai Fort — a fort in Raigad, known for History, Temples, Seafood and local culture.",
+        "image_url": "https://example.com/images/korlai-fort.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 4.4,
+        "price_range": "₹700 - ₹1600",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "History",
+            "Temples",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "History Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Korlai+Fort%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 13,
+        "name": "Dapoli",
+        "slug": "dapoli",
+        "short_desc": "Dapoli — a coastal town in Ratnagiri, known for Clean Beach, Trekking, Temples and local culture.",
+        "image_url": "https://example.com/images/dapoli.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Coastal Town",
+        "rating": 4.7,
+        "price_range": "₹800 - ₹1300",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Clean Beach",
+            "Trekking",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Nature Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Dapoli%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 14,
+        "name": "Karde Beach",
+        "slug": "karde-beach",
+        "short_desc": "Karde Beach — a beach in Ratnagiri, known for Birdwatching, Seafood, Scuba and local culture.",
+        "image_url": "https://example.com/images/karde-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 5.0,
+        "price_range": "₹1000 - ₹1500",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Birdwatching",
+            "Seafood",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Friends",
+            "History Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Karde+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 15,
+        "name": "Harnai",
+        "slug": "harnai",
+        "short_desc": "Harnai — a fishing village in Ratnagiri, known for Peaceful, Seafood, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/harnai.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fishing Village",
+        "rating": 4.7,
+        "price_range": "₹800 - ₹1300",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Peaceful",
+            "Seafood",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "History Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Harnai%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 16,
+        "name": "Suvarnadurg Fort",
+        "slug": "suvarnadurg-fort",
+        "short_desc": "Suvarnadurg Fort — a fort in Ratnagiri, known for Birdwatching, Forts, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/suvarnadurg-fort.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1800",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Forts",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Nature Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Suvarnadurg+Fort%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 17,
+        "name": "Guhagar",
+        "slug": "guhagar",
+        "short_desc": "Guhagar — a beach in Ratnagiri, known for Forts, History, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/guhagar.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.5,
+        "price_range": "₹1000 - ₹1900",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 2,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Forts",
+            "History",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Guhagar%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 18,
+        "name": "Shrikhand Mahadev (local)",
+        "slug": "shrikhand-mahadev-local",
+        "short_desc": "Shrikhand Mahadev (local) — a pilgrimage in Ratnagiri, known for Scuba, Trekking, Forts and local culture.",
+        "image_url": "https://example.com/images/shrikhand-mahadev-local.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Pilgrimage",
+        "rating": 4.3,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Scuba",
+            "Trekking",
+            "Forts"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Shrikhand+Mahadev+%28local%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 19,
+        "name": "Anjarle Beach",
+        "slug": "anjarle-beach",
+        "short_desc": "Anjarle Beach — a beach in Ratnagiri, known for Wildlife, History, Peaceful and local culture.",
+        "image_url": "https://example.com/images/anjarle-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.6,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 1,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Wildlife",
+            "History",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Anjarle+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 20,
+        "name": "Velneshwar",
+        "slug": "velneshwar",
+        "short_desc": "Velneshwar — a beach/temple in Ratnagiri, known for Wildlife, Forts, Temples and local culture.",
+        "image_url": "https://example.com/images/velneshwar.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach/Temple",
+        "rating": 4.4,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 3,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Wildlife",
+            "Forts",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Family",
+            "Nature Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Velneshwar%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 21,
+        "name": "Ganpatipule Beach",
+        "slug": "ganpatipule-beach",
+        "short_desc": "Ganpatipule Beach — a beach in Ratnagiri, known for Wildlife, Birdwatching, Temples and local culture.",
+        "image_url": "https://example.com/images/ganpatipule-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.5,
+        "price_range": "₹500 - ₹1000",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 2,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Wildlife",
+            "Birdwatching",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Family",
+            "Couples",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Ganpatipule+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 22,
+        "name": "Jaigad Fort",
+        "slug": "jaigad-fort",
+        "short_desc": "Jaigad Fort — a fort in Ratnagiri, known for Birdwatching, Seafood, Wildlife and local culture.",
+        "image_url": "https://example.com/images/jaigad-fort.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.3,
+        "price_range": "₹700 - ₹1600",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 2,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Birdwatching",
+            "Seafood",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Jaigad+Fort%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 23,
+        "name": "Marleshwar Temple",
+        "slug": "marleshwar-temple",
+        "short_desc": "Marleshwar Temple — a temple in Sangli/Pune, known for Waterfalls, Clean Beach, Seafood and local culture.",
+        "image_url": "https://example.com/images/marleshwar-temple.jpg",
+        "location": "Sangli/Pune, Maharashtra",
+        "category": "Temple",
+        "rating": 4.7,
+        "price_range": "₹700 - ₹1200",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Clean Beach",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Couples",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Marleshwar+Temple%2C+Sangli%2FPune+Maharashtra"
+    },
+    {
+        "id": 24,
+        "name": "Ratnadurg Fort",
+        "slug": "ratnadurg-fort",
+        "short_desc": "Ratnadurg Fort — a fort in Ratnagiri, known for Scuba, Temples, Peaceful and local culture.",
+        "image_url": "https://example.com/images/ratnadurg-fort.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.4,
+        "price_range": "₹500 - ₹1000",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Scuba",
+            "Temples",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Family",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Ratnadurg+Fort%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 25,
+        "name": "Bhatye Beach",
+        "slug": "bhatye-beach",
+        "short_desc": "Bhatye Beach — a beach in Ratnagiri, known for Temples, Birdwatching, Sunset and local culture.",
+        "image_url": "https://example.com/images/bhatye-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.2,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Temples",
+            "Birdwatching",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bhatye+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 26,
+        "name": "Tarkarli",
+        "slug": "tarkarli",
+        "short_desc": "Tarkarli — a beach/scuba in Sindhudurg, known for Temples, Wildlife, Scuba and local culture.",
+        "image_url": "https://example.com/images/tarkarli.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Beach/Scuba",
+        "rating": 4.5,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "160 km",
+        "duration_days": 1,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Temples",
+            "Wildlife",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Tarkarli%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 27,
+        "name": "Malvan",
+        "slug": "malvan",
+        "short_desc": "Malvan — a coastal town in Sindhudurg, known for History, Temples, Sunset and local culture.",
+        "image_url": "https://example.com/images/malvan.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Coastal Town",
+        "rating": 4.8,
+        "price_range": "₹1000 - ₹1900",
+        "distance_from_mumbai": "160 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "History",
+            "Temples",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Malvan%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 28,
+        "name": "Sindhudurg Fort",
+        "slug": "sindhudurg-fort",
+        "short_desc": "Sindhudurg Fort — a fort in Sindhudurg, known for Sunset, History, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/sindhudurg-fort.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Fort",
+        "rating": 5.0,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 2,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Sunset",
+            "History",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Couples",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Sindhudurg+Fort%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 29,
+        "name": "Devbagh",
+        "slug": "devbagh",
+        "short_desc": "Devbagh — a beach in Sindhudurg, known for Trekking, Clean Beach, Peaceful and local culture.",
+        "image_url": "https://example.com/images/devbagh.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Beach",
+        "rating": 4.3,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Trekking",
+            "Clean Beach",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Friends",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Devbagh%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 30,
+        "name": "Vengurla",
+        "slug": "vengurla",
+        "short_desc": "Vengurla — a coastal town in Sindhudurg, known for History, Scuba, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/vengurla.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Coastal Town",
+        "rating": 4.3,
+        "price_range": "₹500 - ₹1200",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "History",
+            "Scuba",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Friends",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Vengurla%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 31,
+        "name": "Amboli",
+        "slug": "amboli",
+        "short_desc": "Amboli — a hill station in Sindhudurg, known for Temples, Birdwatching, Forts and local culture.",
+        "image_url": "https://example.com/images/amboli.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Hill Station",
+        "rating": 4.8,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Temples",
+            "Birdwatching",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Family",
+            "Friends",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Amboli%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 32,
+        "name": "Dhamapur Lake",
+        "slug": "dhamapur-lake",
+        "short_desc": "Dhamapur Lake — a lake in Sindhudurg, known for Birdwatching, Trekking, Sunset and local culture.",
+        "image_url": "https://example.com/images/dhamapur-lake.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Lake",
+        "rating": 4.9,
+        "price_range": "₹1000 - ₹1300",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Birdwatching",
+            "Trekking",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Dhamapur+Lake%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 33,
+        "name": "Sawantwadi",
+        "slug": "sawantwadi",
+        "short_desc": "Sawantwadi — a town/culture in Sindhudurg, known for Peaceful, Scuba, Waterfalls and local culture.",
+        "image_url": "https://example.com/images/sawantwadi.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Town/Culture",
+        "rating": 4.9,
+        "price_range": "₹700 - ₹1000",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Peaceful",
+            "Scuba",
+            "Waterfalls"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Sawantwadi%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 34,
+        "name": "Kunkeshwar Temple",
+        "slug": "kunkeshwar-temple",
+        "short_desc": "Kunkeshwar Temple — a temple in Sindhudurg, known for Birdwatching, Waterfalls, Peaceful and local culture.",
+        "image_url": "https://example.com/images/kunkeshwar-temple.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Temple",
+        "rating": 4.7,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Waterfalls",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kunkeshwar+Temple%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 35,
+        "name": "Kunkeshwar Beach",
+        "slug": "kunkeshwar-beach",
+        "short_desc": "Kunkeshwar Beach — a beach in Sindhudurg, known for Peaceful, Temples, Sunset and local culture.",
+        "image_url": "https://example.com/images/kunkeshwar-beach.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Peaceful",
+            "Temples",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Couples",
+            "History Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kunkeshwar+Beach%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 36,
+        "name": "Devgarh (Devgad)",
+        "slug": "devgarh-devgad",
+        "short_desc": "Devgarh (Devgad) — a fort/beach in Sindhudurg, known for Peaceful, Seafood, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/devgarh-devgad.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Fort/Beach",
+        "rating": 4.4,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Peaceful",
+            "Seafood",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Family",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Devgarh+%28Devgad%29%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 37,
+        "name": "Velas Turtle Festival",
+        "slug": "velas-turtle-festival",
+        "short_desc": "Velas Turtle Festival — a nature in Raigad, known for Clean Beach, Birdwatching, Temples and local culture.",
+        "image_url": "https://example.com/images/velas-turtle-festival.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Nature",
+        "rating": 4.7,
+        "price_range": "₹700 - ₹1600",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Clean Beach",
+            "Birdwatching",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Family",
+            "Friends",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Velas+Turtle+Festival%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 38,
+        "name": "Panchgani",
+        "slug": "panchgani",
+        "short_desc": "Panchgani — a hill station in Satara, known for Waterfalls, Wildlife, Forts and local culture.",
+        "image_url": "https://example.com/images/panchgani.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Hill Station",
+        "rating": 4.8,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Wildlife",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Family",
+            "Solo Travelers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Panchgani%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 39,
+        "name": "Mahabaleshwar",
+        "slug": "mahabaleshwar",
+        "short_desc": "Mahabaleshwar — a hill station in Satara, known for Scuba, Temples, Peaceful and local culture.",
+        "image_url": "https://example.com/images/mahabaleshwar.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Hill Station",
+        "rating": 5.0,
+        "price_range": "₹800 - ₹1100",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Scuba",
+            "Temples",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Nature Lovers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mahabaleshwar%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 40,
+        "name": "Koyna Dam",
+        "slug": "koyna-dam",
+        "short_desc": "Koyna Dam — a dam/reservoir in Satara, known for Temples, Peaceful, History and local culture.",
+        "image_url": "https://example.com/images/koyna-dam.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Dam/Reservoir",
+        "rating": 5.0,
+        "price_range": "₹1000 - ₹1900",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Temples",
+            "Peaceful",
+            "History"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Koyna+Dam%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 41,
+        "name": "Bhimashankar",
+        "slug": "bhimashankar",
+        "short_desc": "Bhimashankar — a temple/ghat in Pune, known for Trekking, Forts, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/bhimashankar.jpg",
+        "location": "Pune, Maharashtra",
+        "category": "Temple/Ghat",
+        "rating": 4.6,
+        "price_range": "₹900 - ₹1800",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Trekking",
+            "Forts",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bhimashankar%2C+Pune+Maharashtra"
+    },
+    {
+        "id": 42,
+        "name": "Panhala Fort",
+        "slug": "panhala-fort",
+        "short_desc": "Panhala Fort — a fort in Kolhapur, known for Birdwatching, Forts, Trekking and local culture.",
+        "image_url": "https://example.com/images/panhala-fort.jpg",
+        "location": "Kolhapur, Maharashtra",
+        "category": "Fort",
+        "rating": 4.6,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Forts",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Family",
+            "Solo Travelers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Panhala+Fort%2C+Kolhapur+Maharashtra"
+    },
+    {
+        "id": 43,
+        "name": "Kankavli",
+        "slug": "kankavli",
+        "short_desc": "Kankavli — a town in Sindhudurg, known for Trekking, Seafood, Forts and local culture.",
+        "image_url": "https://example.com/images/kankavli.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Town",
+        "rating": 5.0,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Trekking",
+            "Seafood",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Family",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kankavli%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 44,
+        "name": "Kolhapur (nearby)",
+        "slug": "kolhapur-nearby",
+        "short_desc": "Kolhapur (nearby) — a city/temple in Kolhapur, known for Birdwatching, Temples, History and local culture.",
+        "image_url": "https://example.com/images/kolhapur-nearby.jpg",
+        "location": "Kolhapur, Maharashtra",
+        "category": "City/Temple",
+        "rating": 4.6,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Temples",
+            "History"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Couples",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kolhapur+%28nearby%29%2C+Kolhapur+Maharashtra"
+    },
+    {
+        "id": 45,
+        "name": "Ratnagiri City",
+        "slug": "ratnagiri-city",
+        "short_desc": "Ratnagiri City — a city in Ratnagiri, known for Birdwatching, History, Seafood and local culture.",
+        "image_url": "https://example.com/images/ratnagiri-city.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "City",
+        "rating": 4.4,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "300 km",
+        "duration_days": 4,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "History",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Solo Travelers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Ratnagiri+City%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 46,
+        "name": "Revdanda Beach",
+        "slug": "revdanda-beach",
+        "short_desc": "Revdanda Beach — a beach in Raigad, known for Peaceful, History, Forts and local culture.",
+        "image_url": "https://example.com/images/revdanda-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.7,
+        "price_range": "₹700 - ₹1000",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 4,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Peaceful",
+            "History",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Friends",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Revdanda+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 47,
+        "name": "Mandwa Beach",
+        "slug": "mandwa-beach",
+        "short_desc": "Mandwa Beach — a beach in Raigad, known for Scuba, Wildlife, Trekking and local culture.",
+        "image_url": "https://example.com/images/mandwa-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.3,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 1,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Scuba",
+            "Wildlife",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Couples",
+            "History Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mandwa+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 48,
+        "name": "Nagaon Beach",
+        "slug": "nagaon-beach",
+        "short_desc": "Nagaon Beach — a beach in Alibag, known for Wildlife, Scuba, Sunset and local culture.",
+        "image_url": "https://example.com/images/nagaon-beach.jpg",
+        "location": "Alibag, Maharashtra",
+        "category": "Beach",
+        "rating": 4.3,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Wildlife",
+            "Scuba",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "History Lovers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Nagaon+Beach%2C+Alibag+Maharashtra"
+    },
+    {
+        "id": 49,
+        "name": "Varsoli Beach",
+        "slug": "varsoli-beach",
+        "short_desc": "Varsoli Beach — a beach in Alibag, known for Birdwatching, Peaceful, Temples and local culture.",
+        "image_url": "https://example.com/images/varsoli-beach.jpg",
+        "location": "Alibag, Maharashtra",
+        "category": "Beach",
+        "rating": 4.4,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 2,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Peaceful",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Friends",
+            "History Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Varsoli+Beach%2C+Alibag+Maharashtra"
+    },
+    {
+        "id": 50,
+        "name": "Mandangad Fort",
+        "slug": "mandangad-fort",
+        "short_desc": "Mandangad Fort — a fort in Ratnagiri, known for Waterfalls, Trekking, Peaceful and local culture.",
+        "image_url": "https://example.com/images/mandangad-fort.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1600",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Trekking",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Couples",
+            "History Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mandangad+Fort%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 51,
+        "name": "Kunkeshwar Lighthouse",
+        "slug": "kunkeshwar-lighthouse",
+        "short_desc": "Kunkeshwar Lighthouse — a lighthouse in Sindhudurg, known for Waterfalls, Wildlife, History and local culture.",
+        "image_url": "https://example.com/images/kunkeshwar-lighthouse.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Lighthouse",
+        "rating": 4.6,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Waterfalls",
+            "Wildlife",
+            "History"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Friends",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kunkeshwar+Lighthouse%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 52,
+        "name": "Kashid Fort (sea-facing)",
+        "slug": "kashid-fort-sea-facing",
+        "short_desc": "Kashid Fort (sea-facing) — a fort in Raigad, known for Clean Beach, Scuba, Temples and local culture.",
+        "image_url": "https://example.com/images/kashid-fort-sea-facing.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 4.3,
+        "price_range": "₹1000 - ₹1300",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Clean Beach",
+            "Scuba",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Nature Lovers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kashid+Fort+%28sea-facing%29%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 53,
+        "name": "Chiplun",
+        "slug": "chiplun",
+        "short_desc": "Chiplun — a town in Ratnagiri, known for Birdwatching, Waterfalls, Trekking and local culture.",
+        "image_url": "https://example.com/images/chiplun.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Town",
+        "rating": 4.3,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "160 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Birdwatching",
+            "Waterfalls",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Couples",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Chiplun%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 54,
+        "name": "Kaas Plateau",
+        "slug": "kaas-plateau",
+        "short_desc": "Kaas Plateau — a plateau/floral in Satara, known for Forts, Trekking, Seafood and local culture.",
+        "image_url": "https://example.com/images/kaas-plateau.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Plateau/Floral",
+        "rating": 4.4,
+        "price_range": "₹900 - ₹1600",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Forts",
+            "Trekking",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Nature Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kaas+Plateau%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 55,
+        "name": "Pujaritgarh",
+        "slug": "pujaritgarh",
+        "short_desc": "Pujaritgarh — a fort in Ratnagiri, known for Peaceful, Birdwatching, Temples and local culture.",
+        "image_url": "https://example.com/images/pujaritgarh.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.9,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 2,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Peaceful",
+            "Birdwatching",
+            "Temples"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Couples",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Pujaritgarh%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 56,
+        "name": "Anshi National Park (nearby)",
+        "slug": "anshi-national-park-nearby",
+        "short_desc": "Anshi National Park (nearby) — a park in Karnataka, known for Wildlife, History, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/anshi-national-park-nearby.jpg",
+        "location": "Karnataka, Maharashtra",
+        "category": "Park",
+        "rating": 4.4,
+        "price_range": "₹800 - ₹1500",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 1,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Wildlife",
+            "History",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Family",
+            "Nature Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Anshi+National+Park+%28nearby%29%2C+Karnataka+Maharashtra"
+    },
+    {
+        "id": 57,
+        "name": "Sawantwadi Palace",
+        "slug": "sawantwadi-palace",
+        "short_desc": "Sawantwadi Palace — a palace in Sindhudurg, known for Waterfalls, Trekking, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/sawantwadi-palace.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Palace",
+        "rating": 4.9,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 2,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Trekking",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Family",
+            "History Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Sawantwadi+Palace%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 58,
+        "name": "Terekhol Fort",
+        "slug": "terekhol-fort",
+        "short_desc": "Terekhol Fort — a fort in Goa border, known for Forts, Birdwatching, Wildlife and local culture.",
+        "image_url": "https://example.com/images/terekhol-fort.jpg",
+        "location": "Goa border, Maharashtra",
+        "category": "Fort",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1100",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Forts",
+            "Birdwatching",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Solo Travelers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Terekhol+Fort%2C+Goa+border+Maharashtra"
+    },
+    {
+        "id": 59,
+        "name": "Chapora (nearby)",
+        "slug": "chapora-nearby",
+        "short_desc": "Chapora (nearby) — a fort/beach in Goa, known for History, Birdwatching, Temples and local culture.",
+        "image_url": "https://example.com/images/chapora-nearby.jpg",
+        "location": "Goa, Maharashtra",
+        "category": "Fort/Beach",
+        "rating": 4.4,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "History",
+            "Birdwatching",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Couples",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Chapora+%28nearby%29%2C+Goa+Maharashtra"
+    },
+    {
+        "id": 60,
+        "name": "Collem (nearby)",
+        "slug": "collem-nearby",
+        "short_desc": "Collem (nearby) — a ghat in Goa, known for History, Sunset, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/collem-nearby.jpg",
+        "location": "Goa, Maharashtra",
+        "category": "Ghat",
+        "rating": 4.6,
+        "price_range": "₹700 - ₹1200",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "History",
+            "Sunset",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Solo Travelers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Collem+%28nearby%29%2C+Goa+Maharashtra"
+    },
+    {
+        "id": 61,
+        "name": "Bhogave Beach",
+        "slug": "bhogave-beach",
+        "short_desc": "Bhogave Beach — a beach in Ratnagiri, known for History, Waterfalls, Temples and local culture.",
+        "image_url": "https://example.com/images/bhogave-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "History",
+            "Waterfalls",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bhogave+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 62,
+        "name": "Ashwem (nearby Goa)",
+        "slug": "ashwem-nearby-goa",
+        "short_desc": "Ashwem (nearby Goa) — a beach in Goa, known for Waterfalls, Forts, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/ashwem-nearby-goa.jpg",
+        "location": "Goa, Maharashtra",
+        "category": "Beach",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Forts",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Ashwem+%28nearby+Goa%29%2C+Goa+Maharashtra"
+    },
+    {
+        "id": 63,
+        "name": "Marleshwar Falls",
+        "slug": "marleshwar-falls",
+        "short_desc": "Marleshwar Falls — a waterfall in Satara, known for Forts, Sunset, Trekking and local culture.",
+        "image_url": "https://example.com/images/marleshwar-falls.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Waterfall",
+        "rating": 4.6,
+        "price_range": "₹700 - ₹1600",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Forts",
+            "Sunset",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Marleshwar+Falls%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 64,
+        "name": "Purnagad Fort",
+        "slug": "purnagad-fort",
+        "short_desc": "Purnagad Fort — a fort in Sindhudurg, known for Temples, Waterfalls, Wildlife and local culture.",
+        "image_url": "https://example.com/images/purnagad-fort.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Fort",
+        "rating": 4.9,
+        "price_range": "₹700 - ₹1200",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Temples",
+            "Waterfalls",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "Family",
+            "History Lovers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Purnagad+Fort%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 65,
+        "name": "Khodiyar (local cave)",
+        "slug": "khodiyar-local-cave",
+        "short_desc": "Khodiyar (local cave) — a cave in Ratnagiri, known for Clean Beach, History, Trekking and local culture.",
+        "image_url": "https://example.com/images/khodiyar-local-cave.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Cave",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "160 km",
+        "duration_days": 4,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Clean Beach",
+            "History",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Khodiyar+%28local+cave%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 66,
+        "name": "Malgund (Kumar)",
+        "slug": "malgund-kumar",
+        "short_desc": "Malgund (Kumar) — a village in Ratnagiri, known for Forts, Temples, Scuba and local culture.",
+        "image_url": "https://example.com/images/malgund-kumar.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Village",
+        "rating": 4.3,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Forts",
+            "Temples",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Friends",
+            "History Lovers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Malgund+%28Kumar%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 67,
+        "name": "Velas (turtle)",
+        "slug": "velas-turtle",
+        "short_desc": "Velas (turtle) — a beach/nature in Raigad, known for Clean Beach, Forts, Waterfalls and local culture.",
+        "image_url": "https://example.com/images/velas-turtle.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach/Nature",
+        "rating": 4.8,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "380 km",
+        "duration_days": 1,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Clean Beach",
+            "Forts",
+            "Waterfalls"
+        ],
+        "ideal_for": [
+            "Family",
+            "Solo Travelers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Velas+%28turtle%29%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 68,
+        "name": "Vyadeshwar Temple",
+        "slug": "vyadeshwar-temple",
+        "short_desc": "Vyadeshwar Temple — a temple in Raigad, known for Waterfalls, Trekking, Wildlife and local culture.",
+        "image_url": "https://example.com/images/vyadeshwar-temple.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Temple",
+        "rating": 4.3,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Trekking",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Friends",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Vyadeshwar+Temple%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 69,
+        "name": "Siddhagad",
+        "slug": "siddhagad",
+        "short_desc": "Siddhagad — a fort in Raigad, known for Wildlife, Trekking, History and local culture.",
+        "image_url": "https://example.com/images/siddhagad.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 5.0,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Wildlife",
+            "Trekking",
+            "History"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Siddhagad%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 70,
+        "name": "Kodal (small beach)",
+        "slug": "kodal-small-beach",
+        "short_desc": "Kodal (small beach) — a beach in Ratnagiri, known for Waterfalls, Peaceful, Forts and local culture.",
+        "image_url": "https://example.com/images/kodal-small-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1300",
+        "distance_from_mumbai": "200 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Waterfalls",
+            "Peaceful",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Nature Lovers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kodal+%28small+beach%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 71,
+        "name": "Harnai Killa (local)",
+        "slug": "harnai-killa-local",
+        "short_desc": "Harnai Killa (local) — a fort in Ratnagiri, known for Forts, Temples, Waterfalls and local culture.",
+        "image_url": "https://example.com/images/harnai-killa-local.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Fort",
+        "rating": 4.8,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Forts",
+            "Temples",
+            "Waterfalls"
+        ],
+        "ideal_for": [
+            "Family",
+            "Couples",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Harnai+Killa+%28local%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 72,
+        "name": "Bhogwe Beach",
+        "slug": "bhogwe-beach",
+        "short_desc": "Bhogwe Beach — a beach in Ratnagiri, known for Scuba, Clean Beach, Temples and local culture.",
+        "image_url": "https://example.com/images/bhogwe-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.7,
+        "price_range": "₹1000 - ₹1300",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 3,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Scuba",
+            "Clean Beach",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Family",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bhogwe+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 73,
+        "name": "Nivati",
+        "slug": "nivati",
+        "short_desc": "Nivati — a beach in Sindhudurg, known for Temples, Birdwatching, History and local culture.",
+        "image_url": "https://example.com/images/nivati.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1700",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Temples",
+            "Birdwatching",
+            "History"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Couples",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Nivati%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 74,
+        "name": "Terekhol Beach",
+        "slug": "terekhol-beach",
+        "short_desc": "Terekhol Beach — a beach in Goa border, known for Sunset, Forts, Scuba and local culture.",
+        "image_url": "https://example.com/images/terekhol-beach.jpg",
+        "location": "Goa border, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹1000 - ₹1500",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Sunset",
+            "Forts",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Terekhol+Beach%2C+Goa+border+Maharashtra"
+    },
+    {
+        "id": 75,
+        "name": "Kunkeshwar Viewpoint",
+        "slug": "kunkeshwar-viewpoint",
+        "short_desc": "Kunkeshwar Viewpoint — a viewpoint in Sindhudurg, known for History, Forts, Seafood and local culture.",
+        "image_url": "https://example.com/images/kunkeshwar-viewpoint.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Viewpoint",
+        "rating": 4.5,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "History",
+            "Forts",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kunkeshwar+Viewpoint%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 76,
+        "name": "Shree Dev Rameshwar Temple",
+        "slug": "shree-dev-rameshwar-temple",
+        "short_desc": "Shree Dev Rameshwar Temple — a temple in Konkan, known for Seafood, Waterfalls, Sunset and local culture.",
+        "image_url": "https://example.com/images/shree-dev-rameshwar-temple.jpg",
+        "location": "Konkan, Maharashtra",
+        "category": "Temple",
+        "rating": 4.6,
+        "price_range": "₹900 - ₹1800",
+        "distance_from_mumbai": "90 km",
+        "duration_days": 4,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Seafood",
+            "Waterfalls",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Shree+Dev+Rameshwar+Temple%2C+Konkan+Maharashtra"
+    },
+    {
+        "id": 77,
+        "name": "Karde Lighthouse",
+        "slug": "karde-lighthouse",
+        "short_desc": "Karde Lighthouse — a lighthouse in Ratnagiri, known for Sunset, Forts, Scuba and local culture.",
+        "image_url": "https://example.com/images/karde-lighthouse.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Lighthouse",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "90 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Sunset",
+            "Forts",
+            "Scuba"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Karde+Lighthouse%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 78,
+        "name": "Mirya Beach",
+        "slug": "mirya-beach",
+        "short_desc": "Mirya Beach — a beach in Goa border, known for Trekking, Forts, Seafood and local culture.",
+        "image_url": "https://example.com/images/mirya-beach.jpg",
+        "location": "Goa border, Maharashtra",
+        "category": "Beach",
+        "rating": 4.5,
+        "price_range": "₹800 - ₹1100",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 2,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Trekking",
+            "Forts",
+            "Seafood"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Nature Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mirya+Beach%2C+Goa+border+Maharashtra"
+    },
+    {
+        "id": 79,
+        "name": "Kelshi Beach",
+        "slug": "kelshi-beach",
+        "short_desc": "Kelshi Beach — a beach in Ratnagiri, known for Temples, Wildlife, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/kelshi-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.3,
+        "price_range": "₹1000 - ₹1700",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 2,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Temples",
+            "Wildlife",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Family",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kelshi+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 80,
+        "name": "Bankot Fort",
+        "slug": "bankot-fort",
+        "short_desc": "Bankot Fort — a fort in Raigad, known for Trekking, Temples, Clean Beach and local culture.",
+        "image_url": "https://example.com/images/bankot-fort.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Fort",
+        "rating": 4.5,
+        "price_range": "₹1000 - ₹1500",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 2,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Trekking",
+            "Temples",
+            "Clean Beach"
+        ],
+        "ideal_for": [
+            "Family",
+            "History Lovers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bankot+Fort%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 81,
+        "name": "Phansad Wildlife Sanctuary",
+        "slug": "phansad-wildlife-sanctuary",
+        "short_desc": "Phansad Wildlife Sanctuary — a sanctuary in Raigad, known for Seafood, Waterfalls, Forts and local culture.",
+        "image_url": "https://example.com/images/phansad-wildlife-sanctuary.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Sanctuary",
+        "rating": 4.6,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 3,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Seafood",
+            "Waterfalls",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Phansad+Wildlife+Sanctuary%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 82,
+        "name": "Sasawane Beach",
+        "slug": "sasawane-beach",
+        "short_desc": "Sasawane Beach — a beach in Raigad, known for Trekking, Seafood, Peaceful and local culture.",
+        "image_url": "https://example.com/images/sasawane-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.8,
+        "price_range": "₹800 - ₹1100",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Trekking",
+            "Seafood",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Solo Travelers",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Sasawane+Beach%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 83,
+        "name": "Sakhari River (estuary)",
+        "slug": "sakhari-river-estuary",
+        "short_desc": "Sakhari River (estuary) — a estuary in Ratnagiri, known for Waterfalls, Clean Beach, Wildlife and local culture.",
+        "image_url": "https://example.com/images/sakhari-river-estuary.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Estuary",
+        "rating": 4.2,
+        "price_range": "₹1000 - ₹1900",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Waterfalls",
+            "Clean Beach",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Nature Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Sakhari+River+%28estuary%29%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 84,
+        "name": "Mansoa (nearby)",
+        "slug": "mansoa-nearby",
+        "short_desc": "Mansoa (nearby) — a town in Goa, known for Waterfalls, Scuba, Temples and local culture.",
+        "image_url": "https://example.com/images/mansoa-nearby.jpg",
+        "location": "Goa, Maharashtra",
+        "category": "Town",
+        "rating": 4.7,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "160 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Waterfalls",
+            "Scuba",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Friends",
+            "History Lovers",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mansoa+%28nearby%29%2C+Goa+Maharashtra"
+    },
+    {
+        "id": 85,
+        "name": "Revdanda Creek",
+        "slug": "revdanda-creek",
+        "short_desc": "Revdanda Creek — a creek in Raigad, known for Temples, Forts, History and local culture.",
+        "image_url": "https://example.com/images/revdanda-creek.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Creek",
+        "rating": 4.4,
+        "price_range": "₹500 - ₹1400",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Temples",
+            "Forts",
+            "History"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Couples",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Revdanda+Creek%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 86,
+        "name": "Kundalika River Rafting",
+        "slug": "kundalika-river-rafting",
+        "short_desc": "Kundalika River Rafting — a adventure in Raigad, known for Temples, Clean Beach, Trekking and local culture.",
+        "image_url": "https://example.com/images/kundalika-river-rafting.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Adventure",
+        "rating": 4.5,
+        "price_range": "₹500 - ₹800",
+        "distance_from_mumbai": "330 km",
+        "duration_days": 1,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Temples",
+            "Clean Beach",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "History Lovers",
+            "Couples",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kundalika+River+Rafting%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 87,
+        "name": "Kashid Viewpoint",
+        "slug": "kashid-viewpoint",
+        "short_desc": "Kashid Viewpoint — a viewpoint in Raigad, known for Sunset, Peaceful, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/kashid-viewpoint.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Viewpoint",
+        "rating": 4.4,
+        "price_range": "₹700 - ₹1000",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Sunset",
+            "Peaceful",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Friends",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kashid+Viewpoint%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 88,
+        "name": "Kunkeshwar Beach (alternate)",
+        "slug": "kunkeshwar-beach-alternate",
+        "short_desc": "Kunkeshwar Beach (alternate) — a beach in Sindhudurg, known for Birdwatching, Peaceful, Forts and local culture.",
+        "image_url": "https://example.com/images/kunkeshwar-beach-alternate.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Beach",
+        "rating": 5.0,
+        "price_range": "₹1000 - ₹1300",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 1,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Birdwatching",
+            "Peaceful",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Solo Travelers",
+            "History Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kunkeshwar+Beach+%28alternate%29%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 89,
+        "name": "Korlai Birdwatching",
+        "slug": "korlai-birdwatching",
+        "short_desc": "Korlai Birdwatching — a sanctuary in Raigad, known for Wildlife, Seafood, Sunset and local culture.",
+        "image_url": "https://example.com/images/korlai-birdwatching.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Sanctuary",
+        "rating": 4.6,
+        "price_range": "₹1000 - ₹1500",
+        "distance_from_mumbai": "70 km",
+        "duration_days": 2,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Wildlife",
+            "Seafood",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Friends",
+            "Family"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Korlai+Birdwatching%2C+Raigad+Maharashtra"
+    },
+    {
+        "id": 90,
+        "name": "Kelshi Lighthouse",
+        "slug": "kelshi-lighthouse",
+        "short_desc": "Kelshi Lighthouse — a lighthouse in Ratnagiri, known for Clean Beach, Waterfalls, Birdwatching and local culture.",
+        "image_url": "https://example.com/images/kelshi-lighthouse.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Lighthouse",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1200",
+        "distance_from_mumbai": "90 km",
+        "duration_days": 2,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Clean Beach",
+            "Waterfalls",
+            "Birdwatching"
+        ],
+        "ideal_for": [
+            "Nature Lovers",
+            "Family",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Kelshi+Lighthouse%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 91,
+        "name": "Gomantak Maratha Samadhi",
+        "slug": "gomantak-maratha-samadhi",
+        "short_desc": "Gomantak Maratha Samadhi — a historical in Konkan, known for Wildlife, Waterfalls, Peaceful and local culture.",
+        "image_url": "https://example.com/images/gomantak-maratha-samadhi.jpg",
+        "location": "Konkan, Maharashtra",
+        "category": "Historical",
+        "rating": 4.6,
+        "price_range": "₹800 - ₹1100",
+        "distance_from_mumbai": "110 km",
+        "duration_days": 1,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Wildlife",
+            "Waterfalls",
+            "Peaceful"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Nature Lovers",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Gomantak+Maratha+Samadhi%2C+Konkan+Maharashtra"
+    },
+    {
+        "id": 92,
+        "name": "Mandangad Beach",
+        "slug": "mandangad-beach",
+        "short_desc": "Mandangad Beach — a beach in Ratnagiri, known for Sunset, Peaceful, Forts and local culture.",
+        "image_url": "https://example.com/images/mandangad-beach.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Beach",
+        "rating": 4.9,
+        "price_range": "₹800 - ₹1500",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 4,
+        "best_time": "Sep - Feb",
+        "popular_for": [
+            "Sunset",
+            "Peaceful",
+            "Forts"
+        ],
+        "ideal_for": [
+            "Couples",
+            "History Lovers",
+            "Solo Travelers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Mandangad+Beach%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 93,
+        "name": "Nivati Fort",
+        "slug": "nivati-fort",
+        "short_desc": "Nivati Fort — a fort in Sindhudurg, known for Birdwatching, Clean Beach, Trekking and local culture.",
+        "image_url": "https://example.com/images/nivati-fort.jpg",
+        "location": "Sindhudurg, Maharashtra",
+        "category": "Fort",
+        "rating": 4.5,
+        "price_range": "₹700 - ₹1400",
+        "distance_from_mumbai": "90 km",
+        "duration_days": 4,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Birdwatching",
+            "Clean Beach",
+            "Trekking"
+        ],
+        "ideal_for": [
+            "Family",
+            "Couples",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Nivati+Fort%2C+Sindhudurg+Maharashtra"
+    },
+    {
+        "id": 94,
+        "name": "Vashishti River",
+        "slug": "vashishti-river",
+        "short_desc": "Vashishti River — a river/estuary in Ratnagiri, known for Clean Beach, Peaceful, Wildlife and local culture.",
+        "image_url": "https://example.com/images/vashishti-river.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "River/Estuary",
+        "rating": 4.8,
+        "price_range": "₹800 - ₹1500",
+        "distance_from_mumbai": "90 km",
+        "duration_days": 3,
+        "best_time": "Nov - Feb",
+        "popular_for": [
+            "Clean Beach",
+            "Peaceful",
+            "Wildlife"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Nature Lovers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Vashishti+River%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 95,
+        "name": "Pratapgad (nearby)",
+        "slug": "pratapgad-nearby",
+        "short_desc": "Pratapgad (nearby) — a fort/ghat in Satara, known for History, Wildlife, Temples and local culture.",
+        "image_url": "https://example.com/images/pratapgad-nearby.jpg",
+        "location": "Satara, Maharashtra",
+        "category": "Fort/Ghat",
+        "rating": 4.7,
+        "price_range": "₹1000 - ₹1500",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 3,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "History",
+            "Wildlife",
+            "Temples"
+        ],
+        "ideal_for": [
+            "Couples",
+            "Solo Travelers",
+            "Friends"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Pratapgad+%28nearby%29%2C+Satara+Maharashtra"
+    },
+    {
+        "id": 96,
+        "name": "Amba Ghat",
+        "slug": "amba-ghat",
+        "short_desc": "Amba Ghat — a ghat in Ratnagiri, known for Trekking, Temples, Waterfalls and local culture.",
+        "image_url": "https://example.com/images/amba-ghat.jpg",
+        "location": "Ratnagiri, Maharashtra",
+        "category": "Ghat",
+        "rating": 4.5,
+        "price_range": "₹900 - ₹1800",
+        "distance_from_mumbai": "250 km",
+        "duration_days": 4,
+        "best_time": "Oct - Mar",
+        "popular_for": [
+            "Trekking",
+            "Temples",
+            "Waterfalls"
+        ],
+        "ideal_for": [
+            "Friends",
+            "Family",
+            "Couples"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Amba+Ghat%2C+Ratnagiri+Maharashtra"
+    },
+    {
+        "id": 97,
+        "name": "Bankot Beach",
+        "slug": "bankot-beach",
+        "short_desc": "Bankot Beach — a beach in Raigad, known for Trekking, Seafood, Sunset and local culture.",
+        "image_url": "https://example.com/images/bankot-beach.jpg",
+        "location": "Raigad, Maharashtra",
+        "category": "Beach",
+        "rating": 4.3,
+        "price_range": "₹900 - ₹1400",
+        "distance_from_mumbai": "140 km",
+        "duration_days": 3,
+        "best_time": "Dec - Mar",
+        "popular_for": [
+            "Trekking",
+            "Seafood",
+            "Sunset"
+        ],
+        "ideal_for": [
+            "Solo Travelers",
+            "Couples",
+            "Nature Lovers"
+        ],
+        "latitude": null,
+        "longitude": null,
+        "google_map_link": "https://www.google.com/maps/search/?api=1&query=Bankot+Beach%2C+Raigad+Maharashtra"
+    }
+]

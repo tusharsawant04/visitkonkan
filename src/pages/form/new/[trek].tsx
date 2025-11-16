@@ -121,6 +121,12 @@ const handleSubmit = async (e: React.FormEvent) => {
       
       const cloudinaryData = await uploadResponse.json();
       const screenshotPublicId = cloudinaryData.public_id;
+    let trekId = trek;
+
+    // If trek name is "rajgad-trek", use only "rajgad"
+    if (trek === "rajgad-trek") {
+      trekId = "rajgad";
+    }
 
       // 4. Save the final data to Firestore
       const registrationsCollectionRef = collection(db, 'trip', trek, 'deatils');
@@ -134,7 +140,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       });
 
       alert(`Registration for ${formData.trekChoice} successful!`);
-      router.push(`/naneghat-trek`);
+      router.push(`/rajgad-trek`);
     } catch (error) {
       console.error("Error submitting registration: ", error);
       alert('Failed to submit registration. Please try again.');

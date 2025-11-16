@@ -2,6 +2,7 @@ import React, { ReactNode } from 'react';
 import Header from './header';
 import Footer from './footer';
 import ChatbotButton from './ChatbotButton';
+import "./../app/globals.css";
 interface LayoutProps {
   children: ReactNode;  // Define children prop type
 }

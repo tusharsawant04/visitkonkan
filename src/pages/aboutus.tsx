@@ -5,152 +5,65 @@ import Layout from "../components/layout";
 
 export default function AboutPage() {
   return (
-<Layout>
-  <section
-      className="text-white position-relative overflow-hidden d-flex flex-column justify-content-center align-items-center text-center"
-      style={{
-        minHeight: "100vh",
-        backgroundImage: "url('/images/konkan-beach.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        padding: "60px 20px",
-        fontFamily: "'Poppins', sans-serif",
-      }}
-    >
-      {/* Animated Gradient Overlay */}
-      <div
-        className="position-absolute top-0 start-0 w-100 h-100"
+    <Layout>
+      <section
+        className="min-vh-100 d-flex flex-column justify-content-center align-items-center text-center text-dark px-3"
         style={{
-          background:
-            "linear-gradient(135deg, rgba(0,123,255,0.6), rgba(0,198,255,0.6))",
-          backgroundSize: "400% 400%",
-          animation: "waveAnimation 12s ease infinite",
-          zIndex: 0,
+          background: "linear-gradient(to right, #e0f7fa, #ffffff)",
+          fontFamily: "'Poppins', sans-serif",
+          paddingTop: "80px",
+          paddingBottom: "80px",
         }}
-      ></div>
-
-      {/* Floating Emojis */}
-      <span
-        className="floating-emoji"
-        style={{ top: "15%", left: "10%" }}
       >
-        🌴
-      </span>
-      <span
-        className="floating-emoji"
-        style={{ top: "25%", right: "15%" }}
-      >
-        🌅
-      </span>
-      <span
-        className="floating-emoji"
-        style={{ bottom: "10%", left: "20%" }}
-      >
-        ✨
-      </span>
+        <div className="container" style={{ maxWidth: "800px" }}>
+          <h1 className="fw-bold mb-4 text-primary">
+            About <span className="text-info">Visit Konkan</span>
+          </h1>
 
-      <div className="container position-relative z-1" style={{ maxWidth: "900px" }}>
-        <h1
-          className="fw-bold display-5 mb-4"
-          style={{ textShadow: "0 0 15px rgba(0,0,0,0.7)" }}
-        >
-          🌴 About <span className="text-warning">Visit Konkan</span>
-        </h1>
-
-        <p
-          className="lead mb-5"
-          style={{ fontSize: "1.2rem", lineHeight: "1.8" }}
-        >
-          Welcome to <strong>Visit Konkan</strong> — your gateway to the untouched beauty
-          of India’s western coastline! From hidden waterfalls and peaceful beaches
-          to authentic Konkan cuisine, we’re here to showcase the charm of Maharashtra’s
-          coastal paradise. 🌊
-        </p>
-
-        {/* Story Section */}
-        <div className="bg-light text-dark rounded-4 shadow-lg p-4 mb-5 about-card">
-          <h3 className="fw-bold mb-3">🌺 Our Story</h3>
-          <p>
-            Visit Konkan was born from a simple idea — to connect travelers with the real
-            Konkan experience. Whether it’s a cozy homestay in Ratnagiri, a seafood joint
-            in Malvan, or a scenic drive through Guhagar’s green lanes — we bring Konkan’s
-            hidden gems to your fingertips.
+          <p className="lead mb-5 text-secondary">
+            Welcome to <strong>Visit Konkan</strong> — your friendly guide to
+            Maharashtra’s serene coastal region. From calm beaches to delicious
+            seafood, we bring you the best of Konkan in one place.
           </p>
+
+          <div className="bg-white shadow-sm rounded-4 p-4 mb-4 text-start">
+            <h4 className="fw-semibold text-primary mb-2">Our Story</h4>
+            <p className="text-muted mb-0">
+              Visit Konkan started with a simple goal — to help people discover
+              the real Konkan. We highlight local culture, food, and natural
+              beauty while supporting small communities and local tourism.
+            </p>
+          </div>
+
+          <div className="bg-white shadow-sm rounded-4 p-4 mb-4 text-start">
+            <h4 className="fw-semibold text-primary mb-2">Our Mission</h4>
+            <p className="text-muted mb-0">
+              To promote sustainable tourism and empower locals by connecting
+              travelers with authentic and meaningful experiences across the
+              Konkan coast.
+            </p>
+          </div>
+
+          <div className="bg-white shadow-sm rounded-4 p-4 text-start">
+            <h4 className="fw-semibold text-primary mb-2">Join Us</h4>
+            <p className="text-muted">
+              Are you a homestay owner, local guide, or small business in
+              Konkan? We’d love to work with you! Let’s grow together and help
+              the world discover the beauty of coastal Maharashtra.
+            </p>
+            <a
+              href="/list-your-business"
+              className="btn btn-info fw-semibold px-4 py-2 rounded-pill mt-2"
+            >
+              🚀 List Your Business
+            </a>
+          </div>
+
+          <footer className="mt-5 text-secondary small">
+            Made with ❤️ by the Visit Konkan Team
+          </footer>
         </div>
-
-        {/* Mission Section */}
-        <div className="bg-light text-dark rounded-4 shadow-lg p-4 mb-5 about-card">
-          <h3 className="fw-bold mb-3">🌊 Our Mission</h3>
-          <p>
-            To promote sustainable tourism by helping local communities grow while giving
-            travelers authentic, memorable, and eco-friendly experiences across the Konkan
-            coast.
-          </p>
-        </div>
-
-        {/* Join Us Section */}
-        <div className="bg-light text-dark rounded-4 shadow-lg p-4 about-card">
-          <h3 className="fw-bold mb-3">🤝 Join Us</h3>
-          <p>
-            Are you a homestay owner, local guide, or small business from Konkan?  
-            We’d love to feature you! Join hands with Visit Konkan and help the world
-            discover the coastal beauty of Maharashtra. 🌅
-          </p>
-          <a
-            href="/list-your-business"
-            className="btn btn-primary fw-bold px-4 py-2 rounded-pill mt-3"
-          >
-            🚀 List Your Business
-          </a>
-        </div>
-
-        <footer className="mt-5 text-light small">
-          Made with ❤️ by the Visit Konkan Team | Bringing Konkan Closer to You
-        </footer>
-      </div>
-
-      {/* CSS Animations */}
-      <style jsx>{`
-        @keyframes waveAnimation {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        .floating-emoji {
-          position: absolute;
-          font-size: 2rem;
-          opacity: 0.9;
-          animation: float 6s ease-in-out infinite;
-          z-index: 1;
-        }
-
-        @keyframes float {
-          0% { transform: translateY(0); }
-          50% { transform: translateY(-15px); }
-          100% { transform: translateY(0); }
-        }
-
-        .about-card {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 1s forwards;
-        }
-
-        .about-card:nth-child(1) { animation-delay: 0.3s; }
-        .about-card:nth-child(2) { animation-delay: 0.6s; }
-        .about-card:nth-child(3) { animation-delay: 0.9s; }
-
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
-    </section>
-</Layout>
-
+      </section>
+    </Layout>
   );
 }
