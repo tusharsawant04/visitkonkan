@@ -80,8 +80,8 @@ export default function TermsAndConditionsPage() {
             <h4 className="fw-semibold text-primary mb-2">7. Contact Us</h4>
             <p className="text-muted mb-0">
               If you have any questions about these Terms, please contact us at{" "}
-              <a href="mailto:support@visitkonkan.com" className="text-primary">
-                support@visitkonkan.com
+              <a href="mailto:konkanvisit@gmail.com" className="text-primary">
+                konkanvisit@gmail.com
               </a>.
             </p>
           </div>

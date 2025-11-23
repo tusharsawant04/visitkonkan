@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { signOut } from 'firebase/auth';
-import { collection, getDocs, Timestamp, updateDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { collection, getDocs, Timestamp, updateDoc, doc, serverTimestamp, setDoc, deleteDoc } from 'firebase/firestore';
 import { Container, Nav, Table, Spinner, Alert, Button } from 'react-bootstrap';
 
 import { db, auth } from '../../backend/lib/firebase'; // Adjust path as needed
@@ -47,6 +47,10 @@ export default function RegistrationsPage() {
     const [loadingTreks, setLoadingTreks] = useState<boolean>(true);
     const [loadingRegistrations, setLoadingRegistrations] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null); // State for error messages
+    const [expenses, setExpenses] = useState<{ id: string; name: string; amount: number }[]>([]);
+    const [expenseName, setExpenseName] = useState('');
+    const [expenseAmount, setExpenseAmount] = useState('');
+    const [editingExpenseId, setEditingExpenseId] = useState<string | null>(null);
 
     // Effect 1: Fetch the list of all treks for the tabs
     useEffect(() => {
@@ -193,6 +197,41 @@ export default function RegistrationsPage() {
         }
     };
 
+    // Add admin action to edit discount
+    const handleEditDiscount = async (reg: Registration) => {
+        if (!activeTrekId) return;
+        const currentDiscount = reg.discountGiven ?? reg.discount ?? 0;
+
+        const input = prompt(
+            `Edit discount for ${reg.fullName || 'participant'}\nCurrent discount: ₹${currentDiscount}\nEnter new discount amount (numeric):`,
+            String(currentDiscount)
+        );
+        if (input === null) return; // cancelled
+
+        const newDiscount = Number(input.trim());
+        if (isNaN(newDiscount) || newDiscount < 0) {
+            alert('Invalid amount entered. Please enter a non-negative number.');
+            return;
+        }
+
+        try {
+            const docRef = doc(db, 'trip', activeTrekId, 'deatils', reg.id);
+            await updateDoc(docRef, {
+                discountGiven: newDiscount,
+                lastUpdatedAt: serverTimestamp(),
+            });
+
+            // Optimistic UI update
+            setRegistrations(prev => {
+                const list = prev[activeTrekId]?.map(r => r.id === reg.id ? { ...r, discountGiven: newDiscount } : r) || [];
+                return { ...prev, [activeTrekId]: list };
+            });
+        } catch (err) {
+            console.error('Edit discount failed', err);
+            alert('Failed to update discount. Check console for details.');
+        }
+    };
+
     const currentRegistrations = activeTrekId ? (registrations[activeTrekId] ?? []) : [];
 
     // Totals calculation (extended to include expected revenue & discounts)
@@ -200,9 +239,12 @@ export default function RegistrationsPage() {
         const expected = r.totalFee ?? r.amountExpected ?? defaultTrekFee;
         const paid = r.finalAmountPaid ?? 0;
         const discount = r.discountGiven ?? r.discount ?? 0;
+        
+        // Remaining = (expected - discount) - paid
+        const remaining = Math.max(0, (expected - discount) - paid);
 
         acc.totalCollected += paid;
-        acc.totalRemaining += Math.max(0, expected - paid);
+        acc.totalRemaining += remaining;
         acc.totalExpected += expected;
         acc.totalDiscount += discount;
         acc.count += 1;
@@ -211,6 +253,118 @@ export default function RegistrationsPage() {
 
     // netRevenue is what has actually been collected (you can change definition if needed)
     const netRevenue = totals.totalCollected;
+
+    // Save expense to Firestore
+    const saveExpenseToDb = async (expense: { id: string; name: string; amount: number }) => {
+        if (!activeTrekId) return;
+        try {
+            const expenseDocRef = doc(db, 'trip', activeTrekId, 'expenses', expense.id);
+            await setDoc(expenseDocRef, {
+                name: expense.name,
+                amount: expense.amount,
+                createdAt: serverTimestamp(),
+            }, { merge: true });
+        } catch (err) {
+            console.error('Error saving expense to DB:', err);
+        }
+    };
+
+    // Delete expense from Firestore
+    const deleteExpenseFromDb = async (expenseId: string) => {
+        if (!activeTrekId) return;
+        try {
+            const expenseDocRef = doc(db, 'trip', activeTrekId, 'expenses', expenseId);
+            await deleteDoc(expenseDocRef);
+        } catch (err) {
+            console.error('Error deleting expense from DB:', err);
+        }
+    };
+
+    // Fetch expenses from Firestore when trek changes
+    useEffect(() => {
+        if (!activeTrekId) return;
+
+        const fetchExpenses = async () => {
+            try {
+                const expensesCollectionRef = collection(db, 'trip', activeTrekId, 'expenses');
+                const querySnapshot = await getDocs(expensesCollectionRef);
+                
+                const fetchedExpenses = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    name: doc.data().name,
+                    amount: doc.data().amount,
+                }));
+                
+                setExpenses(fetchedExpenses);
+            } catch (err) {
+                console.error('Error fetching expenses:', err);
+            }
+        };
+
+        fetchExpenses();
+    }, [activeTrekId]);
+
+    // Add or update expense
+    const handleAddExpense = async () => {
+        if (!expenseName.trim() || !expenseAmount.trim()) {
+            alert('Please enter both expense name and amount.');
+            return;
+        }
+
+        const amt = Number(expenseAmount);
+        if (isNaN(amt) || amt <= 0) {
+            alert('Please enter a valid amount.');
+            return;
+        }
+
+        if (editingExpenseId) {
+            // Update existing expense
+            const updatedExpense = {
+                id: editingExpenseId,
+                name: expenseName,
+                amount: amt,
+            };
+            setExpenses(expenses.map(e => 
+                e.id === editingExpenseId 
+                    ? updatedExpense
+                    : e
+            ));
+            await saveExpenseToDb(updatedExpense);
+            setEditingExpenseId(null);
+        } else {
+            // Add new expense
+            const newExpense = {
+                id: Date.now().toString(),
+                name: expenseName,
+                amount: amt,
+            };
+            setExpenses([...expenses, newExpense]);
+            await saveExpenseToDb(newExpense);
+        }
+
+        setExpenseName('');
+        setExpenseAmount('');
+    };
+
+    // Start editing an expense
+    const handleEditExpense = (expense: { id: string; name: string; amount: number }) => {
+        setEditingExpenseId(expense.id);
+        setExpenseName(expense.name);
+        setExpenseAmount(String(expense.amount));
+    };
+
+    // Cancel editing
+    const handleCancelEdit = () => {
+        setEditingExpenseId(null);
+        setExpenseName('');
+        setExpenseAmount('');
+    };
+
+    // Delete expense
+    const handleDeleteExpense = async (id: string) => {
+        setExpenses(expenses.filter(e => e.id !== id));
+        await deleteExpenseFromDb(id);
+    };
 
     return (
         <Layout>
@@ -264,7 +418,9 @@ export default function RegistrationsPage() {
                                         {currentRegistrations.map((reg, index) => {
                                             const expected = reg.totalFee ?? reg.amountExpected ?? defaultTrekFee;
                                             const paid = reg.finalAmountPaid ?? 0;
-                                            const remaining = Math.max(0, expected - paid);
+                                            const discount = reg.discountGiven ?? reg.discount ?? 0;
+                                            // Calculate remaining: (expected - discount) - paid
+                                            const remaining = Math.max(0, (expected - discount) - paid);
 
                                             return (
                                                 <tr key={reg.id}>
@@ -304,7 +460,8 @@ export default function RegistrationsPage() {
                                                     <td style={{ color: remaining > 0 ? '#d9534f' : '#28a745' }}>₹{remaining}</td>
                                                     <td>
                                                         <Button size="sm" variant="outline-primary" onClick={() => handleMarkPaid(reg)} className="me-2">Mark Paid</Button>
-                                                        <Button size="sm" variant="outline-secondary" onClick={() => handleAdjustPaid(reg)}>Adjust</Button>
+                                                        <Button size="sm" variant="outline-secondary" onClick={() => handleAdjustPaid(reg)} className="me-2">Adjust</Button>
+                                                        <Button size="sm" variant="outline-warning" onClick={() => handleEditDiscount(reg)}>Edit Disc</Button>
                                                     </td>
 
                                                      <td>₹{reg.discountGiven ?? 0}</td>
@@ -340,6 +497,160 @@ export default function RegistrationsPage() {
                                         <div><strong>Net revenue:</strong></div>
                                         <div>₹{netRevenue}</div>
                                     </div>
+                                </div>
+
+                                {/* Expenses Section */}
+                                <div className="mt-4 p-3 border rounded bg-light">
+                                    <h5 className="mb-3">📊 Expense Tracker</h5>
+                                    
+                                    <div className="row mb-3">
+                                        <div className="col-md-6">
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                placeholder="Expense name (e.g., Transport, Permits)"
+                                                value={expenseName}
+                                                onChange={(e) => setExpenseName(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="col-md-4">
+                                            <input
+                                                type="number"
+                                                className="form-control"
+                                                placeholder="Amount"
+                                                value={expenseAmount}
+                                                onChange={(e) => setExpenseAmount(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className="col-md-2">
+                                            <Button 
+                                                variant={editingExpenseId ? "warning" : "primary"} 
+                                                onClick={handleAddExpense} 
+                                                className="w-100"
+                                            >
+                                                {editingExpenseId ? 'Update' : 'Add'}
+                                            </Button>
+                                            {editingExpenseId && (
+                                                <Button 
+                                                    variant="secondary" 
+                                                    onClick={handleCancelEdit} 
+                                                    className="w-100 mt-2"
+                                                >
+                                                    Cancel
+                                                </Button>
+                                            )}
+                                        </div>
+                                    </div>
+
+                                    {/* Expenses Table */}
+                                    {expenses.length > 0 && (
+                                        <Table striped bordered hover size="sm">
+                                            <thead>
+                                                <tr>
+                                                    <th>Expense</th>
+                                                    <th>Amount</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {expenses.map((expense) => (
+                                                    <tr key={expense.id} style={{ backgroundColor: editingExpenseId === expense.id ? '#fff3cd' : '' }}>
+                                                        <td>{expense.name}</td>
+                                                        <td>₹{expense.amount}</td>
+                                                        <td>
+                                                            <Button 
+                                                                size="sm" 
+                                                                variant="outline-warning" 
+                                                                onClick={() => handleEditExpense(expense)}
+                                                                className="me-2"
+                                                            >
+                                                                Edit
+                                                            </Button>
+                                                            <Button 
+                                                                size="sm" 
+                                                                variant="outline-danger" 
+                                                                onClick={() => handleDeleteExpense(expense.id)}
+                                                            >
+                                                                Delete
+                                                            </Button>
+                                                        </td>
+                                                    </tr>
+                                                ))}
+                                            </tbody>
+                                        </Table>
+                                    )}
+
+                                    {/* Expense Summary */}
+                                    {(() => {
+                                        const totalExpenses = expenses.reduce((sum, e) => sum + e.amount, 0);
+                                        const profit = netRevenue - totalExpenses;
+                                        const discountPercentage = totals.totalExpected > 0 
+                                            ? ((totals.totalDiscount / totals.totalExpected) * 100).toFixed(2)
+                                            : '0.00';
+                                        const profitMargin = netRevenue > 0 
+                                            ? ((profit / netRevenue) * 100).toFixed(2)
+                                            : '0.00';
+                                        const perUserExpense = totals.count > 0 
+                                            ? (totalExpenses / totals.count).toFixed(2)
+                                            : '0.00';
+                                        const perHeadProfit = totals.count > 0 
+                                            ? (profit / totals.count).toFixed(2)
+                                            : '0.00';
+
+                                        return (
+                                            <div className="d-flex flex-column gap-2 p-3 border-top mt-3">
+                                                <h6 className="mb-2">💰 Financial Summary</h6>
+                                                
+                                                <div className="d-flex justify-content-between">
+                                                    <strong>Total Expenses:</strong>
+                                                    <strong>₹{totalExpenses}</strong>
+                                                </div>
+                                                
+                                                <div className="d-flex justify-content-between">
+                                                    <strong>Net Revenue:</strong>
+                                                    <strong>₹{netRevenue}</strong>
+                                                </div>
+
+                                                <hr className="my-2" />
+
+                                                <div className="d-flex justify-content-between">
+                                                    <strong>Total Discount Given:</strong>
+                                                    <strong>₹{totals.totalDiscount} ({discountPercentage}%)</strong>
+                                                </div>
+
+                                                <div className="d-flex justify-content-between">
+                                                    <strong>Per User Expense:</strong>
+                                                    <strong>₹{perUserExpense}</strong>
+                                                </div>
+
+                                                <div className="d-flex justify-content-between">
+                                                    <strong>Per Head Profit:</strong>
+                                                    <strong style={{ color: parseFloat(perHeadProfit) >= 0 ? '#28a745' : '#d9534f' }}>
+                                                        ₹{perHeadProfit}
+                                                    </strong>
+                                                </div>
+
+                                                <hr className="my-2" />
+
+                                                <div className="d-flex justify-content-between" style={{ 
+                                                    fontSize: '1.1rem',
+                                                    color: parseFloat(profit.toFixed(2)) >= 0 ? '#28a745' : '#d9534f',
+                                                    fontWeight: 'bold'
+                                                }}>
+                                                    <strong>Total Profit/Loss:</strong>
+                                                    <strong>₹{profit.toFixed(2)}</strong>
+                                                </div>
+
+                                                <div className="d-flex justify-content-between" style={{ 
+                                                    fontSize: '1rem',
+                                                    color: parseFloat(profitMargin) >= 0 ? '#28a745' : '#d9534f'
+                                                }}>
+                                                    <strong>Profit Margin:</strong>
+                                                    <strong>{profitMargin}%</strong>
+                                                </div>
+                                            </div>
+                                        );
+                                    })()}
                                 </div>
                                 </>
                             ) : (

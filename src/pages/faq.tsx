@@ -80,8 +80,8 @@ export default function FAQPage() {
             </h5>
             <p className="text-muted mb-0">
               You can reach us anytime at{" "}
-              <a href="mailto:support@visitkonkan.com" className="text-primary">
-                support@visitkonkan.com
+              <a href="mailto:konkanvisit@gmail.com" className="text-primary">
+                konkanvisit@gmail.com
               </a>
               . We’ll be happy to assist you!
             </p>
@@ -102,8 +102,8 @@ export default function FAQPage() {
           {/* Footer */}
           <footer className="mt-5 text-center text-secondary small">
             Can’t find your question? Reach us at{" "}
-            <a href="mailto:support@visitkonkan.com" className="text-primary">
-              support@visitkonkan.com
+            <a href="mailto:konkanvisit@gmail.com" className="text-primary">
+              konkanvisit@gmail.com
             </a>
           </footer>
         </div>
