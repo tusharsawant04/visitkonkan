@@ -104,7 +104,7 @@ export default function ExperienceList() {
                 />
                 <div className="card-body">
                   <h5 className="fw-semibold text-white">{exp.name}</h5>
-                  <p className="text-muted small">{exp.desc}</p>
+                  <p className="text-blue small">{exp.desc}</p>
                   <p className="text-warning small">⭐ {exp.rating}</p>
                   <Link href={`/${exp.slug}`} passHref>
                   <button

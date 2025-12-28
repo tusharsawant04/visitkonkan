@@ -275,14 +275,15 @@ Together, Ekvira Devi Temple and Lohagad Fort symbolize Maharashtra’s layered 
     "Extra pair of clothes and a towel."
   ],
   itinerary: [
-    { time: "9:00 PM", description: "Departure from Mumbai", day: 1 },
-    { time: "3:30 AM", description: "Reach Pachnai base village", day: 2 },
-    { time: "4:30 AM", description: "Start trek from base", day: 2 },
+    { time: "9:00 PM", description: "Departure from Mumbai", day: 0 },
+    { time: "12:00 AM", description: "Reach Kasara and travel to pachnai", day: 0 },
+    { time: "3:30 AM", description: "Reach Pachnai base village", day: 1 },
+    { time: "4:30 AM", description: "Start trek from base", day: 1 },
     { time: "7:00 AM", description: "Reach Harishchandragad top, rest & explore", day: 2 },
-    { time: "8:30 AM", description: "Visit Kedareshwar Cave & Konkan Kada", day: 2 },
-    { time: "11:30 AM", description: "Start descent", day: 2 },
-    { time: "1:30 PM", description: "Lunch at base village", day: 2 },
-    { time: "3:00 PM", description: "Return journey to Mumbai", day: 2 }
+    { time: "8:30 AM", description: "Visit Kedareshwar Cave & Konkan Kada", day: 1 },
+    { time: "11:30 AM", description: "Start descent", day: 1 },
+    { time: "1:30 PM", description: "Lunch at base village", day: 1 },
+    { time: "3:00 PM", description: "Return journey to Mumbai", day: 1 }
   ],
   location: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3793.0161615166806!2d73.77165427502383!3d19.383378245214746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd78bbce5542c5%3A0xc3b1d1c9391fdf06!2sHarishchandragad%20Fort!5e0!3m2!1sen!2sin!4v1677334645012!5m2!1sen!2sin",
   reviews: [
