@@ -26,7 +26,7 @@
     "googleapis": "^166.0.0",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.552.0",
-    "next": "^15.2.2-canary.5",
+    "next": "15.1.6",
     "next-cloudinary": "^6.16.0",
     "next-sitemap": "^4.2.3",
     "nodemailer": "^7.0.5",
@@ -43,7 +43,8 @@
     "react-masonry-css": "^1.0.16",
     "react-quill": "^2.0.0",
     "react-razorpay": "^3.0.1",
-    "swiper": "^11.2.6"
+    "swiper": "^11.2.6",
+    "eslint-config-next": "15.1.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
