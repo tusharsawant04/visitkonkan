@@ -153,7 +153,7 @@ const handleSubmit = async (e: React.FormEvent) => {
   };
 
   // ... (The rest of your component code, including pickupLocations, payeeVPA, payeeName, and the entire return() statement remains the same as the previous version) ...
-  const pickupLocations = ["Virar", "Nalasopara", "Thane"];
+  const pickupLocations = ["Virar", "Nalasopara", "Thane","Kasara"];
   const payeeVPA = "new"; 
   const payeeName = "new";   
 
