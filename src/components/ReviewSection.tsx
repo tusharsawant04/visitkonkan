@@ -70,14 +70,7 @@ export default function StoriesSection() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="d-flex justify-content-end mb-4 gap-2">
-          <button ref={prevRef} className="btn btn-outline-light rounded-circle shadow p-3">
-            <i className="bi bi-chevron-left fs-5"></i>
-          </button>
-          <button ref={nextRef} className="btn btn-outline-light rounded-circle shadow p-3">
-            <i className="bi bi-chevron-right fs-5"></i>
-          </button>
-        </div>
+       
 
         <Swiper
           modules={[Navigation]}

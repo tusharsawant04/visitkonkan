@@ -1,0 +1,28 @@
+/* ScrollReveal.module.css */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .6s cubic-bezier(.2,.9,.3,1), transform .6s cubic-bezier(.2,.9,.3,1);
+  will-change: transform, opacity;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animations */
+.fade-up { transform: translateY(20px); }
+.fade-left { transform: translateX(-20px); }
+.fade-right { transform: translateX(20px); }
+.zoom { transform: scale(.98); }
+
+/* When visible, reset transforms appropriately */
+.visible.fade-left { transform: translateX(0); }
+.visible.fade-right { transform: translateX(0); }
+.visible.zoom { transform: scale(1); }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none !important; transform: none !important; }
+}

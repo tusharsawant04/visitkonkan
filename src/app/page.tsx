@@ -2,6 +2,7 @@
 'use client';
 import "../styles/custom.css";
 import Layout from '../components/layout';
+import ScrollReveal from '../components/ScrollReveal';
 // ✅ Lazy load non-critical components
 const HeroSlider = dynamic(() => import("../components/Herosilder"), { ssr: true });
 const Category = dynamic(() => import("../components/category"), { ssr: false });
@@ -21,12 +22,18 @@ export default function Home() {
       <HeroSlider />
 
       {/* ✅ Fold Content Below */}
-      <Category />
-      <ExperienceList />
-      <ProductSlider />
-      <FeaturedDestinations />
-      <BlogSection />
-      <ReviewSection />
+      <ScrollReveal><Category /></ScrollReveal>
+      <ScrollReveal delay={80}><ExperienceList /></ScrollReveal>
+      <ScrollReveal delay={160}><ProductSlider /></ScrollReveal>
+      <ScrollReveal delay={240}><FeaturedDestinations /></ScrollReveal>
+      <ScrollReveal delay={320}><BlogSection /></ScrollReveal>
+      <section id="ig-widget" className="ig-section">
+  
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div className="elfsight-app-28cdfe42-7a25-430d-96ec-6a9db3d9933f" data-elfsight-app-lazy></div>
+     
+    </section>
+      <ScrollReveal delay={400}><ReviewSection /></ScrollReveal>
       </Layout>
     </main>
   );

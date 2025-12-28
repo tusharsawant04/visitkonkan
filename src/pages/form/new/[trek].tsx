@@ -121,12 +121,15 @@ const handleSubmit = async (e: React.FormEvent) => {
       
       const cloudinaryData = await uploadResponse.json();
       const screenshotPublicId = cloudinaryData.public_id;
-    let trekId = trek;
 
-    // If trek name is "rajgad-trek", use only "rajgad"
-    if (trek == "rajgad-trek") {
-      trekId = "rajgad";
-    }
+      // Map specific trek slugs to their Firestore IDs (easy to extend)
+      const trekSlug = trek as string;
+      const trekMap: { [key: string]: string } = {
+        'rajgad-trek': 'rajgad1',
+        'raigad-trek': 'raigad1',
+        'harishchandragad-trek' :'harishchandra1',
+      };
+      const trekId = trekMap[trekSlug] ?? trekSlug;
 
       // 4. Save the final data to Firestore
       const registrationsCollectionRef = collection(db, 'trip', trekId, 'deatils');

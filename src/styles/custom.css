@@ -81,6 +81,38 @@ html, body {
   animation: fadeIn 0.5s ease-in;
 }
 
+/* Instagram / Elfsight widget responsive styles */
+#ig-widget {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+#ig-widget .elfsight-app-28cdfe42-7a25-430d-96ec-6a9db3d9933f {
+  width: 100% !important;
+  max-width: 100%;
+  display: block;
+}
+
+/* Target iframe that Elfsight injects */
+#ig-widget iframe,
+#ig-widget .elfsight-app-28cdfe42-7a25-430d-96ec-6a9db3d9933f iframe {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px;
+}
+
+@media (max-width: 768px) {
+  #ig-widget {
+    margin: 1rem auto;
+  }
+
+  #ig-widget iframe,
+  #ig-widget .elfsight-app-28cdfe42-7a25-430d-96ec-6a9db3d9933f iframe {
+    max-height: 320px;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
