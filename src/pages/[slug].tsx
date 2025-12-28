@@ -256,7 +256,7 @@ Together, Ekvira Devi Temple and Lohagad Fort symbolize Maharashtra’s layered 
   slug: "harishchandragad-trek",
   desc: "Journey into the heart of the Western Ghats where ancient caves, misty cliffs, and the legendary Konkan Kada await your footsteps.",
   rating: "4.8/5",
-  price: 1799,
+  price: 999,
   img: [
     "https://images.unsplash.com/photo-1612331689896-09c0d9d0ec0e",
     "https://images.unsplash.com/photo-1576485436506-69d2f0c7a2cc",

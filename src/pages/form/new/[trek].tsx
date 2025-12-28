@@ -24,7 +24,7 @@ export default function TrekFormPage() {
   const [paymentScreenshot, setPaymentScreenshot] = useState<File | null>(null);
   const [showTerms, setShowTerms] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const trekPrice = 1400;
+  const trekPrice = 999;
   const [isPayingHalf, setIsPayingHalf] = useState(false);
   const [couponCode, setCouponCode] = useState('');
   const [discount, setDiscount] = useState(0);
@@ -143,7 +143,7 @@ const handleSubmit = async (e: React.FormEvent) => {
       });
 
       alert(`Registration for ${formData.trekChoice} successful!`);
-      router.push(`/rajgad-trek`);
+      router.push(`/`);
     } catch (error) {
       console.error("Error submitting registration: ", error);
       alert('Failed to submit registration. Please try again.');
