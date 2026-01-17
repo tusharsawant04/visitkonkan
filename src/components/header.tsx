@@ -7,7 +7,12 @@ const Header = () => {
     <header>
       <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div className="container">
-          <Link href="/" className="navbar-brand fw-bold">Visit Konkan</Link>
+          {/* <Link href="/" className="navbar-brand fw-bold">Visit Konkan</Link> */}
+          <Link href="/" className="navbar-brand fw-bold">
+          <span className="text-dark">Visit</span>{' '}
+          <span className="text-warning">Konkan</span>
+        </Link>
+
           <button 
             className="navbar-toggler" 
             type="button" 

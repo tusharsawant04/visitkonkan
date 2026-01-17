@@ -1,90 +1,808 @@
-.hero-container {
+/* ========================================
+   HERO WRAPPER & CAROUSEL BASE
+   ======================================== */
+
+.hero-wrapper {
   position: relative;
-  /* margin-bottom: 6rem; */
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #000;
 }
 
-.planning-card-wrapper {
+.hero-carousel-enhanced {
+  height: 100vh;
+  position: relative;
+}
+
+.hero-carousel-enhanced .carousel-inner,
+.hero-carousel-enhanced .carousel-item {
+  height: 100vh;
+}
+
+.hero-slide-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ========================================
+   IMAGE & OVERLAY EFFECTS
+   ======================================== */
+
+.hero-image-container {
   position: absolute;
-  bottom: -80px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-image {
+  transform: scale(1.05);
+  transition: transform 8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.carousel-item.active .hero-image {
+  transform: scale(1);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.hero-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.4) 50%,
+    transparent 100%
+  );
+  z-index: 3;
+}
+
+/* ========================================
+   NAVIGATION OVERLAY
+   ======================================== */
+
+.hero-nav-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 1.5rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.hero-nav-overlay.scrolled {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-quick-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.quick-link-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+}
+
+.quick-link-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  color: white;
+}
+
+.quick-link-icon {
+  font-size: 1.75rem;
+  transition: transform 0.3s ease;
+}
+
+.quick-link-item:hover .quick-link-icon {
+  transform: scale(1.15);
+}
+
+.quick-link-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   HERO CONTENT
+   ======================================== */
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.hero-content-inner {
+  max-width: 800px;
+  padding-top: 4rem;
+}
+
+/* Accent Badge */
+.hero-accent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+.accent-pulse {
+  width: 8px;
+  height: 8px;
+  background: #00d4ff;
+  border-radius: 50%;
+  position: relative;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(0, 212, 255, 0);
+  }
+}
+
+/* Hero Title */
+.hero-title {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.title-line {
+  display: block;
+  animation: fadeInUp 0.8s ease 0.4s both;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  animation: fadeInUp 0.8s ease 0.6s both;
+}
+
+/* ========================================
+   CTA BUTTONS
+   ======================================== */
+
+.hero-cta-group {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  animation: fadeInUp 0.8s ease 0.8s both;
+}
+
+.btn-hero {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.btn-hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-hero:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-hero-primary {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+}
+
+.btn-hero-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+}
+
+.btn-hero-secondary {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.btn-hero-secondary:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-icon {
+  position: relative;
+  z-index: 1;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-hero:hover .btn-icon {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   SLIDE INFO
+   ======================================== */
+
+.hero-slide-info {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 10;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: 'Courier New', monospace;
+  color: white;
+  animation: fadeIn 1s ease 1s both;
+}
+
+.slide-number {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.slide-divider {
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.slide-total {
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+/* ========================================
+   SCROLL INDICATOR
+   ======================================== */
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 800px;
-  z-index: 2;
- 
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  animation: fadeIn 1s ease 1.2s both;
 }
 
-/* Add these styles to TripPlanningCard component */
-.planning-card {
-  display: none;
+.scroll-mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  position: relative;
+}
+
+.scroll-wheel {
+  width: 4px;
+  height: 10px;
+  background: white;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2s ease-in-out infinite;
+}
+
+@keyframes scrollWheel {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+.scroll-text {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+}
+
+/* ========================================
+   CAROUSEL CONTROLS
+   ======================================== */
+
+.hero-carousel-enhanced .carousel-control-prev,
+.hero-carousel-enhanced .carousel-control-next {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  transform: translateY(-50%);
   opacity: 0;
-  transition: opacity 0.3s ease;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  width: 100%; /* Ensure card takes full width of wrapper */
+  transition: all 0.3s ease;
 }
 
-.planning-card.show {
-  display: block;
+.hero-carousel-enhanced:hover .carousel-control-prev,
+.hero-carousel-enhanced:hover .carousel-control-next {
   opacity: 1;
 }
 
-.recommendations-section {
-  background-color: #f8f9fa;
-  padding: 3rem 0;
-  margin-top: 2rem;
+.hero-carousel-enhanced .carousel-control-prev {
+  left: 2rem;
 }
 
-.hover-card {
-  transition: transform 0.2s;
+.hero-carousel-enhanced .carousel-control-next {
+  right: 2rem;
 }
 
-.hover-card:hover {
+.hero-carousel-enhanced .carousel-control-prev-icon,
+.hero-carousel-enhanced .carousel-control-next-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-enhanced .carousel-control-prev:hover .carousel-control-prev-icon,
+.hero-carousel-enhanced .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Carousel Indicators */
+.hero-carousel-enhanced .carousel-indicators {
+  bottom: 2rem;
+  margin-bottom: 0;
+  gap: 0.75rem;
+}
+
+.hero-carousel-enhanced .carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: transparent;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+
+.hero-carousel-enhanced .carousel-indicators .active {
+  width: 40px;
+  border-radius: 6px;
+  background-color: white;
+  border-color: white;
+}
+
+/* ========================================
+   PLANNING CARDS
+   ======================================== */
+
+.planning-cards-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.planning-cards-container.active {
+  pointer-events: auto;
+}
+
+.planning-card-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.planning-card-content {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease;
+}
+
+.card-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.card-close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  transform: rotate(90deg);
+}
+
+/* ========================================
+   STATS SECTION
+   ======================================== */
+
+.hero-stats-section {
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 4rem 0;
+  margin-top: -1px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
   transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #00d4ff 0%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+
+/* ========================================
+   RECOMMENDATIONS SECTION
+   ======================================== */
+
+.recommendations-section {
+  padding: 6rem 0;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #ffffff 100%);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  color: #1a1a2e;
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  font-weight: 300;
+}
+
+.section-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.btn-section {
+  padding: 1rem 2.5rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-section-outline {
+  background: transparent;
+  border: 2px solid #00d4ff;
+  color: #00d4ff;
+}
+
+.btn-section-outline:hover {
+  background: #00d4ff;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.btn-section-filled {
+  background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+  color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 25px rgba(0, 212, 255, 0.3);
+}
+
+.btn-section-filled:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
+  color: white;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
 
 @media (max-width: 768px) {
-  .planning-card-wrapper {
-    position: relative;
-    bottom: 0;
-    left: 0;
-    transform: translateY(-50px);
-    width: calc(100% - 30px);
-    margin: 0 15px;
-  }
-  
-  .hero-container {
-    margin-bottom: 4rem;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+  .hero-wrapper,
+  .hero-carousel-enhanced,
+  .hero-carousel-enhanced .carousel-inner,
+  .hero-carousel-enhanced .carousel-item,
+  .hero-slide-wrapper {
+    height: 100vh;
+    min-height: 600px;
   }
 
-  .planning-card {
-    margin: 0 auto; /* Center the card */
+  .hero-content-inner {
+    padding-top: 2rem;
   }
 
-  .display-4 {
-    font-size: 2rem;
+  .hero-quick-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
   }
 
-  .btn {
-    font-size: 0.9rem;
+  .quick-link-item {
     padding: 0.5rem 1rem;
   }
 
-  .recommendations-section {
-    padding: 2rem 0;
-  }
-  
-  .recommendations-section h2 {
+  .quick-link-icon {
     font-size: 1.5rem;
+  }
+
+  .quick-link-label {
+    font-size: 0.75rem;
+  }
+
+  .hero-accent-badge {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+  }
+
+  .btn-hero {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-slide-info {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .slide-number {
+    font-size: 2rem;
+  }
+
+  .slide-total {
+    font-size: 1rem;
+  }
+
+  .hero-carousel-enhanced .carousel-control-prev,
+  .hero-carousel-enhanced .carousel-control-next {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hero-carousel-enhanced .carousel-control-prev {
+    left: 1rem;
+  }
+
+  .hero-carousel-enhanced .carousel-control-next {
+    right: 1rem;
+  }
+
+  .hero-carousel-enhanced .carousel-control-prev-icon,
+  .hero-carousel-enhanced .carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .planning-card-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
   }
 }
 
-@media (max-width: 576px) {
-  .display-4 {
-    font-size: 1.75rem;
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 }

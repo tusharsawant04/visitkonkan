@@ -90,35 +90,45 @@ export default function ExperienceList() {
           <i className="bi bi-chevron-left"></i>
         </button>
 
-        <div className="experience-slider-container">
-          <div className="experience-slider" ref={sliderRef}>
-            {experiences.map((exp, idx) => (
-              <div className="experience-card ms-4" key={idx}>
-                <Image 
-                  src={exp.img} 
-                  width={400} 
-                  height={250} 
-                  className="card-img-top" 
+       <div className="experience-slider-container">
+        <div className="experience-slider" ref={sliderRef}>
+          {experiences.map((exp, idx) => (
+            <div className="experience-card modern-card ms-4" key={idx}>
+              
+              {/* Image Wrapper */}
+              <div className="image-wrapper">
+                <Image
+                  src={exp.img}
+                  width={400}
+                  height={260}
+                  className="card-img"
                   alt={exp.name}
-                  objectFit="cover"
+                  style={{ objectFit: "cover" }}
                 />
-                <div className="card-body">
-                  <h5 className="fw-semibold text-white">{exp.name}</h5>
-                  <p className="text-blue small">{exp.desc}</p>
-                  <p className="text-warning small">⭐ {exp.rating}</p>
-                  <Link href={`/${exp.slug}`} passHref>
+
+                {/* Rating Badge */}
+                <span className="rating-badge">⭐ {exp.rating}</span>
+              </div>
+
+              {/* Card Body */}
+              <div className="card-body">
+                <h5 className="fw-semibold text-white mb-2">{exp.name}</h5>
+                <p className="gtext-blue small mb-3">{exp.desc}</p>
+
+                <Link href={`/${exp.slug}`} passHref>
                   <button
-                    className="btn btn-outline-light"
-                    aria-label={`Learn more about ${exp.name || exp.slug}`}
+                    className="btn btn-modern"
+                    aria-label={`Explore ${exp.name || exp.slug}`}
                   >
-                    Learn More
+                    Explore Experience →
                   </button>
                 </Link>
-                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
+      </div>
+
 
         <button 
           className="scroll-button scroll-right"

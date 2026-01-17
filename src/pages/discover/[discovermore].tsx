@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import Layout from '../../components/layout';
@@ -62,8 +63,68 @@ const DiscoverMorePage = () => {
 
   return (
     <Layout>
+      {/* ================= SEO META TAGS ================= */}
+      <Head>
+        <title>{place.name} | Travel Guide, History & Things To Do</title>
+
+        <meta
+          name="description"
+          content={`${place.name} travel guide. Best time to visit, history, how to reach, things to do, stay options and nearby attractions.`}
+        />
+
+        <meta
+          name="keywords"
+          content={`${place.name}, tourism, travel guide, places to visit, things to do, Konkan tourism`}
+        />
+
+        <link
+          rel="canonical"
+          href={`https://www.visitkokan.in/discover-more/${place.slug}`}
+        />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${place.name} – Complete Travel Guide`} />
+        <meta property="og:description" content={place.description} />
+        <meta property="og:image" content={place.image_gallery[0]} />
+        <meta property="og:type" content="article" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${place.name} – Travel Guide`} />
+        <meta name="twitter:description" content={place.description} />
+        <meta name="twitter:image" content={place.image_gallery[0]} />
+      </Head>
+
+      {/* ================= STRUCTURED DATA ================= */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'TouristAttraction',
+            name: place.name,
+            description: place.description,
+            image: place.image_gallery,
+            touristType: place.ideal_for,
+            url: `https://www.visitkokan.in/discover-more/${place.slug}`,
+            geo:
+              place.latitude && place.longitude
+                ? {
+                    '@type': 'GeoCoordinates',
+                    latitude: place.latitude,
+                    longitude: place.longitude,
+                  }
+                : undefined,
+            address: {
+              '@type': 'PostalAddress',
+              addressCountry: 'IN',
+            },
+          }),
+        }}
+      />
+
       <div className="discover-more-page">
-        {/* Hero Section */}
+        {/* ================= HERO SECTION ================= */}
         <motion.div
           className="hero-image position-relative"
           initial={{ opacity: 0 }}
@@ -72,8 +133,9 @@ const DiscoverMorePage = () => {
         >
           <Image
             src={place.image_gallery[0] || '/placeholder.jpg'}
-            alt={place.name}
+            alt={`${place.name} tourist destination`}
             fill
+            priority
             className="object-cover hero-img"
           />
           <div className="hero-overlay d-flex flex-column justify-content-end text-white">
@@ -84,7 +146,7 @@ const DiscoverMorePage = () => {
           </div>
         </motion.div>
 
-        {/* Details */}
+        {/* ================= DETAILS ================= */}
         <motion.section
           className="container py-5"
           initial={{ opacity: 0, y: 40 }}
@@ -95,9 +157,9 @@ const DiscoverMorePage = () => {
             {/* Left Column */}
             <div className="col-lg-8">
               <div className="detail-card shadow-sm rounded-4 p-4">
-                <h2 className="fw-semibold mb-3">{place.name}</h2>
+                <h2 className="fw-semibold mb-3">About {place.name}</h2>
 
-                <div className="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                <div className="d-flex gap-3 mb-3 flex-wrap">
                   <span className="badge bg-info text-dark px-3 py-2">
                     {place.popular_for.slice(0, 2).join(', ')}
                   </span>
@@ -106,19 +168,19 @@ const DiscoverMorePage = () => {
                   </span>
                 </div>
 
-                <p className="mb-4">{place.description}</p>
+                <p>{place.description}</p>
 
-                <h4 className="fw-bold mt-4">History</h4>
+                <h3 className="fw-bold mt-4">History of {place.name}</h3>
                 <p>{place.history}</p>
 
-                <h4 className="fw-bold mt-4">Things To Do</h4>
+                <h3 className="fw-bold mt-4">Things To Do</h3>
                 <ul>
                   {place.things_to_do.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
 
-                <h4 className="fw-bold mt-4">How To Reach</h4>
+                <h3 className="fw-bold mt-4">How To Reach</h3>
                 <ul>
                   <li><strong>By Road:</strong> {place.how_to_reach.by_road}</li>
                   <li><strong>By Train:</strong> {place.how_to_reach.by_train}</li>
@@ -127,14 +189,14 @@ const DiscoverMorePage = () => {
                   )}
                 </ul>
 
-                <h4 className="fw-bold mt-4">Travel Tips</h4>
+                <h3 className="fw-bold mt-4">Travel Tips</h3>
                 <ul>
                   {place.travel_tips.map((tip, i) => (
                     <li key={i}>{tip}</li>
                   ))}
                 </ul>
 
-                <h4 className="fw-bold mt-4">Stay Options</h4>
+                <h3 className="fw-bold mt-4">Stay Options</h3>
                 <ul>
                   {place.stay_options.map((stay, i) => (
                     <li key={i}>{stay}</li>
@@ -147,35 +209,23 @@ const DiscoverMorePage = () => {
             <div className="col-lg-4">
               <div className="side-card shadow-sm rounded-4 p-4 sticky-top">
                 <h4 className="fw-bold mb-3">Plan Your Visit</h4>
-                <ul className="list-unstyled text-muted small mb-4">
+                <ul className="list-unstyled small text-muted">
                   <li>📍 Best Time: {place.best_time_to_visit}</li>
                   <li>🕒 Timings: {place.timings}</li>
                   <li>💰 Entry Fee: {place.entry_fee}</li>
                 </ul>
 
-                {/* Embedded Google Map */}
-                {place.latitude && place.longitude ? (
-                  <iframe
-                    src={`https://www.google.com/maps?q=${place.latitude},${place.longitude}&hl=en&z=14&output=embed`}
-                    width="100%"
-                    height="220"
-                    className="rounded mb-3 border-0 shadow-sm"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                ) : (
-                  <iframe
-                    src={`${place.google_map_link.replace(
-                      '/maps',
-                      '/maps/embed'
-                    )}`}
-                    width="100%"
-                    height="220"
-                    className="rounded mb-3 border-0 shadow-sm"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                )}
+                <iframe
+                  src={
+                    place.latitude && place.longitude
+                      ? `https://www.google.com/maps?q=${place.latitude},${place.longitude}&z=14&output=embed`
+                      : place.google_map_link.replace('/maps', '/maps/embed')
+                  }
+                  width="100%"
+                  height="220"
+                  className="rounded border-0 shadow-sm mb-3"
+                  loading="lazy"
+                />
 
                 <a
                   href={place.google_map_link}
@@ -193,7 +243,7 @@ const DiscoverMorePage = () => {
           </div>
         </motion.section>
 
-        {/* Gallery */}
+        {/* ================= GALLERY ================= */}
         <section className="container py-5">
           <h3 className="fw-semibold mb-4">Gallery</h3>
           <div className="row g-3">
@@ -201,9 +251,10 @@ const DiscoverMorePage = () => {
               <div key={i} className="col-md-4 col-6">
                 <Image
                   src={img}
-                  alt={place.name}
+                  alt={`${place.name} tourist attraction`}
                   width={400}
                   height={250}
+                  loading="lazy"
                   className="rounded-4 shadow-sm w-100"
                 />
               </div>

@@ -4,7 +4,6 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import { useEffect, useState } from 'react';
 import './discover.css';
-import { color } from 'framer-motion';
 import ReviewsList from "@/components/ReviewsList";
 import ReviewForm from "@/components/ReviewForm";
 import Head from "next/head"; 
@@ -15,7 +14,7 @@ export interface Experience {
   slug: string;
   desc: string;
   rating: string;
-  price: number; // Price property added
+  price: number;
   img: string[];
   history: string;
   whatToCarry?: string[];
@@ -293,11 +292,10 @@ Together, Ekvira Devi Temple and Lohagad Fort symbolize Maharashtra’s layered 
 
 ];
 
-
-// --- COMPONENT ---
 export default function ExperienceDetail() {
   const router = useRouter();
   const { slug } = router.query;
+  const [activeTab, setActiveTab] = useState('overview');
   const experience: Experience | undefined = experiences.find(exp => exp.slug === slug);
 
   const pageTitle = experience ? `${experience.name} | Trekking & Travel Experience` : "Experience Not Found";
@@ -312,12 +310,15 @@ export default function ExperienceDetail() {
   if (!experience) {
     return (
       <Layout>
-        <div className="container text-center py-5">
-          <h2 className="text-danger">Experience not found</h2>
-          <p className="text-muted">We couldn't find the page you were looking for.</p>
-          <Link href="/" className="btn btn-outline-primary mt-3">
-            <i className="bi bi-arrow-left me-2"></i>Back to Discover
-          </Link>
+        <div className="error-container">
+          <div className="error-content">
+            <div className="error-icon">🏔️</div>
+            <h2 className="error-title">Experience Not Found</h2>
+            <p className="error-text">We couldn't find the adventure you were looking for.</p>
+            <Link href="/" className="error-btn">
+              <span>← Back to Home</span>
+            </Link>
+          </div>
         </div>
       </Layout>
     );
@@ -327,363 +328,309 @@ export default function ExperienceDetail() {
 
   return (
     <Layout>
-       <Head>
+      <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={pageDesc} />
-
-        {/* ✅ Open Graph / Facebook */}
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={pageDesc} />
         <meta property="og:image" content={pageImg} />
         <meta property="og:url" content={pageUrl} />
         <meta property="og:type" content="website" />
-
-        {/* ✅ Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
         <meta name="twitter:description" content={pageDesc} />
         <meta name="twitter:image" content={pageImg} />
-
-        {/* ✅ Canonical Link */}
         <link rel="canonical" href={pageUrl} />
       </Head>
-      {/* --- HERO SECTION with GALLERY BUTTON --- */}
-      <div className="container-fluid p-0">
-          <div className="hero-image-container" style={{ backgroundImage: `url(${experience.img[0]})` }}>
-              <div className="hero-overlay">
-                 <div className="container text-center text-white py-5">
-                <h1 
-                    className="display-4 fw-bold mb-3"
-                    style={{
-                      background: "linear-gradient(135deg, #1CA9C9, #005f73)",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                      backgroundClip: "text",
-                    }}
-                  >
-                    {experience.name}
-                  </h1>
 
-                  <div className="d-flex justify-content-center align-items-center gap-4 mb-4 flex-wrap">
-                    
-                    <p className="mb-1">
-                    <strong className="text-primary fs-4"   style={{
-                        color: "linear-gradient(135deg, #1CA9C9, #005f73)",
-                       
-                      }}>
-                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(experience.price)}
-                    </strong> 
-                    <span className="text-muted" > / person</span>
-                  </p>
-                  </div>
+      {/* Modern Hero Section */}
+      <section className="modern-hero">
+        <div className="hero-background" style={{ backgroundImage: `url(${experience.img[0]})` }}>
+          <div className="hero-gradient"></div>
+        </div>
+        
+        <div className="hero-content-modern">
+          <div className="container">
+            <div className="hero-breadcrumb">
+              <Link href="/">Home</Link>
+              <span>/</span>
+              <Link href="/experiences">Experiences</Link>
+              <span>/</span>
+              <span>{experience.name}</span>
+            </div>
 
-                  <div className="d-flex justify-content-center gap-3 flex-wrap">
-                    <button
-                      className="btn btn-light btn-lg fw-semibold shadow-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#galleryModal"
-                    >
-                      <i className="bi bi-images me-2"></i> View Gallery
-                    </button>
-
-                    <a
-                      href={`/form/new/${experience.slug}`}
-                      className="btn btn-lg text-white fw-semibold shadow-sm"
-                      style={{
-                        background: "linear-gradient(135deg, #1CA9C9, #005f73)",
-                        borderRadius: "8px",
-                        padding: "10px 22px",
-                        fontSize: "16px",
-                        letterSpacing: "0.3px",
-                      }}
-                    >
-                      <i className="bi bi-calendar-check me-2"></i> Book Now
-                    </a>
-                  </div>
-                </div>
-
-              </div>
-          </div>
-      </div>
-
-      {/* --- MAIN CONTENT --- */}
-      <div className="container my-5">
-        <div className="row g-5">
-          {/* --- LEFT CONTENT COLUMN --- */}
-          <div className="col-lg-8">
+            <h1 className="hero-title-modern">{experience.name}</h1>
             
-            {/* -- TABS -- */}
-            <ul className="nav nav-tabs nav-fill mb-4" id="experienceTab" role="tablist">
-              <li className="nav-item" role="presentation">
-                <button className="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview-pane" type="button" role="tab" aria-controls="overview-pane" aria-selected="true">
-                  <i className="bi bi-card-text me-2"></i>Overview
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button className="nav-link" id="itinerary-tab" data-bs-toggle="tab" data-bs-target="#itinerary-pane" type="button" role="tab" aria-controls="itinerary-pane" aria-selected="false">
-                  <i className="bi bi-compass me-2"></i>Itinerary
-                </button>
-              </li>
-              <li className="nav-item" role="presentation">
-                <button className="nav-link" id="carry-tab" data-bs-toggle="tab" data-bs-target="#carry-pane" type="button" role="tab" aria-controls="carry-pane" aria-selected="false">
-                  <i className="bi bi-backpack2 me-2"></i>What to Carry
-                </button>
-              </li>
-            </ul>
+            <div className="hero-meta-bar">
+              <div className="meta-item-hero">
+                <span className="meta-icon-hero">⭐</span>
+                <span className="meta-text-hero">{experience.rating}</span>
+              </div>
+              <div className="meta-item-hero">
+                <span className="meta-icon-hero">📍</span>
+                <span className="meta-text-hero">Maharashtra</span>
+              </div>
+              <div className="meta-item-hero">
+                <span className="meta-icon-hero">⏱️</span>
+                <span className="meta-text-hero">{durationInDays} {durationInDays > 1 ? 'Days' : 'Day'}</span>
+              </div>
+              <div className="meta-item-hero price-highlight">
+                <span className="price-amount">₹{experience.price.toLocaleString()}</span>
+                <span className="price-label">/ person</span>
+              </div>
+            </div>
 
-            <div className="tab-content" id="experienceTabContent">
-              {/* -- OVERVIEW PANE -- */}
-              <div className="tab-pane fade show active" id="overview-pane" role="tabpanel" aria-labelledby="overview-tab" tabIndex={0}>
-                <h4 className="fw-bold">About this experience</h4>
-                <p className="text-muted">{experience.desc}</p>
-                
-                <div className="mt-4 p-4 bg-white shadow-sm rounded-3 border">
-                <h5 className="fw-bold mb-3 d-flex align-items-center text-primary">
-                  <span className="me-2 fs-4">📜</span> History
-                </h5>
+            <div className="hero-action-buttons">
+              <button
+                className="hero-btn hero-btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#galleryModal"
+              >
+                <span className="btn-icon">📸</span>
+                <span>View Gallery</span>
+              </button>
+              
+              <Link href={`/form/new/${experience.slug}`}>
+                <button className="hero-btn hero-btn-secondary">
+                  <span className="btn-icon">✓</span>
+                  <span>Book Now</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <p
-                  className="mb-0 lh-lg text-secondary"
-                  style={{
-                    fontSize: "1rem",
-                    textAlign: "justify",
-                    lineHeight: "1.8",
-                    fontFamily: "'Poppins', sans-serif",
-                    whiteSpace: "pre-line"
-                  }}
+      {/* Main Content */}
+      <div className="detail-content-wrapper">
+        <div className="container">
+          <div className="content-grid">
+            {/* Left Column - Main Content */}
+            <div className="main-content-column">
+              {/* Modern Tab Navigation */}
+              <div className="modern-tabs">
+                <button
+                  className={`tab-btn ${activeTab === 'overview' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('overview')}
                 >
-                  {experience.history}
-                </p>
-              </div>
+                  <span className="tab-icon">📖</span>
+                  <span>Overview</span>
+                </button>
+                <button
+                  className={`tab-btn ${activeTab === 'itinerary' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('itinerary')}
+                >
+                  <span className="tab-icon">🗺️</span>
+                  <span>Itinerary</span>
+                </button>
+                <button
+                  className={`tab-btn ${activeTab === 'essentials' ? 'active' : ''}`}
+                  onClick={() => setActiveTab('essentials')}
+                >
+                  <span className="tab-icon">🎒</span>
+                  <span>Essentials</span>
+                </button>
               </div>
 
-              {/* -- ITINERARY PANE -- */}
-              <div className="tab-pane fade" id="itinerary-pane" role="tabpanel" aria-labelledby="itinerary-tab" tabIndex={0}>
-                  <div className="itinerary-container">
-                    {experience.itinerary.map((step, idx) => {
+              {/* Tab Content */}
+              <div className="tab-content-modern">
+                {/* Overview Tab */}
+                {activeTab === 'overview' && (
+                  <div className="tab-pane-modern">
+                    <div className="content-section">
+                      <h2 className="section-heading">About This Experience</h2>
+                      <p className="section-text">{experience.desc}</p>
+                    </div>
+
+                    <div className="content-section history-section">
+                      <h2 className="section-heading">
+                        <span className="heading-icon">📜</span>
+                        History & Heritage
+                      </h2>
+                      <div className="history-content">
+                        <p className="section-text">{experience.history}</p>
+                      </div>
+                    </div>
+
+                    <div className="highlights-grid">
+                      <div className="highlight-card">
+                        <div className="highlight-icon">🏔️</div>
+                        <h3>Scenic Views</h3>
+                        <p>Breathtaking panoramic vistas</p>
+                      </div>
+                      <div className="highlight-card">
+                        <div className="highlight-icon">🏛️</div>
+                        <h3>Rich Heritage</h3>
+                        <p>Ancient forts and temples</p>
+                      </div>
+                      <div className="highlight-card">
+                        <div className="highlight-icon">🥾</div>
+                        <h3>Adventure</h3>
+                        <p>Thrilling trekking experience</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Itinerary Tab */}
+                {activeTab === 'itinerary' && (
+                  <div className="tab-pane-modern">
+                    <h2 className="section-heading">Journey Timeline</h2>
+                    <div className="modern-timeline">
+                      {experience.itinerary.map((step, idx) => {
                         const prevDay = idx > 0 ? experience.itinerary[idx - 1].day : null;
                         const showDay = step.day !== prevDay;
                         return (
-                        <div key={idx} className="d-flex position-relative mb-4 ps-4 timeline-item">
-                            <div className="timeline-icon me-3 d-flex flex-column align-items-center">
-                                <div className="dot bg-primary"></div>
-                                {idx !== experience.itinerary.length - 1 && <div className="line"></div>}
+                          <div key={idx} className="timeline-item-modern">
+                            {showDay && (
+                              <div className="timeline-day-badge">Day {step.day}</div>
+                            )}
+                            <div className="timeline-marker">
+                              <div className="marker-dot"></div>
+                              {idx !== experience.itinerary.length - 1 && (
+                                <div className="marker-line"></div>
+                              )}
                             </div>
-                            <div>
-                                {showDay && (
-                                <span className="badge bg-primary-subtle text-primary-emphasis rounded-pill mb-2">Day {step.day}</span>
-                                )}
-                                <div className="text-muted">
-                                <strong>{step.time}:</strong> {step.description}
-                                </div>
+                            <div className="timeline-content-box">
+                              <div className="timeline-time">{step.time}</div>
+                              <div className="timeline-description">{step.description}</div>
                             </div>
-                        </div>
+                          </div>
                         );
-                    })}
+                      })}
+                    </div>
                   </div>
-              </div>
-              
-              {/* -- WHAT TO CARRY PANE -- */}
-              <div className="tab-pane fade" id="carry-pane" role="tabpanel" aria-labelledby="carry-tab" tabIndex={0}>
-                 {experience.whatToCarry && experience.whatToCarry.length > 0 && (
-                    <ul className="list-group list-group-flush">
-                    {experience.whatToCarry.map((item, idx) => (
-                        <li key={idx} className="list-group-item d-flex align-items-center">
-                            <i className="bi bi-check-circle-fill text-success me-3"></i>
-                            {item}
-                        </li>
-                    ))}
-                    </ul>
+                )}
+
+                {/* Essentials Tab */}
+                {activeTab === 'essentials' && (
+                  <div className="tab-pane-modern">
+                    <h2 className="section-heading">What to Carry</h2>
+                    {experience.whatToCarry && (
+                      <div className="essentials-grid">
+                        {experience.whatToCarry.map((item, idx) => (
+                          <div key={idx} className="essential-item">
+                            <div className="essential-check">✓</div>
+                            <span className="essential-text">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
-          </div>
 
-          {/* --- RIGHT SIDEBAR COLUMN --- */}
-          <div className="col-lg-4">
-            <div className="position-sticky" style={{ top: '2rem' }}>
-              
-              {/* -- ENHANCED BOOKING CARD -- */}
-              <div className="card shadow-sm border-0 mb-4">
-                <div className="card-body p-4">
-                  <h5 className="fw-bold">Ready to Explore?</h5>
-                  
-                  {/* DYNAMIC PRICE DISPLAY */}
-                  <p className="mb-1">
-                    <strong className="text-primary fs-4"   style={{
-                        color: "linear-gradient(135deg, #1CA9C9, #005f73)",
-                       
-                      }}>
-                        {new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(experience.price)}
-                    </strong> 
-                    <span className="text-muted" > / person</span>
-                  </p>
-
-                  <p className="text-muted small">Taxes and fees may apply.</p>
-                  
-                  <div className="d-flex justify-content-between text-muted border-top pt-3 mt-3">
-                      <span><i className="bi bi-clock me-2"></i>Duration</span>
-                      <strong>{durationInDays} {durationInDays > 1 ? 'Days' : 'Day'}</strong>
+            {/* Right Column - Sidebar */}
+            <div className="sidebar-column">
+              <div className="sticky-sidebar">
+                {/* Booking Card */}
+                <div className="booking-card-modern">
+                  <div className="booking-price-section">
+                    <div className="price-main">₹{experience.price.toLocaleString()}</div>
+                    <div className="price-sub">per person</div>
                   </div>
-                  
-                  <div className="d-grid gap-2 mt-4">
-                    <a href="form/new/naneghat" className="btn btn-lg text-white"
-                      style={{
-                        background: "linear-gradient(135deg, #1CA9C9, #005f73)",
-                        borderRadius: "8px",
-                        fontWeight: "500",
-                        padding: "8px 16px",
-                        fontSize: "15px"
-                      }}>
-                      Book Now
-                    </a>
-                  
-                  </div>
-                </div>
-              </div>
 
-              {/* -- UPGRADED REVIEWS -- */}
-              <div className="mb-4">
-        
-                    <ReviewsList slug={experience.slug} />
-      <ReviewForm slug={experience.slug} />
-                {/* {experience.reviews.slice(0, 2).map((review, idx) => (
-                   <div key={idx} className="card border-0 bg-light mb-3">
-                     <div className="card-body d-flex">
-                        <div className="me-3">
-                            <div className="avatar bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center">
-                                {review.name.charAt(0)}
-                            </div>
-                        </div>
-                        <div>
-                            <h6 className="card-title mb-0">{review.name}</h6>
-                            <p className="text-warning small mb-1">
-                                {Array(review.rating).fill(0).map((_, i) => <i key={i} className="bi bi-star-fill"></i>)}
-                                {Array(5 - review.rating).fill(0).map((_, i) => <i key={i} className="bi bi-star"></i>)}
-                            </p>
-                            <p className="card-text small text-muted">"{review.comment}"</p>
-                        </div>
-                     </div>
-                   </div>
-                ))} */}
-              </div>
-
-              {/* -- LOCATION MAP -- */}
-              <div>
-                <h6 className="fw-bold mb-2">📍 Location</h6>
-                <div className="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
-                  <iframe src={experience.location} width="600" height="450" style={{border: 0}} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* --- GALLERY MODAL --- */}
-      <div className="modal fade" id="galleryModal" tabIndex={-1} aria-labelledby="galleryModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-lg modal-dialog-centered">
-            <div className="modal-content">
-                <div className="modal-header">
-                    <h5 className="modal-title" id="galleryModalLabel">{experience.name} - Gallery</h5>
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div className="modal-body">
-                    <div id="galleryCarousel" className="carousel slide" data-bs-ride="carousel">
-                        <div className="carousel-inner">
-                            {experience.img.map((img, idx) => (
-                                <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
-                                    <Image
-                                        src={img}
-                                        alt={`${experience.name} - Image ${idx + 1}`}
-                                        width={800}
-                                        height={600}
-                                        className="d-block w-100"
-                                        style={{ objectFit: 'contain', height: '70vh' }}
-                                    />
-                                </div>
-                            ))}
-                        </div>
-                        <button className="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Previous</span>
-                        </button>
-                        <button className="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="visually-hidden">Next</span>
-                        </button>
+                  <div className="booking-details">
+                    <div className="detail-row">
+                      <span className="detail-label">Duration</span>
+                      <span className="detail-value">{durationInDays} {durationInDays > 1 ? 'Days' : 'Day'}</span>
                     </div>
+                    <div className="detail-row">
+                      <span className="detail-label">Difficulty</span>
+                      <span className="detail-value">Moderate</span>
+                    </div>
+                    <div className="detail-row">
+                      <span className="detail-label">Group Size</span>
+                      <span className="detail-value">10-20 people</span>
+                    </div>
+                  </div>
+
+                  <Link href={`/form/new/${experience.slug}`}>
+                    <button className="booking-cta-btn">
+                      <span>Book This Experience</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </Link>
+
+                  <div className="booking-note">
+                    <span className="note-icon">ℹ️</span>
+                    <span>Free cancellation up to 24 hours before</span>
+                  </div>
                 </div>
+
+                {/* Reviews Section */}
+                <div className="reviews-card-modern">
+                  <h3 className="reviews-heading">Traveler Reviews</h3>
+                  <ReviewsList slug={experience.slug} />
+                  <ReviewForm slug={experience.slug} />
+                </div>
+
+                {/* Location Map */}
+                <div className="map-card-modern">
+                  <h3 className="map-heading">
+                    <span className="heading-icon">📍</span>
+                    Location
+                  </h3>
+                  <div className="map-container">
+                    <iframe 
+                      src={experience.location} 
+                      width="100%" 
+                      height="300" 
+                      style={{border: 0, borderRadius: '12px'}} 
+                      allowFullScreen 
+                      loading="lazy"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
-       
-      {/* --- BOOKING MODAL --- */}
-       <div className="modal fade" id="bookingModal" tabIndex={-1} aria-labelledby="bookingModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <form
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const form = e.target as HTMLFormElement;
-                const data = {
-                  name: (form.elements.namedItem('name') as HTMLInputElement).value,
-                  email: (form.elements.namedItem('email') as HTMLInputElement).value,
-                  phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
-                  message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
-                  experience: experience.name,
-                };
-                try {
-                  const res = await fetch('/api/book', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                  });
-                  const result = await res.json();
-                  if (res.ok) {
-                    alert('Booking inquiry sent successfully!');
-                    form.reset();
-                    const modalEl = document.getElementById('bookingModal');
-                    if (modalEl) {
-                        const bootstrap = await import('bootstrap/dist/js/bootstrap.bundle.min');
-                        const modal = bootstrap.Modal.getInstance(modalEl);
-                        modal?.hide();
-                    }
-                  } else {
-                    alert(result.message || 'Failed to send booking.');
-                  }
-                } catch (err) {
-                  console.error(err);
-                  alert('An unexpected error occurred.');
-                }
-              }}
-            >
-              <div className="modal-header">
-                <h5 className="modal-title" id="bookingModalLabel">Book This Experience</h5>
-                <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      {/* Gallery Modal */}
+      <div className="modal fade" id="galleryModal" tabIndex={-1}>
+        <div className="modal-dialog modal-xl modal-dialog-centered">
+          <div className="modal-content gallery-modal-content">
+            <div className="modal-header gallery-modal-header">
+              <h5 className="modal-title">{experience.name} Gallery</h5>
+              <button type="button" className="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div className="modal-body p-0">
+              <div id="galleryCarousel" className="carousel slide" data-bs-ride="carousel">
+                <div className="carousel-indicators">
+                  {experience.img.map((_, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      data-bs-target="#galleryCarousel"
+                      data-bs-slide-to={idx}
+                      className={idx === 0 ? 'active' : ''}
+                    ></button>
+                  ))}
+                </div>
+                <div className="carousel-inner">
+                  {experience.img.map((img, idx) => (
+                    <div key={idx} className={`carousel-item ${idx === 0 ? 'active' : ''}`}>
+                      <Image
+                        src={img}
+                        alt={`${experience.name} - ${idx + 1}`}
+                        width={1200}
+                        height={800}
+                        className="gallery-image"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <button className="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                  <span className="carousel-control-prev-icon"></span>
+                </button>
+                <button className="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                  <span className="carousel-control-next-icon"></span>
+                </button>
               </div>
-              <div className="modal-body">
-                <div className="mb-3">
-                  <label className="form-label">Name</label>
-                  <input type="text" name="name" className="form-control" required />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Email</label>
-                  <input type="email" name="email" className="form-control" required />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Phone</label>
-                  <input type="tel" name="phone" className="form-control" required />
-                </div>
-                <div className="mb-3">
-                  <label className="form-label">Message (Optional)</label>
-                  <textarea name="message" className="form-control" rows={3}></textarea>
-                </div>
-              </div>
-              <div className="modal-footer">
-                <button type="submit" className="btn btn-primary">Send Inquiry</button>
-              </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>

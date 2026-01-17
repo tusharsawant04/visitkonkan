@@ -22,7 +22,7 @@ export default function Home() {
       <HeroSlider />
 
       {/* ✅ Fold Content Below */}
-      <ScrollReveal><Category /></ScrollReveal>
+      {/* <ScrollReveal><Category /></ScrollReveal> */}
       <ScrollReveal delay={80}><ExperienceList /></ScrollReveal>
       <ScrollReveal delay={160}><ProductSlider /></ScrollReveal>
       <ScrollReveal delay={240}><FeaturedDestinations /></ScrollReveal>
