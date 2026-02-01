@@ -33,7 +33,7 @@ export default function Home() {
       <div className="elfsight-app-28cdfe42-7a25-430d-96ec-6a9db3d9933f" data-elfsight-app-lazy></div>
      
     </section>
-      <ScrollReveal delay={400}><ReviewSection /></ScrollReveal>
+      {/* <ScrollReveal delay={400}><ReviewSection /></ScrollReveal> */}
       </Layout>
     </main>
   );
